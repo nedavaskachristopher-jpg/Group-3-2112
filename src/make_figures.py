@@ -7,6 +7,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle, Polygon
 from matplotlib.collections import PatchCollection
+from matplotlib.ticker import PercentFormatter
 from sklearn.metrics import precision_recall_curve, average_precision_score
 from sklearn.calibration import calibration_curve
 from scipy.stats import spearmanr
@@ -63,7 +64,7 @@ def main():
         for i in range(2):
             for j in range(2):ax.text(j,i,str(a[i,j]),ha='center',va='center',color='white' if a[i,j]>a.max()/2 else '#111111',fontsize=15)
         ax.set_xticks([0,1],['No alert','Alert']);ax.set_yticks([0,1],['No detection','Detection'])
-        ax.set(xlabel='Prediction',ylabel='Actual proxy label',title=f'{exp.replace("_"," ")}\nValidation threshold {row.threshold:.4f}')
+        ax.set(xlabel='Prediction',ylabel='Actual proxy label',title=f'{exp.replace("_"," ")}\nScore threshold {row.threshold*100:.2f}% (uncalibrated)')
     fig.tight_layout();save(fig,'04_confusion')
     fig,axes=plt.subplots(1,2,figsize=(9,3.5))
     for ax,exp in zip(axes,['weekly_holdout','chronological']):
@@ -73,7 +74,9 @@ def main():
             observed,score=calibration_curve(p.fire_positive,p.score,n_bins=8,strategy='quantile')
             brier=m[(m.experiment==exp)&(m.model==model)&(m.view=='all')].brier.iloc[0]
             ax.plot(score,observed,'o-',color=color,label=f'{"Raw" if model=="xgb_full" else "Platt"} Brier {brier:.4f}')
-        ax.set(xlabel='Mean predicted score',ylabel='Observed detection rate',title=exp.replace('_',' '),xlim=(0,1),ylim=(0,1));ax.legend(fontsize=8)
+        ax.set(xlabel='Mean score (%)',ylabel='Observed detection rate (%)',title=exp.replace('_',' '),xlim=(0,1),ylim=(0,1));ax.legend(fontsize=8)
+        ax.xaxis.set_major_formatter(PercentFormatter(xmax=1))
+        ax.yaxis.set_major_formatter(PercentFormatter(xmax=1))
     fig.tight_layout();save(fig,'05_calibration')
     findings=[]
     fig,axes=plt.subplots(1,2,figsize=(10,4.5))
@@ -106,7 +109,7 @@ def main():
         sub=pred[(pred.experiment=='weekly_holdout')&(pred.model==name)&(pred.target_date==example)]
         patches=[Rectangle((r.longitude-.05,r.latitude-.05),.1,.1) for r in sub.itertuples()]
         pc=PatchCollection(patches,cmap='YlOrRd',edgecolor='#333333',linewidth=.4)
-        pc.set_array(sub.score.to_numpy());pc.set_clim(0,1);ax.add_collection(pc)
+        pc.set_array(sub.score.to_numpy()*100);pc.set_clim(0,100);ax.add_collection(pc)
         for f in geo['features']:
             geom=f['geometry'];polys=geom['coordinates'] if geom['type']=='MultiPolygon' else [geom['coordinates']]
             for poly in polys:
@@ -114,7 +117,7 @@ def main():
         truth=sub[sub.fire_positive==1];ax.scatter(truth.longitude,truth.latitude,s=20,marker='x',color='black',label='Next day detected fire')
         ax.set(xlim=(149.73,150.77),ylim=(-34.38,-33.23),xlabel='Longitude east',ylabel='Latitude north',title=NAMES[name]);ax.set_aspect(1/np.cos(np.deg2rad(-33.8)));ax.legend(fontsize=7,loc='lower right')
     axes[1].set_ylabel('')
-    fig.colorbar(pc,cax=cax,label='Raw model score 0 to 1, not calibrated probability')
+    fig.colorbar(pc,cax=cax,label='Model score (%) - uncalibrated, not probability')
     fig.suptitle(f'Illustrative heldout map for {example.date()} UTC\nDate selected for visible detections, not representative performance',fontsize=10)
     save(fig,'08_illustrative_map')
     (RESULTS/'map_example.json').write_text(json.dumps({'target_date':str(example.date()),'selection':'Heldout day with maximum observed positive cells; illustrative only'},indent=2))

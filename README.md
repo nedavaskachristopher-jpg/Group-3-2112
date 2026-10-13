@@ -21,6 +21,7 @@ The results support better within-season ranking than simple baselines, but do n
 | --- | --- |
 | `src/train_evaluate.py` | Baselines, Logistic Regression and XGBoost; validation tuning, weekly, five-fold and forward evaluation |
 | `src/predict.py` | Load a portable saved XGBoost model and score prepared feature rows |
+| `src/score_display.py` and `src/update_score_display.py` | Add percentage presentation while retaining raw scores, labels and evaluation results |
 | `src/audit_data.py` and `src/rebuild_extended.py` | Input checks and reconstruction of the extended feature table |
 | `src/verify_results.py` | Independently recompute metrics and check saved-model predictions and temporal partitions |
 | `src/make_figures.py` | Generate PR curves, confusion matrices, SHAP plots and an illustrative map |
@@ -48,7 +49,17 @@ python -m venv .venv
 
 On macOS/Linux, replace `.\.venv\Scripts\python.exe` with `.venv/bin/python`.
 
-The output contains grid and date identifiers, `model_score`, the model's validation-selected `threshold`, and a binary `alert`. A score is not a calibrated probability or an official risk level. Inputs must already contain the required 23 full-model features, or 20 conditions-only features. This interface does not fetch live weather or accept raw sensor readings.
+The main display fields are `model_score_percent` and `threshold_percent`, on a 0-100 scale. For example, a raw score of 0.73 is displayed as 73%; this is an **uncalibrated model score**, not a claim of a 73% chance of fire. The raw `model_score` and `threshold` remain on the 0-1 scale, and the binary `alert` is computed from the unrounded raw values. Outputs also identify the one-day `forecast_horizon_days` and score interpretation.
+
+The evaluation file `output/results/predictions.csv` similarly adds `score_percent` and `threshold_percent` beside its original raw scores, binary observations and alerts. Accuracy, precision, recall, AP and other metrics continue to use the original labels and score scale. Display conversion does not improve or reduce model performance.
+
+Inputs must already contain the required 23 full-model features, or 20 conditions-only features. This interface does not fetch live weather or accept raw sensor readings.
+
+## Human activity and forecast horizon
+
+Deliberate or accidental ignition, recreation, land-management actions and suppression are not explicit inputs. Their effects can occur in historical labels, but the model cannot anticipate a particular unobserved action. A low score does not establish safety, and percentage formatting does not remove missing-information uncertainty.
+
+The model predicts the next day only, including continuing fire. A detected fire today can inform tomorrow's score. Running the model again with newly observed conditions tomorrow gives an updated next-day prediction; it does not provide a two-/three-day forecast from today's inputs. See [forecast horizons and continuing fire](docs/FORECAST_HORIZONS.md) for the distinction and future development requirements.
 
 ## Verify and reproduce
 

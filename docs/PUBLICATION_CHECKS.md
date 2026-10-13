@@ -17,10 +17,18 @@ Checks performed on 14 October 2026 in a fresh local Python 3.12.14 environment 
 | Source preservation | SHA-256 equality for all 39 retained input/model files and the original predictions, metrics and run manifest |
 | Public content check | Known student identifier, absolute user-directory paths and common embedded credential patterns absent from retained text |
 
-The original notebook, model weights, predictions and training run manifest were retained. Model training and the full raw GIS pipeline were not rerun during these publication checks. The recorded notebook outputs are from the original execution. Report-generation code has a small privacy edit and handles an omitted university logo; packaging code was adapted to the public repository contents.
+The initial publication retained the original notebook, model weights, predictions and training run manifest. Model training and the full raw GIS pipeline were not rerun during those initial publication checks. Report-generation code has a small privacy edit and handles an omitted university logo; packaging code was adapted to the public repository contents. Subsequent checks and display updates are recorded below.
 
 GitHub Actions runs the saved-result and feature-reconstruction checks on pushes and pull requests. Local validation above does not by itself establish the outcome of a remote workflow run.
 
 ## Group repository integration
 
 The contribution is published to `nedavaskachristopher-jpg/Group-3-2112`. Its dataset directory is named `blue_mountains_2019_2020`. Documentation and code comments are in English, the notebook's stored text is English, and artifact paths are ASCII. `src/check_english.py` scans tracked/untracked non-ignored text for Chinese characters and checks file names; it is also included in GitHub Actions. Numerical inputs and saved model files are preserved from the original delivery.
+
+## Percentage presentation update
+
+The current prediction CSVs add percentage display columns. Raw scores, binary labels, thresholds and alert decisions remain available. Percentage conversion is performed in double precision without rounding for decisions; visual formatting may round values for readability. Accuracy, precision, recall, F1, Brier score and ranking metrics are independently checked using the raw scores and original labels. Model weights and the original metric/run-manifest files are preserved. Predictions have added columns, so the earlier byte-preservation statement describes the initial publication, not the current CSV layout.
+
+Human activity is documented as an unobserved factor, and all current predictions are explicitly next-day scores. No two-/three-day model or calibrated fire probability is claimed. The notebook display and affected figures are regenerated using the updated code.
+
+The percentage update passed comparisons against the published baseline: all 226,228 original prediction rows retain their labels and alerts; all 20 model files, the metrics CSV and the original training manifest are byte-identical. The 86 inference examples reproduce the original predictions within the existing numerical tolerance. Near-threshold values that both display as 50.00% retain distinct raw-score decisions. A separate execution of all nine notebook code cells reran 15 experiments and reproduced the metrics and alerts; its refreshed notebook outputs are included. Training for that check took place in an isolated copy and did not replace the published model weights or training manifest.

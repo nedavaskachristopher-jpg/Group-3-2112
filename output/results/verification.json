@@ -2,6 +2,7 @@
   "passed": true,
   "metric_rows_checked": 126,
   "prediction_rows_checked": 226228,
+  "percentage_rows_checked": 226228,
   "outer_test_coverage": 15695,
   "saved_model_parity_rows": 41280,
   "checks": [
@@ -12,6 +13,9 @@
     "strict forward target feature date separation",
     "saved UBJ predictions equal evaluation scores",
     "inference rejects missing feature",
-    "new fire subset uses feature day state only"
+    "new fire subset uses feature day state only",
+    "percentage columns equal raw scores times 100",
+    "alerts use unrounded raw scores",
+    "accuracy precision recall F1 Brier and ranking metrics independently recomputed"
   ]
 }

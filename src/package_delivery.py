@@ -21,7 +21,10 @@ def main():
         'park_filter':'park_area_fraction >= 0.10','features':FEATURES,'dictionary':dictionary,
         'excluded_columns':sorted(set(pd.read_csv(DATA/'blue_mountains_model_table_2019_2020_extended.csv',nrows=0).columns)-set(FEATURES['full'])),
         'decision_rule':'Highest validation precision subject to recall >=0.80. Preserve model-specific metadata threshold.',
-        'interpretation':'Raw ranking score for satellite active-fire detection, including continuing fire; not calibrated ignition probability.'}
+        'interpretation':'Raw ranking score for satellite active-fire detection, including continuing fire; not calibrated ignition probability.',
+        'display':'Percentage score = 100 * raw score; threshold percentages use the same conversion. Labels and metric calculations retain their original scale.',
+        'forecast_horizon_days':1,
+        'unobserved_factors':'Human ignition and suppression activities are not explicit inputs; low scores do not establish safety.'}
     (output/'feature_contract.json').write_text(json.dumps(contract,indent=2))
     files=[]
     for directory in [ROOT/'src',output]:

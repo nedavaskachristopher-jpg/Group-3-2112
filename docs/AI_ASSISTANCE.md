@@ -13,6 +13,7 @@ The user then specified the team's repository, `nedavaskachristopher-jpg/Group-3
 - Provide a shorter English explanation for international teammates.
 - Create a Git repository and upload the existing code and prediction content.
 - Use the Group 3 repository and ensure all uploaded content is in English.
+- Display scores and alert thresholds as percentages while preserving evaluation accuracy; document unobserved human activity and explain continuing-fire and two-/three-day forecast limitations.
 
 ## Evidence and team review
 

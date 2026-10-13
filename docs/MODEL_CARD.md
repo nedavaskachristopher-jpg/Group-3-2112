@@ -22,6 +22,12 @@ Counts refer to cell-days, not independent fire events. The `new_fire` evaluatio
 
 Suitable for reproducing a coursework experiment and investigating retrospective ranking. The current evidence does not establish prospective warning performance. Scores are uncalibrated and must not be presented as official warnings or percentages of ignition risk.
 
+Prediction scores and alert thresholds are presented as percentages by multiplying their raw 0-1 values by 100. A displayed 73% is a score of 73/100, not an established 73% event probability. Raw scores, binary satellite-detection labels and alert decisions are retained, and all evaluation metrics use the original scale. The saved inference interface does not use the exploratory Platt calibrator.
+
 Limitations include a single season, correlated ongoing fire events, overlapping rolling histories, incomplete initial rainfall history, satellite detection errors, coarse spatial aggregation, missing direct fuel information, retrospective weather data and a threshold that transfers poorly to later dates. SHAP explains fitted model behaviour and does not establish causality.
+
+Human activity is not explicitly modelled: deliberate or accidental ignition, recreation, land-management actions and firefighting/suppression may affect outcomes. Historical detection labels may contain their effects, but the model cannot identify those causes or foresee a specific action without relevant information. Identical observed inputs can lead to different outcomes because important factors are unobserved. A low score is not a guarantee of safety, while a high score does not establish inevitable fire.
+
+All current saved models have a one-day horizon. Existing fire is an input for predicting detection tomorrow; it does not imply that fire will continue for a fixed number of days. Rolling daily updates must use newly observed fire state and weather. True two-/three-day forecasts require horizon-specific targets, training and independent time-safe evaluation, as described in `docs/FORECAST_HORIZONS.md`.
 
 Further validation should use multiple independent seasons, event-aware evaluation, stronger labels, fuel information, point-in-time feature availability, independent calibration data and stakeholder-defined alert costs.

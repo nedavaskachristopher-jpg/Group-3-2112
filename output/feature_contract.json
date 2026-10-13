@@ -228,5 +228,8 @@
     "target_date"
   ],
   "decision_rule": "Highest validation precision subject to recall >=0.80. Preserve model-specific metadata threshold.",
-  "interpretation": "Raw ranking score for satellite active-fire detection, including continuing fire; not calibrated ignition probability."
+  "interpretation": "Raw ranking score for satellite active-fire detection, including continuing fire; not calibrated ignition probability.",
+  "display": "Percentage score = 100 * raw score; threshold percentages use the same conversion. Labels and metric calculations retain their original scale.",
+  "forecast_horizon_days": 1,
+  "unobserved_factors": "Human ignition and suppression activities are not explicit inputs; low scores do not establish safety."
 }

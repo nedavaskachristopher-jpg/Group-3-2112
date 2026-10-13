@@ -4,6 +4,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import xgboost as xgb
+from score_display import add_score_percentages, SCORE_INTERPRETATION
 
 def predict_frame(frame,metadata_path):
     metadata_path=Path(metadata_path)
@@ -17,8 +18,11 @@ def predict_frame(frame,metadata_path):
     model=xgb.Booster();model.load_model(bytearray(metadata_path.with_suffix('.ubj').read_bytes()))
     score=model.predict(xgb.DMatrix(x))
     output=frame[[c for c in ['grid_id','feature_date','target_date'] if c in frame]].copy()
-    output['model_score']=score;output['threshold']=metadata['threshold']
+    output['model_score']=np.asarray(score,dtype=np.float64);output['threshold']=metadata['threshold']
     output['alert']=(score>=metadata['threshold']).astype(int)
+    output=add_score_percentages(output)
+    output['forecast_horizon_days']=1
+    output['score_interpretation']=SCORE_INTERPRETATION
     return output
 
 if __name__=='__main__':
@@ -27,4 +31,4 @@ if __name__=='__main__':
     parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args();result=predict_frame(pd.read_csv(args.input),args.model)
     args.output.parent.mkdir(parents=True,exist_ok=True);result.to_csv(args.output,index=False)
-    print(f'Saved {len(result)} retrospective scores. These scores are not operational warning probabilities.')
+    print(f'Saved {len(result)} next-day scores with percentage display columns. Percentages are uncalibrated scores, not fire probabilities; raw scores and alerts are retained.')

@@ -250,7 +250,7 @@
             "Rate",
             "Trees",
             "Positive weight",
-            "Threshold"
+            "Score threshold"
           ],
           [
             [
@@ -259,7 +259,7 @@
               "0.1",
               "31",
               "28.03",
-              "0.7426"
+              "74.26%"
             ],
             [
               "weekly holdout conditions",
@@ -267,7 +267,7 @@
               "0.1",
               "63",
               "28.03",
-              "0.2347"
+              "23.47%"
             ],
             [
               "chronological full",
@@ -275,7 +275,7 @@
               "0.1",
               "26",
               "30.22",
-              "0.8614"
+              "86.14%"
             ],
             [
               "chronological conditions",
@@ -283,7 +283,7 @@
               "0.1",
               "21",
               "30.22",
-              "0.2646"
+              "26.46%"
             ]
           ],
           [
@@ -502,7 +502,7 @@
       ],
       [
         "p",
-        "Full XGBoost AP of 0.186 is above prevalence (0.0058), persistence (0.081) and full Logistic Regression (0.130), but the operationally relevant threshold performance is poor. At threshold 0.8614, it detects 13 of 45 positives, misses 32 and issues 35 false alerts. Its 99.1% accuracy is below the 99.4% no-alert baseline. Conditions-only XGBoost AP is only 0.0096 and it produces 1,073 false alerts while detecting 14 positives."
+        "Full XGBoost AP of 0.186 is above prevalence (0.0058), persistence (0.081) and full Logistic Regression (0.130), but the operationally relevant threshold performance is poor. At score threshold 86.14% (uncalibrated), it detects 13 of 45 positives, misses 32 and issues 35 false alerts. Its 99.1% accuracy is below the 99.4% no-alert baseline. Conditions-only XGBoost AP is only 0.0096 and it produces 1,073 false alerts while detecting 14 positives."
       ],
       [
         "fig",
@@ -649,7 +649,7 @@
     "items": [
       [
         "p",
-        "The model emits a number between 0 and 1, but class weighting and distribution change mean it should be treated as a ranking score unless probability calibration is established. Brier score is the mean squared error between the score and binary label. A lower value is better, but a rare-event baseline can have a low Brier score while identifying no positive cases. Reliability curves compare binned scores with observed frequencies [7]."
+        "Prediction scores and alert thresholds are displayed as percentages by multiplying the raw 0-1 values by 100. These are uncalibrated scores, not percentages of fire occurrence. Binary observation labels, raw scores, alert decisions and metric calculations are retained. Brier score compares the raw score with the binary label; reliability curves compare binned scores with observed frequencies [7]. A lower Brier score alone does not establish reliable probability calibration."
       ],
       [
         "fig",
@@ -727,7 +727,11 @@
       ],
       [
         "p",
-        "Cells extend outside the park because the weather grid determines the prediction unit. Colours are raw model scores and must not be interpreted as calibrated ignition probabilities or official fire danger ratings. The model averages terrain over coarse cells and does not predict a fine-scale fire front. All cells in this experiment are also represented in training, so this map does not demonstrate generalisation to a new location."
+        "Cells extend outside the park because the weather grid determines the prediction unit. Colours display model score percentages and must not be interpreted as calibrated ignition probabilities or official fire danger ratings. The model averages terrain over coarse cells and does not predict a fine-scale fire front. All cells in this experiment are also represented in training, so this map does not demonstrate generalisation to a new location."
+      ],
+      [
+        "p",
+        "Each score concerns the next day only. Following a detected fire, update the observed fire state, weather and histories each day to issue a new next-day score. This does not provide a two- or three-day forecast issued today, guarantee continued burning, or identify independent incidents. Longer horizons require new aligned targets, models and time-safe validation; current scores must not be added or multiplied into a multi-day probability."
       ]
     ]
   },
@@ -754,10 +758,14 @@
               "Partial prescribed burn exclusion",
               "Only 18 detections were excluded by dated NPWS polygons in the source audit. Remaining planned burns can contaminate labels; validate event identity and dates."
             ],
-            [
-              "Persistence and continuing fires",
-              "434 of 566 retained positives follow a detection today. Group entire events and evaluate genuine new incidents with independent labels."
-            ],
+              [
+                "Persistence and continuing fires",
+                "434 of 566 retained positives follow a detection today. Group entire events and evaluate genuine new incidents with independent labels."
+              ],
+              [
+                "Unobserved human activity",
+                "Deliberate or accidental ignition and suppression are not explicit inputs. Historical labels can include these effects, but specific unobserved actions cannot be anticipated. Percentage display does not remove this uncertainty."
+              ],
             [
               "Interleaved validation",
               "Short gaps and rolling features do not isolate long events. Nested fold scores remain within-season interpolation."

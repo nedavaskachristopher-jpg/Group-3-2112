@@ -12,6 +12,7 @@ from sklearn.metrics import (average_precision_score, precision_recall_curve, au
     accuracy_score, precision_score, recall_score, f1_score, confusion_matrix,
     brier_score_loss, roc_auc_score)
 from audit_data import ROOT, load_and_audit
+from score_display import add_score_percentages
 
 WEATHER=['temperature_max_c','temperature_mean_c','temperature_min_c','dewpoint_mean_c',
     'relative_humidity_min_pct','relative_humidity_mean_pct','wind_speed_max_ms','wind_speed_mean_ms']
@@ -154,7 +155,8 @@ def evaluate(d,roles,experiment,only_xgb=False,save_models=False):
             row=dict(experiment=experiment,model=name,view=view,**metrics(test.fire_positive.to_numpy()[mask],p[mask],t))
             rows.append(row); summary.append(row)
         pred=test[['grid_id','feature_date','target_date','latitude','longitude','fire_positive','fire_today','park_area_fraction']].copy()
-        pred['experiment']=experiment; pred['model']=name; pred['score']=p; pred['threshold']=t; pred['alert']=(p>=t).astype(int)
+        pred['experiment']=experiment; pred['model']=name; pred['score']=np.asarray(p,dtype=np.float64); pred['threshold']=t; pred['alert']=(p>=t).astype(int)
+        pred=add_score_percentages(pred,score_column='score')
         predictions_all.append(pred)
     print(experiment,[(r['model'],round(r['average_precision'],4),round(r['recall'],3)) for r in summary if r['view']=='all'],flush=True)
 
