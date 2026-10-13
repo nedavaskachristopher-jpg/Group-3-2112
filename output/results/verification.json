@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "metric_rows_checked": 126,
+  "prediction_rows_checked": 226228,
+  "outer_test_coverage": 15695,
+  "saved_model_parity_rows": 41280,
+  "checks": [
+    "confusion counts and AP independently recomputed",
+    "weekly specification counts",
+    "all cells grouped by date",
+    "nested purging at 1 and 3 days",
+    "strict forward target feature date separation",
+    "saved UBJ predictions equal evaluation scores",
+    "inference rejects missing feature",
+    "new fire subset uses feature day state only"
+  ]
+}

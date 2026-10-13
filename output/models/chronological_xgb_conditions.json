@@ -1,0 +1,47 @@
+{
+  "experiment": "chronological",
+  "model": "xgb_conditions",
+  "features": [
+    "temperature_max_c",
+    "temperature_mean_c",
+    "temperature_min_c",
+    "dewpoint_mean_c",
+    "relative_humidity_min_pct",
+    "relative_humidity_mean_pct",
+    "wind_speed_max_ms",
+    "wind_speed_mean_ms",
+    "precipitation_sum_mm",
+    "precipitation_3d_mm",
+    "precipitation_7d_mm",
+    "precipitation_30d_mm",
+    "precipitation_90d_mm",
+    "days_since_rain_5mm",
+    "slope_mean_deg",
+    "aspect_sin",
+    "aspect_cos",
+    "elevation_mean_m",
+    "elevation_min_m",
+    "elevation_max_m"
+  ],
+  "threshold": 0.2645946145057678,
+  "parameters": {
+    "max_depth": 3,
+    "learning_rate": 0.1,
+    "min_child_weight": 10,
+    "subsample": 1.0,
+    "colsample_bytree": 0.7,
+    "scale_pos_weight": 30.221739130434784,
+    "best_iteration": 20,
+    "validation_ap": 0.5647274683243809
+  },
+  "training_dates": [
+    "2019-07-01",
+    "2019-12-14"
+  ],
+  "validation_dates": [
+    "2019-12-17",
+    "2019-12-30"
+  ],
+  "calibrated": false,
+  "interpretation": "Retrospective ranking score; not an operational warning probability"
+}

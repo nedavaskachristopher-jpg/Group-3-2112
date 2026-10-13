@@ -1,0 +1,91 @@
+{
+  "generated_by": "scripts\\build_model_ready_dataset.py",
+  "generated_utc": "2026-10-10T06:58:44.308907+00:00",
+  "study_area": "Blue Mountains National Park",
+  "study_period": [
+    "2019-07-01",
+    "2020-06-30"
+  ],
+  "sources": [
+    {
+      "relative_path": "processed\\blue_mountains_np_firms_2019_2020_clean.csv",
+      "bytes": 1420780,
+      "sha256": "22dbe711b888806638b675f9885d688a447e87cc52035c025f74d598f0f43496"
+    },
+    {
+      "relative_path": "processed\\blue_mountains_national_park_boundary.gpkg",
+      "bytes": 843776,
+      "sha256": "5afd79db791f2f1bafbef5cd55a66f7d5a2731f9c878ac3e69074a5b80c1fa8c"
+    },
+    {
+      "relative_path": "processed\\blue_mountains_np_fire_history_2019_2020.gpkg",
+      "bytes": 671744,
+      "sha256": "737259caf264834793bb2137c441b91e019684f363fed0e4d03397ea12a74f68"
+    },
+    {
+      "relative_path": "processed\\blue_mountains_np_srtm_dem_clipped.tif",
+      "bytes": 8406544,
+      "sha256": "466412a1ce2c028c3aebf5e49790c7d5cd19cc9fcb2906bc541d1362446ffda2"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2019_07.nc",
+      "bytes": 924728,
+      "sha256": "78dd8c7daf2a5a725a4f7ab8983e267069e46d97067c6dc4b61fd5b68e02d2c6"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2019_08.nc",
+      "bytes": 916140,
+      "sha256": "325622a5888bc3f54f647edab0b04f73fc2461c19987668e61226b1b288a09f7"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2019_09.nc",
+      "bytes": 895097,
+      "sha256": "e2532d4831d5699e2203921b6840d8ecd02c7313deefccad1d5caf70acfb031e"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2019_10.nc",
+      "bytes": 920036,
+      "sha256": "0cadbe488c51aead274389543265387ebc6abea3e60068505031af939a1498c0"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2019_11.nc",
+      "bytes": 879286,
+      "sha256": "73d0d2b5c599847285eece043e477c313ff16ef6b1ec85a8b5eb75518e5e0034"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2019_12.nc",
+      "bytes": 918515,
+      "sha256": "bb93973e5ce34675bbdcbaa3f2228dc47032debf2843bc88cda6b3069fad2413"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2020_01.nc",
+      "bytes": 983694,
+      "sha256": "bd60e7a9a702c6d7d0c5a41d23cb1d1abb3f7fa2b8d3d8304a7df1214b1dda58"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2020_02.nc",
+      "bytes": 939600,
+      "sha256": "00789f29b35dc3a55b3cc63008041a9426d2a4b54654f0cbb1ca002a9fef3a9a"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2020_03.nc",
+      "bytes": 993662,
+      "sha256": "d70707c4687cabeffca1ae21e86e2c348028b4431625d980d3073a37cec69e77"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2020_04.nc",
+      "bytes": 887395,
+      "sha256": "86f9e613479fc2c4d11fbe4c46d45e362464dcc3b84b61b71c2ecd2267d2d685"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2020_05.nc",
+      "bytes": 926317,
+      "sha256": "ebddb9af31a62cf63ee5e51d381ed5e92d17cbd3d08f1aa34ecacf57c49a5ca4"
+    },
+    {
+      "relative_path": "raw\\era5_land\\era5_land_2020_06.nc",
+      "bytes": 910348,
+      "sha256": "4f6b6b32b49aafe7eecfc0308520f09dae6add9491c32ac8c795cb742c86ab7c"
+    }
+  ]
+}

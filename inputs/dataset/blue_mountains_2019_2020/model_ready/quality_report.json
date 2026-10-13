@@ -1,0 +1,63 @@
+{
+  "checks_passed": {
+    "complete_grid_day_weather_panel": true,
+    "complete_grid_day_label_panel": true,
+    "unique_grid_feature_date_keys": true,
+    "no_missing_model_values": true,
+    "chronological_split": true,
+    "raw_sources_unchanged": true
+  },
+  "grid_cells": 52,
+  "weather_rows": 18980,
+  "terrain_rows": 52,
+  "label_rows": 19032,
+  "model_rows": 18980,
+  "feature_date_range": [
+    "2019-07-01",
+    "2020-06-29"
+  ],
+  "target_date_range": [
+    "2019-07-02",
+    "2020-06-30"
+  ],
+  "split_summary": {
+    "train": {
+      "rows": 8736,
+      "positive_rows": 249,
+      "negative_rows": 8487,
+      "positive_rate": 0.028502747252747252,
+      "first_feature_date": "2019-07-01",
+      "last_feature_date": "2019-12-15"
+    },
+    "validation": {
+      "rows": 832,
+      "positive_rows": 275,
+      "negative_rows": 557,
+      "positive_rate": 0.33052884615384615,
+      "first_feature_date": "2019-12-16",
+      "last_feature_date": "2019-12-31"
+    },
+    "test": {
+      "rows": 9412,
+      "positive_rows": 54,
+      "negative_rows": 9358,
+      "positive_rate": 0.005737356566085848,
+      "first_feature_date": "2020-01-01",
+      "last_feature_date": "2020-06-29"
+    }
+  },
+  "recommended_xgboost_scale_pos_weight_from_training_only": 34.08433734939759,
+  "limitations": [
+    "The split is within one fire season; additional seasons are needed to test year-to-year generalisation.",
+    "Days use UTC because FIRMS acquisition dates and ERA5-Land timestamps are aligned in UTC.",
+    "FIRMS active-fire detections are proxy labels, not confirmed ignition records.",
+    "Prescribed-burn exclusion is limited to dated polygons present in the NPWS Fire History layer."
+  ],
+  "era5_hourly_time_steps": 8784,
+  "fire_label_audit": {
+    "firms_clean_records": 17290,
+    "prescribed_burn_records_excluded_from_label": 18,
+    "eligible_firms_records": 17272,
+    "positive_grid_cell_days": 578
+  }
+}

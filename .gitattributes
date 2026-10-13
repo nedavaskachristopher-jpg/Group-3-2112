@@ -1,0 +1,18 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.yml text eol=lf
+*.png binary
+*.pdf binary
+*.joblib binary
+*.ubj binary
+*.nc binary
+*.gpkg binary
+# Keep supplied data and saved artifacts byte-identical, including line endings.
+inputs/** -text
+output/** -text
+.gitattributes text eol=lf
+.gitignore text eol=lf
+requirements.txt text eol=lf

@@ -1,0 +1,46 @@
+{
+  "sha256": "c9b4391f9616dce86172605419793e42a39a20adf1aecb30da11b4965afccb8b",
+  "shape": [
+    18980,
+    39
+  ],
+  "missing_values": 0,
+  "retained_rows": 15695,
+  "retained_cells": 43,
+  "retained_positives": 566,
+  "dropped_positives": 12,
+  "new_fire_positives": 132,
+  "persistence_true_positives": 434,
+  "rain_rolling_max_abs_error": {
+    "3": 8.689208982559649e-06,
+    "7": 8.970275814590423e-06,
+    "30": 8.995644009246462e-06,
+    "90": 9.705184083941276e-06
+  },
+  "extra_rain_history_day": "2019-06-30 verified against July 1 00 UTC raw precipitation",
+  "short_90d_history_rows_retained": 3784,
+  "target_month_positives": {
+    "2019-07": 0,
+    "2019-08": 4,
+    "2019-09": 0,
+    "2019-10": 0,
+    "2019-11": 21,
+    "2019-12": 493,
+    "2020-01": 51,
+    "2020-02": 9,
+    "2020-03": 0,
+    "2020-04": 0,
+    "2020-05": 0,
+    "2020-06": 0
+  },
+  "checks": [
+    "unique keys",
+    "finite complete inputs",
+    "one day target shift",
+    "labels reconstructed",
+    "fire_today reconstructed",
+    "7 day fire reconstructed",
+    "8 neighbour fire reconstructed",
+    "causal rainfall windows reconstructed"
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "experiment": "weekly_holdout",
+    "model": "xgb_full",
+    "raw_brier": 0.020144576206803322,
+    "calibrated_brier": 0.01384444136733287,
+    "calibration_slope": 1.020012058771146,
+    "validation_prevalence": 0.03372093023255814
+  },
+  {
+    "experiment": "weekly_holdout",
+    "model": "xgb_conditions",
+    "raw_brier": 0.04086223244667053,
+    "calibrated_brier": 0.02643760865301395,
+    "calibration_slope": 0.7039108484575048,
+    "validation_prevalence": 0.03372093023255814
+  },
+  {
+    "experiment": "chronological",
+    "model": "xgb_full",
+    "raw_brier": 0.019192630425095558,
+    "calibrated_brier": 0.01019369722956518,
+    "calibration_slope": 0.7951087551590511,
+    "validation_prevalence": 0.4069767441860465
+  },
+  {
+    "experiment": "chronological",
+    "model": "xgb_conditions",
+    "raw_brier": 0.04574215039610863,
+    "calibrated_brier": 0.08637370708025183,
+    "calibration_slope": 1.3978259261876076,
+    "validation_prevalence": 0.4069767441860465
+  }
+]

@@ -1,0 +1,32 @@
+column,unit_or_type,definition
+grid_id,identifier,Stable ERA5-Land grid-cell identifier.
+feature_date,date (UTC),Date represented by all predictor values.
+target_date,date (UTC),Following day used to create the fire label.
+split,category,"Chronological train, validation or test partition."
+latitude,degrees north,ERA5-Land cell-centre latitude.
+longitude,degrees east,ERA5-Land cell-centre longitude.
+park_area_fraction,0-1,Fraction of the ERA5 cell covered by the park.
+temperature_mean_c,degrees C,Daily mean 2 m air temperature.
+temperature_max_c,degrees C,Daily maximum 2 m air temperature.
+temperature_min_c,degrees C,Daily minimum 2 m air temperature.
+dewpoint_mean_c,degrees C,Daily mean 2 m dew-point temperature.
+relative_humidity_mean_pct,percent,Daily mean relative humidity derived from temperature and dew point.
+relative_humidity_min_pct,percent,Daily minimum derived relative humidity.
+precipitation_sum_mm,mm,ERA5-Land daily accumulation ending at 00 UTC on the following day.
+precipitation_3d_mm,mm,Rolling three-day precipitation sum ending on feature_date.
+wind_speed_mean_ms,m/s,Daily mean 10 m wind speed derived from u10 and v10.
+wind_speed_max_ms,m/s,Daily maximum derived 10 m wind speed.
+day_of_year_sin,unitless,Sine encoding of seasonal day of year.
+day_of_year_cos,unitless,Cosine encoding of seasonal day of year.
+dem_valid_pixel_count,count,Valid park-clipped SRTM pixels in the cell.
+elevation_mean_m,m,Mean SRTM elevation within the park portion of the cell.
+elevation_min_m,m,Minimum SRTM elevation within the park portion of the cell.
+elevation_max_m,m,Maximum SRTM elevation within the park portion of the cell.
+slope_mean_deg,degrees,Mean terrain slope derived from SRTM.
+aspect_mean_deg,degrees,"Circular mean downslope aspect, clockwise from north."
+aspect_sin,unitless,Sine component of mean terrain aspect for modelling.
+aspect_cos,unitless,Cosine component of mean terrain aspect for modelling.
+fire_detection_count_raw,count,All retained FIRMS detections in the target cell/day.
+prescribed_burn_detection_count,count,FIRMS detections overlapping a dated NPWS prescribed-burn polygon.
+eligible_fire_detection_count,count,FIRMS detections remaining after the prescribed-burn check.
+fire_positive,0/1 target,1 when at least one eligible FIRMS detection occurs on target_date.

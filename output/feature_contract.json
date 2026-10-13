@@ -1,0 +1,232 @@
+{
+  "target": "fire_positive on target_date = feature_date + one UTC day",
+  "prediction_time_assumption": "Completed feature UTC day plus data availability; retrospective ERA5-Land inputs do not simulate operational forecast latency.",
+  "park_filter": "park_area_fraction >= 0.10",
+  "features": {
+    "full": [
+      "temperature_max_c",
+      "temperature_mean_c",
+      "temperature_min_c",
+      "dewpoint_mean_c",
+      "relative_humidity_min_pct",
+      "relative_humidity_mean_pct",
+      "wind_speed_max_ms",
+      "wind_speed_mean_ms",
+      "precipitation_sum_mm",
+      "precipitation_3d_mm",
+      "precipitation_7d_mm",
+      "precipitation_30d_mm",
+      "precipitation_90d_mm",
+      "days_since_rain_5mm",
+      "slope_mean_deg",
+      "aspect_sin",
+      "aspect_cos",
+      "elevation_mean_m",
+      "elevation_min_m",
+      "elevation_max_m",
+      "fire_today",
+      "fire_neighbour_today",
+      "fire_days_last_7"
+    ],
+    "conditions": [
+      "temperature_max_c",
+      "temperature_mean_c",
+      "temperature_min_c",
+      "dewpoint_mean_c",
+      "relative_humidity_min_pct",
+      "relative_humidity_mean_pct",
+      "wind_speed_max_ms",
+      "wind_speed_mean_ms",
+      "precipitation_sum_mm",
+      "precipitation_3d_mm",
+      "precipitation_7d_mm",
+      "precipitation_30d_mm",
+      "precipitation_90d_mm",
+      "days_since_rain_5mm",
+      "slope_mean_deg",
+      "aspect_sin",
+      "aspect_cos",
+      "elevation_mean_m",
+      "elevation_min_m",
+      "elevation_max_m"
+    ]
+  },
+  "dictionary": {
+    "grid_id": {
+      "unit_or_type": "identifier",
+      "definition": "Stable ERA5-Land grid-cell identifier."
+    },
+    "feature_date": {
+      "unit_or_type": "date (UTC)",
+      "definition": "Date represented by all predictor values."
+    },
+    "target_date": {
+      "unit_or_type": "date (UTC)",
+      "definition": "Following day used to create the fire label."
+    },
+    "split": {
+      "unit_or_type": "category",
+      "definition": "Chronological train, validation or test partition."
+    },
+    "latitude": {
+      "unit_or_type": "degrees north",
+      "definition": "ERA5-Land cell-centre latitude."
+    },
+    "longitude": {
+      "unit_or_type": "degrees east",
+      "definition": "ERA5-Land cell-centre longitude."
+    },
+    "park_area_fraction": {
+      "unit_or_type": "0-1",
+      "definition": "Fraction of the ERA5 cell covered by the park."
+    },
+    "temperature_mean_c": {
+      "unit_or_type": "degrees C",
+      "definition": "Daily mean 2 m air temperature."
+    },
+    "temperature_max_c": {
+      "unit_or_type": "degrees C",
+      "definition": "Daily maximum 2 m air temperature."
+    },
+    "temperature_min_c": {
+      "unit_or_type": "degrees C",
+      "definition": "Daily minimum 2 m air temperature."
+    },
+    "dewpoint_mean_c": {
+      "unit_or_type": "degrees C",
+      "definition": "Daily mean 2 m dew-point temperature."
+    },
+    "relative_humidity_mean_pct": {
+      "unit_or_type": "percent",
+      "definition": "Daily mean relative humidity derived from temperature and dew point."
+    },
+    "relative_humidity_min_pct": {
+      "unit_or_type": "percent",
+      "definition": "Daily minimum derived relative humidity."
+    },
+    "precipitation_sum_mm": {
+      "unit_or_type": "mm",
+      "definition": "ERA5-Land daily accumulation ending at 00 UTC on the following day."
+    },
+    "precipitation_3d_mm": {
+      "unit_or_type": "mm",
+      "definition": "Rolling three-day precipitation sum ending on feature_date."
+    },
+    "wind_speed_mean_ms": {
+      "unit_or_type": "m/s",
+      "definition": "Daily mean 10 m wind speed derived from u10 and v10."
+    },
+    "wind_speed_max_ms": {
+      "unit_or_type": "m/s",
+      "definition": "Daily maximum derived 10 m wind speed."
+    },
+    "day_of_year_sin": {
+      "unit_or_type": "unitless",
+      "definition": "Sine encoding of seasonal day of year."
+    },
+    "day_of_year_cos": {
+      "unit_or_type": "unitless",
+      "definition": "Cosine encoding of seasonal day of year."
+    },
+    "dem_valid_pixel_count": {
+      "unit_or_type": "count",
+      "definition": "Valid park-clipped SRTM pixels in the cell."
+    },
+    "elevation_mean_m": {
+      "unit_or_type": "m",
+      "definition": "Mean SRTM elevation within the park portion of the cell."
+    },
+    "elevation_min_m": {
+      "unit_or_type": "m",
+      "definition": "Minimum SRTM elevation within the park portion of the cell."
+    },
+    "elevation_max_m": {
+      "unit_or_type": "m",
+      "definition": "Maximum SRTM elevation within the park portion of the cell."
+    },
+    "slope_mean_deg": {
+      "unit_or_type": "degrees",
+      "definition": "Mean terrain slope derived from SRTM."
+    },
+    "aspect_mean_deg": {
+      "unit_or_type": "degrees",
+      "definition": "Circular mean downslope aspect, clockwise from north."
+    },
+    "aspect_sin": {
+      "unit_or_type": "unitless",
+      "definition": "Sine component of mean terrain aspect for modelling."
+    },
+    "aspect_cos": {
+      "unit_or_type": "unitless",
+      "definition": "Cosine component of mean terrain aspect for modelling."
+    },
+    "fire_detection_count_raw": {
+      "unit_or_type": "count",
+      "definition": "All retained FIRMS detections in the target cell/day."
+    },
+    "prescribed_burn_detection_count": {
+      "unit_or_type": "count",
+      "definition": "FIRMS detections overlapping a dated NPWS prescribed-burn polygon."
+    },
+    "eligible_fire_detection_count": {
+      "unit_or_type": "count",
+      "definition": "FIRMS detections remaining after the prescribed-burn check."
+    },
+    "fire_positive": {
+      "unit_or_type": "0/1 target",
+      "definition": "1 when at least one eligible FIRMS detection occurs on target_date."
+    },
+    "fire_today": {
+      "unit_or_type": "0/1",
+      "definition": "Eligible satellite detection in the same park cell on feature_date."
+    },
+    "fire_neighbour_today": {
+      "unit_or_type": "0/1",
+      "definition": "Eligible detection on feature_date in any of eight neighbours from the original 52-cell panel."
+    },
+    "fire_days_last_7": {
+      "unit_or_type": "days",
+      "definition": "Count of eligible detection days in the seven-day causal window ending on feature_date, 0 to 7."
+    },
+    "days_since_rain_5mm": {
+      "unit_or_type": "days",
+      "definition": "Days since daily precipitation at least 5 mm; capped at 120; initial prior dry history is unknown."
+    },
+    "rain_history_days": {
+      "unit_or_type": "days",
+      "definition": "Number of observed rain days available including the initial 30 June 2019 rainfall day."
+    },
+    "precipitation_7d_mm": {
+      "unit_or_type": "mm",
+      "definition": "Causal 7-day rainfall sum ending on feature_date; partial history at the panel start."
+    },
+    "precipitation_30d_mm": {
+      "unit_or_type": "mm",
+      "definition": "Causal 30-day rainfall sum ending on feature_date; partial history at the panel start."
+    },
+    "precipitation_90d_mm": {
+      "unit_or_type": "mm",
+      "definition": "Causal 90-day rainfall sum ending on feature_date; partial history at the panel start."
+    }
+  },
+  "excluded_columns": [
+    "aspect_mean_deg",
+    "day_of_year_cos",
+    "day_of_year_sin",
+    "dem_valid_pixel_count",
+    "eligible_fire_detection_count",
+    "feature_date",
+    "fire_detection_count_raw",
+    "fire_positive",
+    "grid_id",
+    "latitude",
+    "longitude",
+    "park_area_fraction",
+    "prescribed_burn_detection_count",
+    "rain_history_days",
+    "split",
+    "target_date"
+  ],
+  "decision_rule": "Highest validation precision subject to recall >=0.80. Preserve model-specific metadata threshold.",
+  "interpretation": "Raw ranking score for satellite active-fire detection, including continuing fire; not calibrated ignition probability."
+}
