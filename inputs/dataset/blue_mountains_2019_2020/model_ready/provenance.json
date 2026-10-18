@@ -10,82 +10,189 @@
     {
       "relative_path": "processed\\blue_mountains_np_firms_2019_2020_clean.csv",
       "bytes": 1420780,
-      "sha256": "22dbe711b888806638b675f9885d688a447e87cc52035c025f74d598f0f43496"
+      "sha256": "22dbe711b888806638b675f9885d688a447e87cc52035c025f74d598f0f43496",
+      "in_this_repository": false
     },
     {
       "relative_path": "processed\\blue_mountains_national_park_boundary.gpkg",
       "bytes": 843776,
-      "sha256": "5afd79db791f2f1bafbef5cd55a66f7d5a2731f9c878ac3e69074a5b80c1fa8c"
+      "sha256": "5afd79db791f2f1bafbef5cd55a66f7d5a2731f9c878ac3e69074a5b80c1fa8c",
+      "in_this_repository": false
     },
     {
       "relative_path": "processed\\blue_mountains_np_fire_history_2019_2020.gpkg",
       "bytes": 671744,
-      "sha256": "737259caf264834793bb2137c441b91e019684f363fed0e4d03397ea12a74f68"
+      "sha256": "737259caf264834793bb2137c441b91e019684f363fed0e4d03397ea12a74f68",
+      "in_this_repository": false
     },
     {
       "relative_path": "processed\\blue_mountains_np_srtm_dem_clipped.tif",
       "bytes": 8406544,
-      "sha256": "466412a1ce2c028c3aebf5e49790c7d5cd19cc9fcb2906bc541d1362446ffda2"
+      "sha256": "466412a1ce2c028c3aebf5e49790c7d5cd19cc9fcb2906bc541d1362446ffda2",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2019_07.nc",
       "bytes": 924728,
-      "sha256": "78dd8c7daf2a5a725a4f7ab8983e267069e46d97067c6dc4b61fd5b68e02d2c6"
+      "sha256": "78dd8c7daf2a5a725a4f7ab8983e267069e46d97067c6dc4b61fd5b68e02d2c6",
+      "in_this_repository": true,
+      "repository_path": "inputs/dataset/blue_mountains_2019_2020/raw/era5_land/era5_land_2019_07.nc"
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2019_08.nc",
       "bytes": 916140,
-      "sha256": "325622a5888bc3f54f647edab0b04f73fc2461c19987668e61226b1b288a09f7"
+      "sha256": "325622a5888bc3f54f647edab0b04f73fc2461c19987668e61226b1b288a09f7",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2019_09.nc",
       "bytes": 895097,
-      "sha256": "e2532d4831d5699e2203921b6840d8ecd02c7313deefccad1d5caf70acfb031e"
+      "sha256": "e2532d4831d5699e2203921b6840d8ecd02c7313deefccad1d5caf70acfb031e",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2019_10.nc",
       "bytes": 920036,
-      "sha256": "0cadbe488c51aead274389543265387ebc6abea3e60068505031af939a1498c0"
+      "sha256": "0cadbe488c51aead274389543265387ebc6abea3e60068505031af939a1498c0",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2019_11.nc",
       "bytes": 879286,
-      "sha256": "73d0d2b5c599847285eece043e477c313ff16ef6b1ec85a8b5eb75518e5e0034"
+      "sha256": "73d0d2b5c599847285eece043e477c313ff16ef6b1ec85a8b5eb75518e5e0034",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2019_12.nc",
       "bytes": 918515,
-      "sha256": "bb93973e5ce34675bbdcbaa3f2228dc47032debf2843bc88cda6b3069fad2413"
+      "sha256": "bb93973e5ce34675bbdcbaa3f2228dc47032debf2843bc88cda6b3069fad2413",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2020_01.nc",
       "bytes": 983694,
-      "sha256": "bd60e7a9a702c6d7d0c5a41d23cb1d1abb3f7fa2b8d3d8304a7df1214b1dda58"
+      "sha256": "bd60e7a9a702c6d7d0c5a41d23cb1d1abb3f7fa2b8d3d8304a7df1214b1dda58",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2020_02.nc",
       "bytes": 939600,
-      "sha256": "00789f29b35dc3a55b3cc63008041a9426d2a4b54654f0cbb1ca002a9fef3a9a"
+      "sha256": "00789f29b35dc3a55b3cc63008041a9426d2a4b54654f0cbb1ca002a9fef3a9a",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2020_03.nc",
       "bytes": 993662,
-      "sha256": "d70707c4687cabeffca1ae21e86e2c348028b4431625d980d3073a37cec69e77"
+      "sha256": "d70707c4687cabeffca1ae21e86e2c348028b4431625d980d3073a37cec69e77",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2020_04.nc",
       "bytes": 887395,
-      "sha256": "86f9e613479fc2c4d11fbe4c46d45e362464dcc3b84b61b71c2ecd2267d2d685"
+      "sha256": "86f9e613479fc2c4d11fbe4c46d45e362464dcc3b84b61b71c2ecd2267d2d685",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2020_05.nc",
       "bytes": 926317,
-      "sha256": "ebddb9af31a62cf63ee5e51d381ed5e92d17cbd3d08f1aa34ecacf57c49a5ca4"
+      "sha256": "ebddb9af31a62cf63ee5e51d381ed5e92d17cbd3d08f1aa34ecacf57c49a5ca4",
+      "in_this_repository": false
     },
     {
       "relative_path": "raw\\era5_land\\era5_land_2020_06.nc",
       "bytes": 910348,
-      "sha256": "4f6b6b32b49aafe7eecfc0308520f09dae6add9491c32ac8c795cb742c86ab7c"
+      "sha256": "4f6b6b32b49aafe7eecfc0308520f09dae6add9491c32ac8c795cb742c86ab7c",
+      "in_this_repository": false
     }
-  ]
+  ],
+  "record_scope": "Keys generated_by to sources were written by scripts/build_model_ready_dataset.py and describe the inputs of the base build; source paths are relative to the original dataset root, which is inputs/dataset/blue_mountains_2019_2020 in this repository. Later keys were added on 2026-10-18 for the extended table and its use by the ML code.",
+  "record_updated": "2026-10-18",
+  "source_register": "metadata/data_register.csv",
+  "raw_download_checksums": "metadata/sha256_manifest.csv",
+  "source_availability_note": "1 of the 16 listed base-build sources is included in this repository. The others are retained only as historical checksums; see docs/DATA_NOTES.md.",
+  "other_files_in_repository": [
+    {
+      "repository_path": "inputs/dataset/blue_mountains_2019_2020/processed/blue_mountains_national_park_boundary.geojson",
+      "bytes": 2129801,
+      "sha256": "ecda75b1007fa8f70a1a21c4db38dc4b2db5b863fcce69eb3dac3fae63a583e5"
+    }
+  ],
+  "model_ready_files": [
+    {
+      "file": "model_ready/blue_mountains_model_table_2019_2020.csv",
+      "bytes": 7093728,
+      "sha256": "1cfc97cf719ca69995e0263d22f65ba8bd7f87fe04f4a54637f5fa5f3480625f",
+      "produced_by": "scripts/build_model_ready_dataset.py"
+    },
+    {
+      "file": "model_ready/blue_mountains_model_table_2019_2020_extended.csv",
+      "bytes": 8290422,
+      "sha256": "c9b4391f9616dce86172605419793e42a39a20adf1aecb30da11b4965afccb8b",
+      "produced_by": "extension of the base table; see derived_tables"
+    },
+    {
+      "file": "model_ready/daily_weather_features_2019_2020.csv",
+      "bytes": 2895503,
+      "sha256": "d2dd3be0cc2f08870a47575a47cc8efe2ec2bf99d1554d2204349b7a237cc415",
+      "produced_by": "scripts/build_model_ready_dataset.py"
+    },
+    {
+      "file": "model_ready/terrain_features.csv",
+      "bytes": 7669,
+      "sha256": "ff14db300d0b1714f8aad3288a81e07b678e315e251fe2d1164c10b833b4fa13",
+      "produced_by": "scripts/build_model_ready_dataset.py"
+    },
+    {
+      "file": "model_ready/daily_fire_labels_2019_2020.csv",
+      "bytes": 495743,
+      "sha256": "00fac6ecce820b829ce6ddc89b28028fd6c9cc8b4dc7fc6d5a8fe46b2d7757f5",
+      "produced_by": "scripts/build_model_ready_dataset.py"
+    },
+    {
+      "file": "model_ready/blue_mountains_era5_grid.gpkg",
+      "bytes": 110592,
+      "sha256": "e750a696662b49be016a71814eb0dfc09542c6b2c976ae902f96af51bb01f0c2",
+      "produced_by": "scripts/build_model_ready_dataset.py"
+    },
+    {
+      "file": "model_ready/data_dictionary.csv",
+      "bytes": 2316,
+      "sha256": "40f124d5b7093438cf9cd5abfa419db328463a27199c22b0761b51215be2ad1b",
+      "produced_by": "scripts/build_model_ready_dataset.py"
+    }
+  ],
+  "derived_tables": [
+    {
+      "file": "model_ready/blue_mountains_model_table_2019_2020_extended.csv",
+      "sha256": "c9b4391f9616dce86172605419793e42a39a20adf1aecb30da11b4965afccb8b",
+      "inputs": [
+        "model_ready/blue_mountains_model_table_2019_2020.csv",
+        "model_ready/daily_fire_labels_2019_2020.csv",
+        "raw/era5_land/era5_land_2019_07.nc"
+      ],
+      "added_columns": [
+        "fire_today",
+        "fire_neighbour_today",
+        "fire_days_last_7",
+        "precipitation_7d_mm",
+        "precipitation_30d_mm",
+        "precipitation_90d_mm",
+        "days_since_rain_5mm",
+        "rain_history_days"
+      ],
+      "method": "Base columns are carried over (equal to the base table within 1e-9). fire_today is the eligible-detection label of the feature date; fire_days_last_7 is its seven-day causal count; fire_neighbour_today uses the eight neighbouring cells of the 52-cell grid. Rainfall windows and days_since_rain_5mm add a 30 June 2019 rainfall value taken from the 2019-07-01 00 UTC ERA5-Land total precipitation before the panel start.",
+      "reproduced_by": "src/rebuild_extended.py",
+      "verification": "output/results/extended_rebuild_verification.json"
+    }
+  ],
+  "modelling_use": {
+    "loaded_by": "src/audit_data.py",
+    "trained_and_evaluated_by": "src/train_evaluate.py",
+    "input_file": "model_ready/blue_mountains_model_table_2019_2020_extended.csv",
+    "input_sha256_recorded_in": "output/results/run_manifest.json",
+    "park_filter": "park_area_fraction >= 0.1",
+    "full_model_feature_count": 23,
+    "conditions_only_feature_count": 20,
+    "feature_contract": "output/feature_contract.json"
+  }
 }
