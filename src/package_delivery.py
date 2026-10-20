@@ -6,6 +6,8 @@ from audit_data import ROOT,DATA
 from train_evaluate import FEATURES
 
 def main():
+    # Packaging refreshes the feature contract and archive verification record.
+    # It does not run training or prove the correctness of archived model outputs.
     output=ROOT/'output';dest=output/'Kian_ML_Delivery.zip'
     dictionary=pd.read_csv(DATA/'data_dictionary.csv').set_index('column').to_dict('index')
     dictionary.update({
@@ -16,6 +18,8 @@ def main():
         'rain_history_days':{'unit_or_type':'days','definition':'Number of observed rain days available including the initial 30 June 2019 rainfall day.'},
     })
     for n in [7,30,90]:dictionary[f'precipitation_{n}d_mm']={'unit_or_type':'mm','definition':f'Causal {n}-day rainfall sum ending on feature_date; partial history at the panel start.'}
+    # Keep feature order, exclusions, issue-time assumptions and score limitations
+    # beside the models so a recipient can prepare compatible inference inputs.
     contract={'target':'fire_positive on target_date = feature_date + one UTC day',
         'prediction_time_assumption':'Completed feature UTC day plus data availability; retrospective ERA5-Land inputs do not simulate operational forecast latency.',
         'park_filter':'park_area_fraction >= 0.10','features':FEATURES,'dictionary':dictionary,
@@ -26,6 +30,8 @@ def main():
         'forecast_horizon_days':1,
         'unobserved_factors':'Human ignition and suppression activities are not explicit inputs; low scores do not establish safety.'}
     (output/'feature_contract.json').write_text(json.dumps(contract,indent=2))
+    # Use an explicit input subset: the complete raw-data archive is not bundled.
+    # Generated ZIPs and caches are excluded to avoid recursive archive growth.
     files=[]
     for directory in [ROOT/'src',output]:
         files.extend(p for p in directory.rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.zip' and p.name!='delivery_verification.json')
@@ -38,10 +44,12 @@ def main():
     files.extend((DATA.parent/'scripts').glob('*'))
     # Avoid any previous archive-validation payload; the explicit input list controls scope.
     files=sorted(set(p for p in files if p.is_file()))
+    # Hash each included file so recipients can check extraction/content identity.
     manifest={p.relative_to(ROOT).as_posix():{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in files}
     with zipfile.ZipFile(dest,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
         for p in files:z.write(p,p.relative_to(ROOT).as_posix())
         z.writestr('DELIVERY_MANIFEST.json',json.dumps(manifest,indent=2))
+    # CRC and required-entry checks validate archive structure, not model accuracy.
     with zipfile.ZipFile(dest) as z:
         assert z.testzip() is None
         assert 'src/train_evaluate.py' in z.namelist()

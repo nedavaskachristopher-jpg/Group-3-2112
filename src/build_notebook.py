@@ -6,11 +6,16 @@ import matplotlib.pyplot as plt
 from audit_data import ROOT
 
 def main():
+    # This is an executable build, not merely a notebook exporter: the generated
+    # cells retrain models and regenerate figures/results when this script runs.
+    # Flow: define cells -> execute in shared namespace -> capture -> validate/save.
     nb=nbformat.v4.new_notebook()
     nb.metadata={'kernelspec':{'display_name':'Python 3','language':'python','name':'python3'},
         'language_info':{'name':'python','version':sys.version.split()[0]},
         'analysis_date':'2026-10-14','author':'Kian Luo','course':'ENGG2112',
         'note':'All code cells executed against the supplied dataset. Run from the extracted project root or output folder.'}
+    # Markdown explains interpretation; code delegates to the authoritative src
+    # modules rather than maintaining a second implementation inside the notebook.
     cells=[
         ('md','# Blue Mountains next day active fire modelling\n\nKian Luo, ML Engineer. This notebook audits and reconstructs the features, trains the baselines and XGBoost, and evaluates both within-season interpolation and strictly forward testing. Prediction scores and alert thresholds are displayed as percentages; they are uncalibrated scores, not fire probabilities. Raw 0-1 scores and binary observation labels remain unchanged for evaluation.'),
         ('code',"from pathlib import Path\nimport sys, json\nROOT = Path.cwd()\nif not (ROOT / 'src').exists():\n    ROOT = ROOT.parent\nassert (ROOT / 'src').exists(), 'Open this notebook inside the delivered project'\nsys.path.insert(0, str(ROOT / 'src'))\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom audit_data import DATA, load_and_audit\nfrom train_evaluate import FEATURES, split_weekly, split_chronological\nprint('Project:', ROOT.name)\nprint('Predictors:', {k: len(v) for k, v in FEATURES.items()})"),
@@ -32,10 +37,12 @@ def main():
         ('md','## Interpretation and unobserved human activity\n\nThe evidence supports within-season ranking improvement over prevalence and persistence. The strict forward test has only 45 positive cell-days and detects no new-fire positives with the full model at its validation threshold. Deliberate or accidental ignition, recreation, land-management actions and suppression are not explicit model inputs. Historical labels can contain their effects, but the model cannot anticipate a specific unobserved action. A low score does not establish safety. Multiple independently heldout seasons, event grouping, complete fuel data and point-in-time weather availability are needed before a stronger use claim.'),
         ('md','## Forecast horizon\n\nEach prediction concerns the next UTC day only. If fire is detected today, the full model uses that observation to score continued or spreading fire tomorrow. With newly observed weather and fire state tomorrow, the model can be run again for the following day. This is rolling next-day prediction, not a two- or three-day forecast issued today. True two-/three-day forecasts require horizon-specific labels, training and time-safe evaluation. Do not reuse tomorrow\'s score for later days, insert predicted fire states as observed facts, or add/multiply these uncalibrated scores to obtain a multi-day probability. See docs/FORECAST_HORIZONS.md.'),
     ]
+    # A shared namespace reproduces normal sequential notebook variable state.
     namespace={'__name__':'notebook_execution'}
     count=0;figure_outputs=[]
     original_show=plt.show
     def capture_show(*args,**kwargs):
+        # Embed displayed figures as PNG outputs rather than opening GUI windows.
         for number in plt.get_fignums():
             buf=io.BytesIO();plt.figure(number).savefig(buf,format='png',bbox_inches='tight')
             figure_outputs.append(nbformat.v4.new_output('display_data',data={'image/png':base64.b64encode(buf.getvalue()).decode('ascii'),'text/plain':'<matplotlib figure>'}))
@@ -45,10 +52,13 @@ def main():
         for kind,source in cells:
             if kind=='md':nb.cells.append(nbformat.v4.new_markdown_cell(source));continue
             count+=1;cell=nbformat.v4.new_code_cell(source,execution_count=count);buffer=io.StringIO();figure_outputs.clear()
+            # Compilation gives exceptions a cell-specific name; stdout is stored
+            # beside that cell's figures as reproducible execution evidence.
             with contextlib.redirect_stdout(buffer):exec(compile(source,f'notebook_cell_{count}','exec'),namespace)
             cell.outputs=[]
             if buffer.getvalue():cell.outputs.append(nbformat.v4.new_output('stream',name='stdout',text=buffer.getvalue()))
             cell.outputs.extend(figure_outputs);nb.cells.append(cell)
+    # Restore plotting even if a cell fails; only a completed run reaches saving.
     finally:plt.show=original_show
     nbformat.validate(nb)
     nbformat.write(nb,ROOT/'output/Kian_ML_Analysis.ipynb')

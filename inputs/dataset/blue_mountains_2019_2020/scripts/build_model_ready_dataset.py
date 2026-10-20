@@ -57,6 +57,7 @@ WEATHER_COLUMNS = [
 
 
 def sha256(path: Path) -> str:
+    # Stream large raw inputs into the digest instead of loading them all at once.
     digest = hashlib.sha256()
     with path.open("rb") as source:
         for chunk in iter(lambda: source.read(1024 * 1024), b""):
@@ -93,6 +94,8 @@ def build_analysis_grid(
             )
 
     grid = gpd.GeoDataFrame(records, crs="EPSG:4326")
+    # Compute park-overlap fractions in an Australian equal-area CRS, not in
+    # latitude/longitude degrees. The later ML stage applies its own 10% filter.
     grid_projected = grid.to_crs("EPSG:3577")
     park_geometry = park.to_crs("EPSG:3577").geometry.iloc[0]
     intersection_area = grid_projected.geometry.intersection(park_geometry).area
@@ -123,6 +126,8 @@ def build_weather_features(grid: gpd.GeoDataFrame) -> tuple[pd.DataFrame, int]:
             total_hourly_steps += dataset.sizes["valid_time"]
             temperature_c = dataset["t2m"] - 273.15
             dewpoint_c = dataset["d2m"] - 273.15
+            # Wind magnitude comes from vector components; relative humidity is
+            # derived from air/dew-point temperature before daily aggregation.
             wind_speed = np.hypot(dataset["u10"], dataset["v10"])
             relative_humidity = 100 * np.exp(
                 (17.625 * dewpoint_c / (243.04 + dewpoint_c))
@@ -213,6 +218,8 @@ def build_weather_features(grid: gpd.GeoDataFrame) -> tuple[pd.DataFrame, int]:
     ]
     weather = weather.loc[weather["grid_id"].notna()].copy()
     weather = weather.sort_values(["grid_id", "feature_date"]).reset_index(drop=True)
+    # This base 3-day window starts at the panel boundary. The later extension
+    # adds pre-panel rainfall to 7/30/90-day windows, not to this existing column.
     weather["precipitation_3d_mm"] = weather.groupby(
         "grid_id", sort=False
     )["precipitation_sum_mm"].transform(
@@ -237,6 +244,8 @@ def build_terrain_features(grid: gpd.GeoDataFrame) -> pd.DataFrame:
         x_centres = transform.c + (np.arange(source.width) + 0.5) * transform.a
         y_centres = transform.f + (np.arange(source.height) + 0.5) * transform.e
 
+    # Approximate metre spacing at the study latitude before differentiating the
+    # geographic DEM; slope/aspect are summaries, not a fire-spread simulation.
     metres_per_latitude_degree = 111_320.0
     mean_latitude = float(np.nanmean(y_centres))
     metres_per_longitude_degree = metres_per_latitude_degree * np.cos(
@@ -267,6 +276,8 @@ def build_terrain_features(grid: gpd.GeoDataFrame) -> pd.DataFrame:
         if not valid.any():
             continue
 
+        # Circular averaging avoids treating aspects near 359 and 1 degrees as
+        # opposite directions. Sine/cosine components are the model predictors.
         aspect_radians = np.deg2rad(cell_aspect[valid_aspect])
         aspect_sin = float(np.mean(np.sin(aspect_radians)))
         aspect_cos = float(np.mean(np.cos(aspect_radians)))
@@ -315,6 +326,8 @@ def build_fire_labels(
     prescribed["StartDate"] = pd.to_datetime(prescribed["StartDate"])
     prescribed["EndDate"] = pd.to_datetime(prescribed["EndDate"])
 
+    # Exclude detections only where BOTH the recorded burn polygon and its date
+    # interval overlap. This is limited by the completeness of the history layer.
     prescribed_mask = pd.Series(False, index=points.index)
     for fire in prescribed.itertuples():
         prescribed_mask |= (
@@ -327,6 +340,8 @@ def build_fire_labels(
         (round(row.latitude, 6), round(row.longitude, 6)): row.grid_id
         for row in grid.itertuples()
     }
+    # Assign detections to native ERA5 cell centres; grid_id then joins labels to
+    # weather and terrain. Retain counts separately from the binary outcome.
     nearest_latitudes = [
         float(latitudes[np.abs(latitudes - value).argmin()])
         for value in points["latitude"]
@@ -354,6 +369,8 @@ def build_fire_labels(
         - counts["prescribed_burn_detection_count"]
     )
 
+    # Complete the cell/day panel: zero means no eligible satellite detection,
+    # not proof that no fire occurred or that a location was safe.
     full_index = pd.MultiIndex.from_product(
         [
             grid["grid_id"].tolist(),
@@ -384,6 +401,8 @@ def build_fire_labels(
 
 
 def assign_split(feature_dates: pd.Series) -> pd.Series:
+    # Original Data Engineer handoff split only. Reported ML experiments ignore
+    # this column and construct their own purged partitions in train_evaluate.py.
     conditions = [
         feature_dates <= TRAIN_END,
         feature_dates <= VALIDATION_END,
@@ -401,6 +420,8 @@ def build_model_table(
     terrain: pd.DataFrame,
     labels: pd.DataFrame,
 ) -> pd.DataFrame:
+    # Join static and daily predictors on the feature day, then shift the outcome
+    # key by one UTC day. Target-day counts are outcomes, never ML predictors.
     feature_weather = weather.loc[
         weather["feature_date"].between(
             START_DATE, LAST_FEATURE_DATE, inclusive="both"
@@ -424,6 +445,8 @@ def build_model_table(
     )
 
     model["split"] = assign_split(model["feature_date"])
+    # Retain optional calendar encodings in the handoff table. The main full and
+    # conditions-only models exclude them; one named sensitivity run tests them.
     day_of_year = model["feature_date"].dt.dayofyear
     model["day_of_year_sin"] = np.sin(2 * np.pi * day_of_year / 366)
     model["day_of_year_cos"] = np.cos(2 * np.pi * day_of_year / 366)
@@ -459,6 +482,8 @@ def build_model_table(
 
 
 def build_data_dictionary() -> pd.DataFrame:
+    # Publish column meanings/units with the base dataset, including outcome-only
+    # counts. Presence in this dictionary does not imply use as a model feature.
     definitions = [
         ("grid_id", "identifier", "Stable ERA5-Land grid-cell identifier."),
         ("feature_date", "date (UTC)", "Date represented by all predictor values."),
@@ -502,6 +527,8 @@ def validate_outputs(
     labels: pd.DataFrame,
     model: pd.DataFrame,
 ) -> dict[str, object]:
+    # Validate panel cardinality, keys and completeness before writing outputs.
+    # These checks support the base handoff, not cross-season model validation.
     expected_days = len(pd.date_range(START_DATE, END_DATE, freq="D"))
     expected_feature_days = len(
         pd.date_range(START_DATE, LAST_FEATURE_DATE, freq="D")
@@ -544,6 +571,8 @@ def validate_outputs(
     )
     train_positive = int(split_summary.loc["train", "positive_rows"])
     train_negative = int(split_summary.loc["train", "negative_rows"])
+    # This recommendation belongs to the base split. ML must recalculate its
+    # own class weight after applying its filter and each experiment's partition.
     class_weight = train_negative / train_positive if train_positive else None
 
     return {
@@ -599,6 +628,9 @@ def write_outputs(
     fire_audit: dict[str, int],
     total_hourly_steps: int,
 ) -> None:
+    # Export prepared tables, metadata and source hashes; raw downloads remain
+    # untouched. A full rebuild needs the original sources, not just the subset
+    # of files shipped with the ML delivery.
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     csv_frames = {
@@ -697,6 +729,9 @@ This is a student proof-of-concept based on one fire season. FIRMS active-fire d
 
 
 def main() -> None:
+    # Pipeline order: native grid -> weather -> terrain -> labels -> next-day
+    # table -> validation -> export. This builds the base, not the 39-column
+    # extension reconstructed later by src/rebuild_extended.py.
     era5_files = sorted(ERA5_DIR.glob("era5_land_*.nc"))
     if not era5_files:
         raise FileNotFoundError("No ERA5-Land NetCDF files found")

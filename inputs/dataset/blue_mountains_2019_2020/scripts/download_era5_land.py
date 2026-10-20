@@ -32,6 +32,7 @@ VARIABLES = [
 
 
 def months_between(start: date, end: date):
+    # Yield inclusive calendar months, rolling December into January of next year.
     current = start
     while current <= end:
         yield current.year, current.month
@@ -43,14 +44,19 @@ def months_between(start: date, end: date):
 
 
 def main() -> None:
+    # Network stage: read credentials from the user's CDS setup, never source code.
+    # This downloads raw monthly files; it does not prepare daily model features.
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     client = cdsapi.Client()
     for year, month in months_between(START_MONTH, END_MONTH):
         target = OUTPUT_DIR / f"era5_land_{year}_{month:02d}.nc"
+        # Nonempty-file skipping supports resuming, but is not a checksum or
+        # completeness check. Downstream processing must validate downloaded data.
         if target.exists() and target.stat().st_size > 0:
             print(f"Skipping existing file: {target.name}")
             continue
 
+        # Request every UTC hour, respecting each month's length and leap years.
         days = calendar.monthrange(year, month)[1]
         request = {
             "variable": VARIABLES,
