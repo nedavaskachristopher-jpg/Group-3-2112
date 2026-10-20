@@ -22,7 +22,7 @@ The results support better within-season ranking than simple baselines, but do n
 | `src/train_evaluate.py` | Baselines, Logistic Regression and XGBoost; validation tuning, weekly, five-fold and forward evaluation |
 | `src/predict.py` | Load a portable saved XGBoost model and score prepared feature rows |
 | `src/score_display.py` and `src/update_score_display.py` | Add percentage presentation while retaining raw scores, labels and evaluation results |
-| `src/audit_data.py` and `src/rebuild_extended.py` | Input checks and reconstruction of the extended feature table |
+| `src/audit_data.py`, `src/rebuild_extended.py` and `src/update_data_records.py` | Input checks, extended-table reconstruction and reproducible quality/provenance updates |
 | `src/verify_results.py` | Independently recompute metrics and check saved-model predictions and temporal partitions |
 | `src/make_figures.py` | Generate PR curves, confusion matrices, SHAP plots and an illustrative map |
 | `output/Kian_ML_Analysis.ipynb` | Nine previously executed code cells with outputs |
