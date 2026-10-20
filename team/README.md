@@ -11,6 +11,8 @@ Start with the [group workflow](../WORKFLOW.md) and [task board](TASK_BOARD.md).
 
 Shared records: [contributions](CONTRIBUTIONS.md), [decisions](DECISIONS.md), and [tasks](TASK_BOARD.md).
 
+For the planned 22 October discussion, use the [meeting script and next-step guide](MEETING_2026-10-22.md). Confirm its proposed assignments and dates together.
+
 The starting text is organisational scaffolding or a draft based on existing artifacts. It is not evidence that a member authored or approved it. Members review, complete and record their actual work. Repository content, comments and file names use English.
 
 Code, data and generated results retain their current authoritative locations: `src/`, `inputs/`, `output/` and `docs/`. Links from member folders make ownership visible while preserving a reproducible shared project.
