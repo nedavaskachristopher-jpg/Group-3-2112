@@ -1,3 +1,5 @@
+# Build figures from stored evaluation records; no models are fitted here.
+# Running main overwrites figures plus SHAP, map-selection and uncertainty summaries.
 from pathlib import Path
 import json
 import numpy as np
@@ -20,20 +22,25 @@ COLORS=['#9CA3AF','#4B5563','#238C9B','#8AC7C9','#AE4C25','#E8A66A']
 plt.rcParams.update({'font.size':10,'axes.spines.top':False,'axes.spines.right':False,'figure.dpi':120,'savefig.dpi':220,'font.family':'DejaVu Sans'})
 
 def save(fig,name):
+    # Export both a screen-friendly PNG and a vector PDF with the same base name.
     fig.savefig(FIG/f'{name}.png',bbox_inches='tight',facecolor='white')
     fig.savefig(FIG/f'{name}.pdf',bbox_inches='tight',facecolor='white')
     plt.close(fig)
 
 def main():
+    # Read existing evidence once, then render each analysis below. All comparisons
+    # select an explicit experiment/model/view rather than pooling test records.
     FIG.mkdir(parents=True,exist_ok=True)
     m=pd.read_csv(RESULTS/'metrics.csv'); pred=pd.read_csv(RESULTS/'predictions.csv',parse_dates=['feature_date','target_date'])
     data=pd.read_csv(DATA/'blue_mountains_model_table_2019_2020_extended.csv',parse_dates=['feature_date','target_date'])
     d=data[data.park_area_fraction>=.1]
+    # 1. Show how concentrated the observed positives are across target UTC days.
     daily=d.groupby('target_date').fire_positive.sum()
     fig,ax=plt.subplots(figsize=(9,2.8));ax.bar(daily.index,daily.values,color='#AE4C25',width=1)
     ax.set(ylabel='Positive cells per UTC day',xlabel='Target date',title='Fire labels are concentrated in one Black Summer episode')
     ax.axvline(pd.Timestamp('2020-01-03'),color='#238C9B',ls='--',label='Forward test starts Jan 3 target day');ax.legend(fontsize=8)
     save(fig,'01_label_timeline')
+    # 2. Plot ranking quality separately for all rows and the no-fire-today subset.
     for experiment in ['weekly_holdout','chronological']:
         fig,axes=plt.subplots(1,2,figsize=(10,3.7))
         for ax,view in zip(axes,['all','new_fire']):
@@ -47,6 +54,7 @@ def main():
             ax.legend(fontsize=7,loc='upper right')
         fig.suptitle('Within season weekly holdout' if experiment=='weekly_holdout' else 'Strictly forward chronological test')
         fig.tight_layout();save(fig,f'02_pr_{experiment}')
+    # 3. Fold variation is descriptive within one season, not independent seasons.
     cv=m[(m.experiment.str.startswith('blocked_fold_'))&(m.view=='all')]
     fig,ax=plt.subplots(figsize=(8.4,3.3))
     keys=list(NAMES)
@@ -56,6 +64,7 @@ def main():
         ax.errorbar(i,vals.mean(),yerr=vals.std(ddof=1),fmt='s',color=COLORS[i],capsize=5)
     ax.set_xticks(range(len(keys)),[NAMES[k].replace(' ','\n') for k in keys]);ax.set(ylabel='Average precision',ylim=(0,1),title='Five outer folds: points, mean and sample standard deviation')
     save(fig,'03_blocked_cv')
+    # 4. Confusion matrices use the original validation-selected raw thresholds.
     fig,axes=plt.subplots(1,2,figsize=(7.7,3.2))
     for ax,exp in zip(axes,['weekly_holdout','chronological']):
         row=m[(m.experiment==exp)&(m.model=='xgb_full')&(m.view=='all')].iloc[0]
@@ -66,6 +75,8 @@ def main():
         ax.set_xticks([0,1],['No alert','Alert']);ax.set_yticks([0,1],['No detection','Detection'])
         ax.set(xlabel='Prediction',ylabel='Actual proxy label',title=f'{exp.replace("_"," ")}\nScore threshold {row.threshold*100:.2f}% (uncalibrated)')
     fig.tight_layout();save(fig,'04_confusion')
+    # 5. Reliability bins compare mean raw scores with observed frequencies;
+    # percentage tick labels rescale the axes without claiming calibration.
     fig,axes=plt.subplots(1,2,figsize=(9,3.5))
     for ax,exp in zip(axes,['weekly_holdout','chronological']):
         ax.plot([0,1],[0,1],color='grey',ls='--')
@@ -78,6 +89,8 @@ def main():
         ax.xaxis.set_major_formatter(PercentFormatter(xmax=1))
         ax.yaxis.set_major_formatter(PercentFormatter(xmax=1))
     fig.tight_layout();save(fig,'05_calibration')
+    # 6. SHAP magnitudes and correlations describe this fitted model, not causal
+    # fire mechanisms. Contributions here remain in log-odds units.
     findings=[]
     fig,axes=plt.subplots(1,2,figsize=(10,4.5))
     for ax,variant in zip(axes,['full','conditions']):

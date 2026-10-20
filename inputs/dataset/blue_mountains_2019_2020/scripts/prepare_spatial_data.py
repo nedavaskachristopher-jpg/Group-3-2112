@@ -36,6 +36,8 @@ END_DATE = "2020-06-30"
 
 
 def prepare_boundary() -> gpd.GeoDataFrame:
+    # Select the named park, repair geometry, and export a shared geographic CRS
+    # for subsequent point filtering and raster/cell operations.
     estate = gpd.read_file(BOUNDARY_SOURCE)
     park = estate.loc[estate["NAME"].eq(PARK_NAME)].copy()
     if len(park) != 1:
@@ -56,6 +58,8 @@ def prepare_boundary() -> gpd.GeoDataFrame:
 
 
 def prepare_fire_history(park: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    # This source subset is selected by StartDate within the study season, then
+    # clipped to the park. It does not recover unrecorded burns or ignition causes.
     history = gpd.read_file(FIRE_HISTORY_SOURCE, bbox=tuple(park.total_bounds))
     history = history.to_crs(park.crs)
     history["StartDate"] = pd.to_datetime(history["StartDate"], errors="coerce")
@@ -65,6 +69,8 @@ def prepare_fire_history(park: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     ].copy()
     history.geometry = history.geometry.make_valid()
     history = history.loc[history.geometry.intersects(park.geometry.iloc[0])].copy()
+    # Text-derived categories support the later known-prescribed-burn exclusion;
+    # unknown records are not automatically reclassified as wildfire.
     history["fire_type"] = "unknown"
     history.loc[
         history["Label"].str.contains("Wildfire", case=False, na=False), "fire_type"
@@ -84,6 +90,8 @@ def prepare_fire_history(park: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
 
 
 def prepare_dem(park: gpd.GeoDataFrame) -> Path:
+    # Merge the expected four downloaded tiles, then mask outside the park.
+    # Writes processed rasters only; original DEM tiles are not modified.
     tile_paths = sorted((RAW_DIR / "dem").glob("blue_mountains_np_srtm_1sec_*.tif"))
     if len(tile_paths) != 4:
         raise RuntimeError(f"Expected four DEM tiles, found {len(tile_paths)}")
@@ -129,12 +137,15 @@ def prepare_dem(park: gpd.GeoDataFrame) -> Path:
         # Retain the clipped study-area raster and remove the reproducible temp file.
         mosaic_path.unlink(missing_ok=True)
         return clipped_path
+    # Close every opened raster even if merging, masking or writing fails.
     finally:
         for source in sources:
             source.close()
 
 
 def main() -> None:
+    # Requires the original boundary, fire-history and DEM downloads; the minimal
+    # public repository subset alone is not sufficient to rerun this full stage.
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     park = prepare_boundary()
     history = prepare_fire_history(park)

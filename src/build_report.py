@@ -25,21 +25,31 @@ REFERENCES=[
 LABELS={'prevalence':'Prevalence','persistence':'Persistence','lr_full':'Logistic full','lr_conditions':'Logistic conditions','xgb_full':'XGBoost full','xgb_conditions':'XGBoost conditions'}
 
 def tex_escape(text):
+    # Escape LaTeX control characters in narrative/table values, not in templates.
     return ''.join({'\\':r'\textbackslash{}','&':r'\&','%':r'\%','$':r'\$','#':r'\#','_':r'\_','{':r'\{','}':r'\}','~':r'\textasciitilde{}','^':r'\textasciicircum{}'}.get(c,c) for c in str(text))
 
 def main():
+    # Presentation-only build: read recorded metrics and figures, assemble a shared
+    # content structure, then export PDF/Markdown/LaTeX. No models are fitted here.
+    # The output is an ML contribution, not an automatically approved final report.
     REPORT.mkdir(parents=True,exist_ok=True);OVERLEAF.mkdir(parents=True,exist_ok=True)
     m=pd.read_csv(R/'metrics.csv');splits=pd.read_csv(R/'split_counts.csv');manifest=json.loads((R/'run_manifest.json').read_text())
     audit=json.loads((R/'data_audit.json').read_text());selected=json.loads((R/'model_selection.json').read_text())
     uncertainty=json.loads((R/'uncertainty.json').read_text());shap=pd.read_csv(R/'shap_summary.csv')
     cv=m[m.experiment.str.startswith('blocked_fold_')].groupby(['model','view'])
+    # Always select the experiment/model/view explicitly to avoid mixing the
+    # stronger within-season results with the strictly forward assessment.
     get=lambda exp,model,view='all':m[(m.experiment==exp)&(m.model==model)&(m.view==view)].iloc[0]
     w=get('weekly_holdout','xgb_full');c=get('chronological','xgb_full')
     wc=get('weekly_holdout','xgb_conditions');wn=get('weekly_holdout','xgb_full','new_fire');cn=get('chronological','xgb_full','new_fire')
     p=lambda x:f'{x:.3f}';pct=lambda x:f'{100*x:.1f}%'
+    # One intermediate content list feeds multiple formats. Some narrative values
+    # below are fixed to the published run, so a future retrain needs text review.
     pages=[]
     def page(title):
+        # Create a section container and return its ordered paragraphs/tables/figures.
         a={'title':title,'items':[]};pages.append(a);return a['items']
+    # These small helpers record content; rendering happens after assembly.
     def para(items,text):items.append(('p',text))
     def table(items,headers,rows,widths=None):items.append(('table',(headers,rows,widths)))
     def fig(items,name,caption,height):items.append(('fig',(name,caption,height)))
@@ -172,6 +182,8 @@ def main():
     para(a,'Online references were checked on 14 October 2026. The dataset inventory and original GIS/source provenance are retained with the input materials; those acquisition details should be confirmed in the group report by the Data Engineer.')
     for i,(_,author,title,url) in enumerate(REFERENCES,1):para(a,f'[{i}] {author}. {title}. {url}')
 
+    # Render the same content to ReportLab flowables and editable Markdown.
+    # This build writes files; it does not visually inspect the generated pages.
     styles=getSampleStyleSheet()
     styles.add(ParagraphStyle(name='ReportBody',fontName='Helvetica',fontSize=10.2,leading=14.0,spaceAfter=9,textColor=colors.HexColor('#20252B')))
     styles.add(ParagraphStyle(name='ReportTitle',fontName='Helvetica-Bold',fontSize=22,leading=27,spaceAfter=15,textColor=colors.black))
@@ -204,6 +216,7 @@ def main():
                 body.append(KeepTogether([im,Paragraph(html.escape(caption),styles['ReportCaption'])]))
                 md.append(f'![{caption}](../figures/{name}.png)\n')
     def footer(canvas,doc):
+        # Preserve the canvas state so footer styling cannot leak into body content.
         canvas.saveState();canvas.setFont('Helvetica',8);canvas.setFillColor(colors.HexColor('#626C76'))
         canvas.drawString(50,28,'ENGG2112  |  Kian Luo  |  ML engineering')
         canvas.drawRightString(A4[0]-50,28,str(doc.page));canvas.restoreState()
@@ -235,6 +248,7 @@ def main():
     for i,(key,*_) in enumerate(REFERENCES,1):text=text.replace(f'[{i}]',r'\cite{'+key+'}')
     text=text.replace('[4,5]',r'\cite{ap,xgbparams}')
     (OVERLEAF/'kian_section.tex').write_text(text,encoding='utf-8')
+    # Also split the contribution into drop-in sections for the group integrator.
     chunks=text.split(r'\subsection{')
     complete=[r'\subsection{'+chunk for chunk in chunks[1:]]
     (OVERLEAF/'kian_methods.tex').write_text('\n'.join(complete[:3]),encoding='utf-8')

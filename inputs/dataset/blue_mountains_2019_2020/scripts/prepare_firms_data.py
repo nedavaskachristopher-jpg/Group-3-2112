@@ -38,6 +38,8 @@ REQUIRED_COLUMNS = {
 
 
 def main() -> None:
+    # Flow: validate source fields -> date/confidence masks -> park mask -> export.
+    # Full archive/boundary inputs are required beyond the public minimal subset.
     detections = pd.read_csv(SOURCE)
     missing_columns = REQUIRED_COLUMNS.difference(detections.columns)
     if missing_columns:
@@ -51,6 +53,7 @@ def main() -> None:
         raise ValueError("Invalid longitude values")
 
     detections["acq_date"] = pd.to_datetime(detections["acq_date"], errors="raise")
+    # Confidence codes n/h retain nominal/high observations, not low-confidence l.
     period_mask = detections["acq_date"].between(START_DATE, END_DATE, inclusive="both")
     confidence_mask = detections["confidence"].isin(RETAINED_CONFIDENCE)
 
@@ -62,10 +65,13 @@ def main() -> None:
         gpd.points_from_xy(detections["longitude"], detections["latitude"]),
         crs="EPSG:4326",
     )
+    # Intersects also retains observations on the park boundary in a shared CRS.
     park_mask = points.intersects(park.geometry.iloc[0])
 
     clean = detections.loc[period_mask & confidence_mask & park_mask].copy()
     clean["acq_date"] = clean["acq_date"].dt.strftime("%Y-%m-%d")
+    # Deduplicate entire records, not all detections in a cell/day: multiple valid
+    # observations are retained for the later daily-count/label aggregation.
     clean = clean.drop_duplicates().sort_values(
         ["acq_date", "acq_time", "latitude", "longitude"],
         kind="stable",
@@ -74,6 +80,7 @@ def main() -> None:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     clean.to_csv(OUTPUT, index=False, lineterminator="\n")
 
+    # Report removals in filter order so the exclusion counts are interpretable.
     print(f"Source rows: {len(detections)}")
     print(f"Removed outside study period: {(~period_mask).sum()}")
     print(f"Removed low-confidence records in study period: {(period_mask & ~confidence_mask).sum()}")
