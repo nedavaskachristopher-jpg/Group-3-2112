@@ -4,6 +4,19 @@ ENGG2112 Group 3 project repository. The current implementation contains Kian Lu
 
 The repository contains the training and evaluation code, executed notebook, saved models, individual predictions, metrics and figures. It is a retrospective research prototype using the 2019–20 season. The target includes continuing fires; it is not a verified ignition label.
 
+## Team workflow and member workspaces
+
+Start with [WORKFLOW.md](WORKFLOW.md) for responsibilities, handoffs, review steps and report coverage. Kian coordinates the group workflow and ML engineering; Chris owns report integration, Jin data engineering and Seb domain research.
+
+| Member | Working folder |
+| --- | --- |
+| Kian | [ML and coordination](team/kian_ml_and_coordination/README.md) |
+| Chris | [Project and report](team/chris_project_and_report/README.md) |
+| Jin | [Data engineering](team/jin_data_engineering/README.md) |
+| Seb | [Domain research](team/seb_domain_research/README.md) |
+
+Use the [task board](team/TASK_BOARD.md), [contribution record](team/CONTRIBUTIONS.md) and [decision record](team/DECISIONS.md) for coordination. Member folders contain working text and links to authoritative shared artifacts. Running code, numerical inputs and generated results retain their existing locations.
+
 ## Results
 
 | Evaluation of full XGBoost | Average precision (AP) | Recall | Precision | True positives | False positives | False negatives |
