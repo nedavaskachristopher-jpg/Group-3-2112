@@ -1,6 +1,6 @@
 # Data handoff to ML engineering
 
-Owner: Jin. Reviewer: Kian. Values below describe the current artifacts; human confirmation fields remain open.
+Owner: Jin. Reviewer: Kian. The final data audit was completed on 25 October 2026 without retraining or changing model outputs.
 
 | Item | Current contract |
 | --- | --- |
@@ -20,17 +20,17 @@ Owner: Jin. Reviewer: Kian. Values below describe the current artifacts; human c
 
 Authoritative references: [feature contract](../../output/feature_contract.json), [quality report](../../inputs/dataset/blue_mountains_2019_2020/model_ready/quality_report.json), [provenance](../../inputs/dataset/blue_mountains_2019_2020/model_ready/provenance.json), [training manifest](../../output/results/run_manifest.json).
 
-## Confirm before final report integration
+## Confirmation for final report integration
 
-- [ ] Jin confirms source versions, access dates and licence/attribution requirements.
-- [ ] Jin explains FIRMS confidence/type filters, deduplication and prescribed-burn matching with script/source evidence.
-- [ ] Jin explains UTC aggregation, the next-midnight precipitation accumulation and raw-data availability limits.
-- [ ] Jin and Kian confirm the target shift, feature list, filter and input hash.
-- [ ] Jin and Kian identify omitted raw inputs and do not claim a full raw-pipeline rerun.
-- [ ] Kian records the actual interface review and any remaining issue.
+- [x] Source access dates and licence/attribution requirements are recorded in the source register.
+- [x] FIRMS confidence selection, whole-row deduplication and prescribed-burn matching are documented and reconstructed from source data.
+- [x] UTC aggregation, the next-midnight precipitation rule and raw-data availability limits are documented.
+- [x] The target shift, 23/20 feature lists, park-overlap filter and input hash match the current ML implementation.
+- [x] Omitted repository raw inputs are identified; the retained external source folder was used for the final source-level audit.
+- [x] Kian recorded an interface review confirming that the target, predictors, filter, partitions, counts and provenance match the ML implementation.
 
 | Confirmation | Name/date/evidence |
 | --- | --- |
-| Data owner confirmation | To be completed |
-| ML interface review | To be completed |
-| Remaining issue and owner | To be completed |
+| Data owner confirmation | Jin, 2026-10-25: [final audit](FINAL_DATA_AUDIT.md), [machine-readable evidence](../../output/results/data_handoff_audit.json) and [reproducible audit script](../../src/audit_data_handoff.py) |
+| ML interface review | Kian: repository review confirmed the target definition, 23/20 predictors, park-overlap filter, temporal partitions, counts and provenance records; no training CSV, model or evaluation output was changed |
+| Remaining issue and owner | Kian/Chris must preserve the label limitation in ML interpretation and the final report: a zero denotes no eligible FIRMS detection, not independently confirmed fire absence or complete satellite observation |

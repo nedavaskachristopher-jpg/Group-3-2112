@@ -1,0 +1,744 @@
+{
+  "generated_utc": "2026-10-25T02:57:16.907187+00:00",
+  "scope": "Data provenance, label construction, date alignment and observation coverage; no model retraining or test-set tuning.",
+  "overall_status": "pass_with_limitations",
+  "summary": {
+    "original_panel_rows": 18980,
+    "original_grid_cells": 52,
+    "retained_modelling_rows": 15695,
+    "retained_grid_cells": 43,
+    "retained_positive_targets": 566,
+    "feature_date_range": [
+      "2019-07-01",
+      "2020-06-29"
+    ],
+    "target_date_range": [
+      "2019-07-01",
+      "2020-06-30"
+    ],
+    "zero_positive_months": [
+      "2019-07",
+      "2019-09",
+      "2019-10",
+      "2020-03",
+      "2020-04",
+      "2020-05",
+      "2020-06"
+    ]
+  },
+  "monthly_detection_coverage": [
+    {
+      "month": "2019-07",
+      "calendar_days": 31,
+      "label_rows": 1612,
+      "days_with_any_raw_detection": 0,
+      "days_with_any_positive_cell": 0,
+      "raw_detections": 0,
+      "prescribed_detections": 0,
+      "eligible_detections": 0,
+      "positive_cell_days": 0
+    },
+    {
+      "month": "2019-08",
+      "calendar_days": 31,
+      "label_rows": 1612,
+      "days_with_any_raw_detection": 4,
+      "days_with_any_positive_cell": 4,
+      "raw_detections": 35,
+      "prescribed_detections": 18,
+      "eligible_detections": 17,
+      "positive_cell_days": 4
+    },
+    {
+      "month": "2019-09",
+      "calendar_days": 30,
+      "label_rows": 1560,
+      "days_with_any_raw_detection": 0,
+      "days_with_any_positive_cell": 0,
+      "raw_detections": 0,
+      "prescribed_detections": 0,
+      "eligible_detections": 0,
+      "positive_cell_days": 0
+    },
+    {
+      "month": "2019-10",
+      "calendar_days": 31,
+      "label_rows": 1612,
+      "days_with_any_raw_detection": 0,
+      "days_with_any_positive_cell": 0,
+      "raw_detections": 0,
+      "prescribed_detections": 0,
+      "eligible_detections": 0,
+      "positive_cell_days": 0
+    },
+    {
+      "month": "2019-11",
+      "calendar_days": 30,
+      "label_rows": 1560,
+      "days_with_any_raw_detection": 7,
+      "days_with_any_positive_cell": 7,
+      "raw_detections": 295,
+      "prescribed_detections": 0,
+      "eligible_detections": 295,
+      "positive_cell_days": 21
+    },
+    {
+      "month": "2019-12",
+      "calendar_days": 31,
+      "label_rows": 1612,
+      "days_with_any_raw_detection": 30,
+      "days_with_any_positive_cell": 30,
+      "raw_detections": 15689,
+      "prescribed_detections": 0,
+      "eligible_detections": 15689,
+      "positive_cell_days": 493
+    },
+    {
+      "month": "2020-01",
+      "calendar_days": 31,
+      "label_rows": 1612,
+      "days_with_any_raw_detection": 10,
+      "days_with_any_positive_cell": 10,
+      "raw_detections": 1052,
+      "prescribed_detections": 0,
+      "eligible_detections": 1052,
+      "positive_cell_days": 51
+    },
+    {
+      "month": "2020-02",
+      "calendar_days": 29,
+      "label_rows": 1508,
+      "days_with_any_raw_detection": 2,
+      "days_with_any_positive_cell": 2,
+      "raw_detections": 219,
+      "prescribed_detections": 0,
+      "eligible_detections": 219,
+      "positive_cell_days": 9
+    },
+    {
+      "month": "2020-03",
+      "calendar_days": 31,
+      "label_rows": 1612,
+      "days_with_any_raw_detection": 0,
+      "days_with_any_positive_cell": 0,
+      "raw_detections": 0,
+      "prescribed_detections": 0,
+      "eligible_detections": 0,
+      "positive_cell_days": 0
+    },
+    {
+      "month": "2020-04",
+      "calendar_days": 30,
+      "label_rows": 1560,
+      "days_with_any_raw_detection": 0,
+      "days_with_any_positive_cell": 0,
+      "raw_detections": 0,
+      "prescribed_detections": 0,
+      "eligible_detections": 0,
+      "positive_cell_days": 0
+    },
+    {
+      "month": "2020-05",
+      "calendar_days": 31,
+      "label_rows": 1612,
+      "days_with_any_raw_detection": 0,
+      "days_with_any_positive_cell": 0,
+      "raw_detections": 0,
+      "prescribed_detections": 0,
+      "eligible_detections": 0,
+      "positive_cell_days": 0
+    },
+    {
+      "month": "2020-06",
+      "calendar_days": 30,
+      "label_rows": 1560,
+      "days_with_any_raw_detection": 0,
+      "days_with_any_positive_cell": 0,
+      "raw_detections": 0,
+      "prescribed_detections": 0,
+      "eligible_detections": 0,
+      "positive_cell_days": 0
+    }
+  ],
+  "checks": [
+    {
+      "name": "base table dimensions",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        18980,
+        31
+      ]
+    },
+    {
+      "name": "extended table dimensions",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        18980,
+        39
+      ]
+    },
+    {
+      "name": "label panel dimensions",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        19032,
+        6
+      ]
+    },
+    {
+      "name": "weather panel dimensions",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        18980,
+        14
+      ]
+    },
+    {
+      "name": "terrain dimensions",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        52,
+        9
+      ]
+    },
+    {
+      "name": "unique model keys",
+      "status": "pass",
+      "critical": true,
+      "evidence": "grid_id + feature_date"
+    },
+    {
+      "name": "complete finite extended table",
+      "status": "pass",
+      "critical": true,
+      "evidence": {
+        "missing_values": 0
+      }
+    },
+    {
+      "name": "one-day target alignment",
+      "status": "pass",
+      "critical": true,
+      "evidence": {
+        "feature_range": [
+          "2019-07-01",
+          "2020-06-29"
+        ],
+        "target_range": [
+          "2019-07-02",
+          "2020-06-30"
+        ]
+      }
+    },
+    {
+      "name": "complete dates per extended grid cell",
+      "status": "pass",
+      "critical": true,
+      "evidence": {
+        "cells": 52,
+        "feature_days_per_cell": 365
+      }
+    },
+    {
+      "name": "complete dates per label grid cell",
+      "status": "pass",
+      "critical": true,
+      "evidence": {
+        "cells": 52,
+        "target_days_per_cell": 366
+      }
+    },
+    {
+      "name": "label arithmetic and binary rule",
+      "status": "pass",
+      "critical": true,
+      "evidence": "eligible = raw - prescribed; fire_positive = eligible > 0"
+    },
+    {
+      "name": "base target fields reproduce label panel",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "fire_detection_count_raw",
+        "prescribed_burn_detection_count",
+        "eligible_fire_detection_count",
+        "fire_positive"
+      ]
+    },
+    {
+      "name": "fire_today uses feature-day label",
+      "status": "pass",
+      "critical": true,
+      "evidence": "fire_today is joined from the label panel on feature_date"
+    },
+    {
+      "name": "extended target reproduces label panel",
+      "status": "pass",
+      "critical": true,
+      "evidence": "target joined on grid_id + target_date"
+    },
+    {
+      "name": "model-ready provenance hashes",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        {
+          "file": "model_ready/blue_mountains_model_table_2019_2020.csv",
+          "verified": true
+        },
+        {
+          "file": "model_ready/blue_mountains_model_table_2019_2020_extended.csv",
+          "verified": true
+        },
+        {
+          "file": "model_ready/daily_weather_features_2019_2020.csv",
+          "verified": true
+        },
+        {
+          "file": "model_ready/terrain_features.csv",
+          "verified": true
+        },
+        {
+          "file": "model_ready/daily_fire_labels_2019_2020.csv",
+          "verified": true
+        },
+        {
+          "file": "model_ready/blue_mountains_era5_grid.gpkg",
+          "verified": true
+        },
+        {
+          "file": "model_ready/data_dictionary.csv",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "name": "training input identity",
+      "status": "pass",
+      "critical": true,
+      "evidence": {
+        "sha256": "c9b4391f9616dce86172605419793e42a39a20adf1aecb30da11b4965afccb8b",
+        "run_manifest_sha256": "c9b4391f9616dce86172605419793e42a39a20adf1aecb30da11b4965afccb8b"
+      }
+    },
+    {
+      "name": "source register covers five required datasets",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "NPWS Estate boundary",
+        "NPWS Fire History",
+        "SRTM-derived DEM",
+        "S-NPP VIIRS active fire",
+        "ERA5-Land"
+      ]
+    },
+    {
+      "name": "source access dates and licences recorded",
+      "status": "pass",
+      "critical": false,
+      "evidence": {
+        "missing_columns": [],
+        "blank_values": {
+          "access_date": 0,
+          "licence_or_terms": 0
+        }
+      }
+    },
+    {
+      "name": "base-build source hashes against retained source root",
+      "status": "pass",
+      "critical": true,
+      "evidence": {
+        "verified": 16,
+        "expected": 16
+      }
+    },
+    {
+      "name": "raw-download manifest hashes",
+      "status": "pass",
+      "critical": true,
+      "evidence": {
+        "verified": 6,
+        "expected": 6
+      }
+    },
+    {
+      "name": "ERA5-Land monthly files",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "era5_land_2019_07.nc",
+        "era5_land_2019_08.nc",
+        "era5_land_2019_09.nc",
+        "era5_land_2019_10.nc",
+        "era5_land_2019_11.nc",
+        "era5_land_2019_12.nc",
+        "era5_land_2020_01.nc",
+        "era5_land_2020_02.nc",
+        "era5_land_2020_03.nc",
+        "era5_land_2020_04.nc",
+        "era5_land_2020_05.nc",
+        "era5_land_2020_06.nc"
+      ]
+    },
+    {
+      "name": "ERA5 variables era5_land_2019_07.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2019_07.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2019_08.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2019_08.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2019_09.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2019_09.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2019_10.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2019_10.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2019_11.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2019_11.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2019_12.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2019_12.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2020_01.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2020_01.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2020_02.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2020_02.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2020_03.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2020_03.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2020_04.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2020_04.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2020_05.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2020_05.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "ERA5 variables era5_land_2020_06.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "d2m",
+        "t2m",
+        "tp",
+        "u10",
+        "v10"
+      ]
+    },
+    {
+      "name": "ERA5 coordinates era5_land_2020_06.nc",
+      "status": "pass",
+      "critical": true,
+      "evidence": "common grid"
+    },
+    {
+      "name": "continuous ERA5 hourly coverage",
+      "status": "pass",
+      "critical": true,
+      "evidence": {
+        "hourly_steps": 8784,
+        "first": "2019-07-01 00:00:00",
+        "last": "2020-06-30 23:00:00",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "ERA5 required variables have no missing cells",
+      "status": "pass",
+      "critical": true,
+      "evidence": {
+        "t2m": 0,
+        "u10": 0,
+        "tp": 0,
+        "v10": 0,
+        "d2m": 0
+      }
+    },
+    {
+      "name": "raw FIRMS required fields",
+      "status": "pass",
+      "critical": true,
+      "evidence": [
+        "acq_date",
+        "acq_time",
+        "confidence",
+        "frp",
+        "instrument",
+        "latitude",
+        "longitude",
+        "satellite"
+      ]
+    },
+    {
+      "name": "cleaned FIRMS table reproduced from raw archive",
+      "status": "pass",
+      "critical": true,
+      "evidence": "ordered rows and columns match"
+    },
+    {
+      "name": "all cleaned FIRMS points assigned to analysis grid",
+      "status": "pass",
+      "critical": true,
+      "evidence": {
+        "unassigned": 0
+      }
+    },
+    {
+      "name": "daily fire-label panel independently reconstructed",
+      "status": "pass",
+      "critical": true,
+      "evidence": "ordered rows and columns match"
+    },
+    {
+      "name": "fire-history interval overlap coverage",
+      "status": "pass",
+      "critical": false,
+      "evidence": {
+        "records_under_current_start_date_rule": 19,
+        "records_overlapping_study_period": 19,
+        "overlapping_records_omitted_by_current_rule": 0,
+        "omitted_prescribed_burn_records": 0
+      }
+    },
+    {
+      "name": "satellite observation opportunities on zero-label dates",
+      "status": "not_verifiable",
+      "critical": false,
+      "evidence": "The supplied FIRMS archive lists detections, not every successful satellite overpass or clear-sky observation. Complete zero-filled label rows therefore do not independently verify observed negatives."
+    },
+    {
+      "name": "independent fire-absence confirmation",
+      "status": "not_verifiable",
+      "critical": false,
+      "evidence": "No independent incident or complete observation-availability panel is supplied for zero-label dates."
+    }
+  ],
+  "external_source_audit": {
+    "provenance_and_era5": {
+      "source_hashes_verified": 16,
+      "raw_manifest_hashes_verified": 6,
+      "monthly_hourly_steps": {
+        "2019_07": 744,
+        "2019_08": 744,
+        "2019_09": 720,
+        "2019_10": 744,
+        "2019_11": 720,
+        "2019_12": 744,
+        "2020_01": 744,
+        "2020_02": 696,
+        "2020_03": 744,
+        "2020_04": 720,
+        "2020_05": 744,
+        "2020_06": 720
+      },
+      "total_hourly_steps": 8784,
+      "missing_values": {
+        "t2m": 0,
+        "u10": 0,
+        "tp": 0,
+        "v10": 0,
+        "d2m": 0
+      }
+    },
+    "firms_cleaning": {
+      "raw_rows": 44211,
+      "rows_in_period": 40320,
+      "rows_with_retained_confidence_in_period": 39085,
+      "rows_inside_park_after_date_confidence": 17290,
+      "duplicates_removed": 0,
+      "cleaned_rows": 17290,
+      "confidence_counts": {
+        "n": 15954,
+        "h": 1336
+      },
+      "first_detection_date": "2019-08-03",
+      "last_detection_date": "2020-02-02"
+    },
+    "label_reconstruction": {
+      "cleaned_firms_records": 17290,
+      "prescribed_burn_records_excluded": 18,
+      "eligible_firms_records": 17272,
+      "positive_grid_cell_days": 578,
+      "prescribed_polygons_used": 1
+    },
+    "fire_history_window": {
+      "records_under_current_start_date_rule": 19,
+      "records_overlapping_study_period": 19,
+      "overlapping_records_omitted_by_current_rule": 0,
+      "omitted_prescribed_burn_records": 0
+    }
+  },
+  "conclusion": "Prepared-table integrity, provenance identities, label arithmetic and the one-day target shift are verified. Zero labels mean no eligible FIRMS detection in the supplied archive; they are not independent confirmation that no fire occurred or that satellite observation was complete."
+}

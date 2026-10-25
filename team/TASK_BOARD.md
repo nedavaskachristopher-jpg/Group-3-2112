@@ -8,7 +8,7 @@ Coordinator: Kian. Update after each handoff or review. Statuses: `To do`, `In p
 | W-02 | Kian | Confirm each member's tasks, dates and review/merge arrangements | Chris and each owner | To do | Stage 1 |
 | P-01 | Chris | Record official brief, deadline, length/format and submission requirements in the report plan | Kian | To do | Before task dates are finalised |
 | D-01 | Jin | Document data integration, the extended table and modelling provenance | Kian is the ML-interface reviewer | Done | Merged as `f089153`; evidence is PR #1 |
-| D-02 | Jin | Confirm the populated data handoff, source/licence evidence and remaining data limits | Kian | To do | Stage 2; uses D-01 |
+| D-02 | Jin | Confirm the populated data handoff, source/licence evidence and remaining data limits | Kian | In review | Final audit completed 2026-10-25; 52 verifiable checks pass and two limitations are documented |
 | M-01 | Kian | Confirm existing model/result handoff and identify the report's evaluated version | Jin | In review | Before results are integrated |
 | M-02 | Kian | Fix model verification so corrupt/missing UBJ files fail without replacement | Jin or Chris reproduces the check | To do | Before final reproducibility sign-off |
 | M-03 | Kian | Run a saved-model demonstration on a teammate's machine and record actual results | A second member | To do | Stage 3 |
@@ -28,5 +28,6 @@ When changing a status, add evidence below or link a GitHub issue/PR. Report wha
 | Date | Task ID | Owner | Progress or blocker | Evidence | Next action |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-21 | D-01 | Jin | Data documentation/provenance update merged | [PR #1](https://github.com/nedavaskachristopher-jpg/Group-3-2112/pull/1) | Complete the final data handoff |
+| 2026-10-25 | D-02 | Jin | Final source, label, date-alignment, coverage and licence audit completed | [Final audit](jin_data_engineering/FINAL_DATA_AUDIT.md) and [JSON evidence](../output/results/data_handoff_audit.json) | Kian/Chris retain the audited limitation wording; merge this branch |
 
 If using GitHub Issues for live tracking, put the issue link in the task row and use its discussion for detailed updates. Keep this board concise.

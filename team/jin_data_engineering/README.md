@@ -5,7 +5,9 @@ Jin owns data engineering and provenance. Start with [WORKFLOW.md](../../WORKFLO
 ## Your files
 
 - [DATA_HANDOFF.md](DATA_HANDOFF.md): the populated data/model interface for you and Kian to confirm.
-- [REPORT_SECTION.md](REPORT_SECTION.md): a data-methods draft based on the merged documentation, with explicit source/processing details still to complete.
+- [REPORT_SECTION.md](REPORT_SECTION.md): checked data-methods wording with source, processing and limitation details.
+- [FINAL_DATA_AUDIT.md](FINAL_DATA_AUDIT.md): the final human-readable source, label, alignment and coverage audit.
+- [Machine-readable audit](../../output/results/data_handoff_audit.json) and [audit script](../../src/audit_data_handoff.py): reproducible evidence for the final handoff.
 
 ## Existing authoritative work
 
@@ -19,6 +21,6 @@ Jin owns data engineering and provenance. Start with [WORKFLOW.md](../../WORKFLO
 
 ## Completion and review
 
-Confirm source versions/licences, confidence/deduplication and prescribed-burn rules, spatial/UTC alignment and the boundary between reproducible prepared-data work and omitted raw inputs. Kian checks the model interface and partitions. Seb checks the physical and label interpretation. Record actual checks and unresolved issues in the handoff and contribution record.
+The final audit confirms source versions/licences, confidence/deduplication and prescribed-burn rules, spatial/UTC alignment and the boundary between repository artifacts and retained raw inputs. Kian has checked the model interface and partitions. Seb should use the documented observation/absence limitation in the physical and stakeholder interpretation. Actual checks and unresolved issues are recorded in the handoff and contribution record.
 
 Keep numerical data and processing scripts in their shared locations. A data-value change requires an explicit input hash/version and discussion with Kian about rerunning dependent results.

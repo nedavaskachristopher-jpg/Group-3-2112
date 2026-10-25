@@ -16,14 +16,14 @@ Record completed work with evidence. Folder ownership and task assignment alone 
 | --- | --- | --- | --- | --- |
 | Kian | To be completed with actual work performed | To be linked | To be completed | To be completed |
 | Chris | To be completed with actual work performed | To be linked | To be completed | To be completed |
-| Jin | To be completed with actual work performed | To be linked | To be completed | To be completed |
+| Jin | Integrated and documented the five public sources; audited provenance, FIRMS cleaning, label construction, UTC/date alignment, monthly coverage and data/ML interface | [Data PR #1](https://github.com/nedavaskachristopher-jpg/Group-3-2112/pull/1), [final audit](jin_data_engineering/FINAL_DATA_AUDIT.md), [audit code](../src/audit_data_handoff.py) and [JSON evidence](../output/results/data_handoff_audit.json) | Reconstructed the clean FIRMS table and daily labels from retained sources; verified all listed hashes and 12 ERA5 months; recorded observation/absence limits | 2026-10-25; data task complete, current branch awaiting review/merge |
 | Seb | To be completed with actual work performed | To be linked | To be completed | To be completed |
 
 ## Review record
 
 | Artifact or task | Reviewer | What was checked | Outcome and remaining action | Evidence/date |
 | --- | --- | --- | --- | --- |
-| To be completed | To be completed | To be completed | To be completed | To be completed |
+| Data/ML interface and final data audit | Kian and Jin | Target, 23/20 predictors, park filter, partitions, counts, provenance, label construction and coverage | Interface approved; zero labels remain unverified fire absence/observation completeness and must be described accordingly | Kian's repository review comment and [final audit](jin_data_engineering/FINAL_DATA_AUDIT.md), 2026-10-25 |
 
 ## AI assistance and human checking
 
@@ -31,7 +31,7 @@ Continue the [existing AI assistance record](../docs/AI_ASSISTANCE.md). Record t
 
 | Tool and purpose | Output used | Member's actual checking or changes | Relevant artifact |
 | --- | --- | --- | --- |
-| To be completed | To be completed | To be completed | To be completed |
+| Codex used to help implement and run a reproducible final data-handoff audit and draft documentation | Audit script, JSON evidence and data-method wording | Outputs were checked against repository hashes and retained raw sources; all AI-assisted material remains subject to member review before submission | [audit code](../src/audit_data_handoff.py), [evidence](../output/results/data_handoff_audit.json) and [data handoff](jin_data_engineering/DATA_HANDOFF.md) |
 
 ## Report contribution statement
 

@@ -15,7 +15,7 @@ Full models use 23 predictors; conditions-only models omit the three recent-fire
 
 ## Open checks and completion evidence
 
-- [ ] Data interface signed off with Jin using [DATA_HANDOFF.md](../jin_data_engineering/DATA_HANDOFF.md).
+- [x] Data interface signed off with Jin using [DATA_HANDOFF.md](../jin_data_engineering/DATA_HANDOFF.md); the final source-level audit passes 52 verifiable checks and records two observation/absence limitations.
 - [ ] Model verification reads delivered UBJ files without rewriting them. Healthy artifacts pass and corrupt/missing files fail; regression checks preserve model hashes.
 - [ ] Another member reproduces prepared inference from repository instructions; record environment, command, expected comparison and outcome.
 - [ ] Representative errors reviewed with Seb/Jin in [ERROR_ANALYSIS.md](ERROR_ANALYSIS.md).
@@ -38,3 +38,13 @@ Compare raw scores and alerts with [example_scores.csv](../../output/example_sco
 | Environment and command | To be completed |
 | Score/alert comparison | To be completed |
 | Remaining issue | To be completed |
+
+## Next actions after the data audit
+
+1. Preserve the audited label wording in all ML and report text: zero means no eligible FIRMS detection in the supplied archive, not confirmed fire absence.
+2. Keep the current final test results unchanged. It is already exposed and cannot be reused as a fresh blind test after further tuning.
+3. Complete model-artifact verification without rewriting UBJ files: healthy artifacts must pass, missing/corrupt artifacts must fail, and model hashes must remain unchanged.
+4. Ask another member to reproduce prepared inference from the command above and record the environment, comparison and outcome.
+5. Complete the representative forward-test error analysis with Seb and the Data Engineer, including false alerts, misses and dates with no recorded positives.
+6. Check that the final methods, results and limitations use the same target, 23/20 predictors, `park_area_fraction >= 0.10` filter, temporal partitions and evaluated versions.
+7. Record actual human checks and AI assistance. If the team continues model development, reserve independent additional seasons or events for the next final validation.
