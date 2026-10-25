@@ -338,8 +338,8 @@ def export_figures(evidence, root=ROOT):
 
 def refresh_manifest(root=ROOT):
     manifest_path = root / "docs/evidence/delivery_manifest.json"
-    paths = [root / name for name in ["README.md", "AGENTS.md", ".gitignore", ".gitattributes", "review.py"]]
-    for directory in ["report", "docs", "tools", "tests"]:
+    paths = [root / name for name in ["README.md", "AGENTS.md", ".gitignore", ".gitattributes", "review.py", "requirements.txt", "WORKFLOW.md"]]
+    for directory in ["report", "docs", "tools", "tests", "applications", "notebooks", "examples", "src", "team", ".github", "output"]:
         paths += [path for path in (root / directory).rglob("*")
                   if path.is_file() and "__pycache__" not in path.parts and path != manifest_path]
     files = {}

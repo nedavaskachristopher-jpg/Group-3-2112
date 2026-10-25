@@ -1,106 +1,70 @@
-# ENGG2112 Group 3 Next Day Active Fire Detection
+# ENGG2112 Group 3: Blue Mountains Bushfire Prediction
 
-ENGG2112 Group 3 project repository. The current implementation contains Kian Luo's ML engineering contribution. It uses weather, rainfall, terrain and recent fire observations to predict whether a satellite will detect eligible active fire in a Blue Mountains National Park grid cell on the following UTC day.
+ENGG2112 ML research for next-day eligible VIIRS detections in Blue Mountains
+National Park. The modelling and evaluation workflow is complete. Final results
+did not establish reliable warning performance or calibrated fire probabilities.
 
-The repository contains the training and evaluation code, executed notebook, saved models, individual predictions, metrics and figures. It is a retrospective research prototype using the 2019–20 season. The target includes continuing fires; it is not a verified ignition label.
+## Choose one starting point
 
-## Team workflow and member workspaces
-
-Start with [WORKFLOW.md](WORKFLOW.md) for responsibilities, handoffs, review steps and report coverage. Kian coordinates the group workflow and ML engineering; Chris owns report integration, Jin data engineering and Seb domain research.
-
-| Member | Working folder |
+| What you want | Where to start |
 | --- | --- |
-| Kian | [ML and coordination](team/kian_ml_and_coordination/README.md) |
-| Chris | [Project and report](team/chris_project_and_report/README.md) |
-| Jin | [Data engineering](team/jin_data_engineering/README.md) |
-| Seb | [Domain research](team/seb_domain_research/README.md) |
+| Read the code | [Research workspace](research/README.md) |
+| Read the final result | [Final evaluation](research/reports/final_holdout.md) |
+| Use the English ML report | [Report package](report/README.md) |
+| Understand decisions and methods | [Documentation](docs/README.md) |
 
-Use the [task board](team/TASK_BOARD.md), [contribution record](team/CONTRIBUTIONS.md) and [decision record](team/DECISIONS.md) for coordination. Member folders contain working text and links to authoritative shared artifacts. Running code, numerical inputs and generated results retain their existing locations.
+## Review from the repository root
 
-## Results
-
-| Evaluation of full XGBoost | Average precision (AP) | Recall | Precision | True positives | False positives | False negatives |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Within-season weekly holdout | 0.824 | 0.766 | 0.837 | 82 | 16 | 25 |
-| Strictly forward test | 0.186 | 0.289 | 0.271 | 13 | 35 | 32 |
-
-Five-fold within-season mean AP is 0.692, with sample standard deviation 0.093. AP measures ranking quality, not classification accuracy. In the forward test, none of the 32 positive cell-days with no detection on the feature day triggered an alert at the selected threshold.
-
-The results support better within-season ranking than simple baselines, but do not establish reliable new-fire warnings. See [the model card](docs/MODEL_CARD.md) for evaluation assumptions and limitations.
-
-## Repository contents
-
-| Location | Contents |
-| --- | --- |
-| `src/train_evaluate.py` | Baselines, Logistic Regression and XGBoost; validation tuning, weekly, five-fold and forward evaluation |
-| `src/predict.py` | Load a portable saved XGBoost model and score prepared feature rows |
-| `src/score_display.py` and `src/update_score_display.py` | Add percentage presentation while retaining raw scores, labels and evaluation results |
-| `src/audit_data.py`, `src/rebuild_extended.py` and `src/update_data_records.py` | Input checks, extended-table reconstruction and reproducible quality/provenance updates |
-| `src/verify_results.py` | Independently recompute metrics and check saved-model predictions and temporal partitions |
-| `src/make_figures.py` | Generate PR curves, confusion matrices, SHAP plots and an illustrative map |
-| `output/Kian_ML_Analysis.ipynb` | Nine previously executed code cells with outputs |
-| `output/models/` | Eight saved LR/XGBoost variants and their feature/threshold metadata; four portable XGBoost UBJ files |
-| `output/results/predictions.csv` | 226,228 evaluation rows across models and experiments, including repeated evaluation of cell-days |
-| `output/results/metrics.csv` | 126 metric rows, including all-cell and no-fire-today views |
-| `output/example_features.csv` and `output/example_scores.csv` | Prepared inference example without outcome labels, and its saved scores |
-| `inputs/dataset/` | Prepared research data, provenance, source-processing scripts and a limited raw input subset |
-| `docs/` | Model card, data notes and AI assistance record |
-
-The final report and group completion scaffold are maintained separately. Uploaded documentation, code comments, notebook text and file names use English. Personal student identifiers and original assignment/chat screenshots are excluded from this public code repository.
-
-## Run the saved model
-
-Use Python 3.12 and install the pinned environment. From the repository root on Windows PowerShell:
+Python 3.12 is the recorded runtime. Viewing results and verifying the public
+files use only the Python standard library; no private data is required.
 
 ```powershell
-git clone https://github.com/nedavaskachristopher-jpg/Group-3-2112.git
-cd Group-3-2112
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe src/predict.py --input output/example_features.csv --model output/models/chronological_xgb_full.json --output output/reproduced_example_scores.csv
+python review.py results
+python review.py verify
 ```
 
-On macOS/Linux, replace `.\.venv\Scripts\python.exe` with `.venv/bin/python`.
-
-The main display fields are `model_score_percent` and `threshold_percent`, on a 0-100 scale. For example, a raw score of 0.73 is displayed as 73%; this is an **uncalibrated model score**, not a claim of a 73% chance of fire. The raw `model_score` and `threshold` remain on the 0-1 scale, and the binary `alert` is computed from the unrounded raw values. Outputs also identify the one-day `forecast_horizon_days` and score interpretation.
-
-The evaluation file `output/results/predictions.csv` similarly adds `score_percent` and `threshold_percent` beside its original raw scores, binary observations and alerts. Accuracy, precision, recall, AP and other metrics continue to use the original labels and score scale. Display conversion does not improve or reduce model performance.
-
-Inputs must already contain the required 23 full-model features, or 20 conditions-only features. This interface does not fetch live weather or accept raw sensor readings.
-
-## Human activity and forecast horizon
-
-Deliberate or accidental ignition, recreation, land-management actions and suppression are not explicit inputs. Their effects can occur in historical labels, but the model cannot anticipate a particular unobserved action. A low score does not establish safety, and percentage formatting does not remove missing-information uncertainty.
-
-The model predicts the next day only, including continuing fire. A detected fire today can inform tomorrow's score. Running the model again with newly observed conditions tomorrow gives an updated next-day prediction; it does not provide a two-/three-day forecast from today's inputs. See [forecast horizons and continuing fire](docs/FORECAST_HORIZONS.md) for the distinction and future development requirements.
-
-## Verify and reproduce
-
-Run the existing independent checks before changing or retraining models:
+To run all synthetic/unit tests, install the recorded ML dependencies first:
 
 ```powershell
-.\.venv\Scripts\python.exe src/verify_results.py
-.\.venv\Scripts\python.exe src/rebuild_extended.py
-.\.venv\Scripts\python.exe src/check_english.py
+python -m pip install -r research/requirements.txt
+python review.py test
 ```
 
-To rerun the experiments and figures:
+Use the existing virtual environment's Python on Windows if needed:
+`.\.venv\Scripts\python.exe review.py verify`. Commands also work when invoked
+using an absolute path from another directory. See the [runbook](docs/technical/runbook.md)
+for export regeneration and optional private hash checks.
 
-```powershell
-.\.venv\Scripts\python.exe src/train_evaluate.py
-.\.venv\Scripts\python.exe src/make_figures.py
+## Folder responsibilities
+
+```text
+research/   Evaluated code, settings, original evidence and original tests
+report/     English ML sections, LaTeX, reading PDF, figures and summary tables
+docs/       Methods, lessons, evidence indexes and verification records
+tools/      Aggregate-only export and verification scripts
+tests/      Delivery and review-entry-point tests
+review.py   One entry point: results, verify, test
 ```
 
-These commands regenerate files under `output/`. Copy any results you want to retain before rerunning. Random seed is 2112; software versions and the original input hash are recorded in `output/results/run_manifest.json`. Historical run records describe the original execution; current publication checks are recorded in `docs/PUBLICATION_CHECKS.md`.
+The research workspace is a relocated snapshot: frozen Python, configurations,
+tests, aggregate values and release records retain their original content.
+Its historical paths are relative to `research/`; the [relocation record](docs/technical/repository_layout.md)
+explains this boundary. Private data, predictions and fitted models remain ignored.
 
-To regenerate and execute the notebook, run `python src/build_notebook.py` using the same environment. For interactive use, also install `ipykernel` and select the corresponding Python environment. Open the notebook from the repository root or `output/`.
+There was one final evaluation. The two policy names refer to development recall
+targets, not achieved final recall. Scores are not validated probabilities; the
+target includes continuing detections, not just new ignitions. Further improvement
+requires a new research cycle and independent evaluation data.
 
-## Data and attribution
+The ML contribution is ready for group integration. Whole-report assembly,
+verified data/map provenance, authorship and member review remain with the group;
+see the [integration guide](report/integration_guide.md) and
+[AI-use record](report/ai_use_appendix.md).
 
-The supplied panel has 18,980 rows and 39 columns. Filtering to cells with at least 10% park overlap retains 43 cells, 15,695 cell-days and 566 positives. It covers one season only. Sources include NASA FIRMS, Copernicus ERA5-Land, Geoscience Australia SRTM and NSW NPWS boundaries/fire history. Source inventory and checksums are retained in `inputs/dataset/blue_mountains_2019_2020/`.
+## Group integration
 
-See [data provenance and scope](docs/DATA_NOTES.md). The complete raw GIS acquisition pipeline cannot be reproduced from the limited original delivery alone. Upstream data retain their providers' terms; this repository does not grant an additional dataset licence. No open-source licence has been selected for the project code.
-
-## AI assistance and report integration
-
-Codex assisted with implementation, experimental checks, explanations and repository preparation. [The AI assistance record](docs/AI_ASSISTANCE.md) distinguishes completed automated checks from team review still to be documented. The final report should link to this public repository and follow the course's report and disclosure requirements.
+[Team workspaces](team/README.md) and [workflow](WORKFLOW.md) retain historical
+contribution context. Current group text is being reconciled on the integration
+branch. See [integration records](docs/integration/README.md),
+[applications](applications/README.md) and the [review notebook](notebooks/README.md).
+The old experiment is preserved at tag `legacy-ml-2026-10-25`.

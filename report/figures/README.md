@@ -12,3 +12,8 @@ Matching vector PDF copies are supplied for LaTeX. Keep captions and units:
 cell-days are not independent fires or staff requirements, and raw model
 scores are not validated probabilities. The complete original multi-panel
 figure remains in [the final report](../../research/reports/final_holdout.md).
+
+- [Frozen score map](frozen_score_map.png), with [provenance](frozen_score_map.json):
+  the first frozen feature date, using original cached scores and supplied static
+  geometry. It is illustrative, uses no outcome-based date selection and makes
+  no calibrated-probability or new-evaluation claim.

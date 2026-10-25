@@ -1,0 +1,12 @@
+{
+  "scope": "Synthetic feature rows only, not a predictive-performance evaluation",
+  "synthetic_rows": 2,
+  "ordered_inputs": 17,
+  "trees": 8,
+  "model_sha256": "b63065a61efcf4b0e94db0fa80d5623ae90d5d61422f6092a9ac6fa7a528d9ce",
+  "native_and_classifier_predictions_identical": true,
+  "model_bytes_unchanged": true,
+  "fitting_performed": false,
+  "final_prediction_performed": false,
+  "row_level_outputs_published": false
+}

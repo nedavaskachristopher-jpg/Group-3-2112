@@ -1,0 +1,14 @@
+{
+  "feature_date": "2020-01-01",
+  "target_date": "2020-01-02",
+  "selection": "First frozen feature date; fixed without inspecting outcomes",
+  "model": "Frozen 8-tree XGBoost 17",
+  "score_cache_sha256": "930dbb0d910cc1d01d37cac3842df3f1e8af06767246cb5e3f0792c690dd4376",
+  "freeze_commit": "ef45cdf63b570c01ce4c76659f3071e89ba29f5a",
+  "rows": 43,
+  "prediction_performed": false,
+  "outcome_columns_used": false,
+  "geometry": "Native 0.1 degree grid cells and supplied park boundary; cells are not clipped",
+  "figure_sha256": "3d247a455c6119390d6a135b4fa30d934cdfddf36163b15622b2d11eed6c7ed7",
+  "boundary_sha256": "ecda75b1007fa8f70a1a21c4db38dc4b2db5b863fcce69eb3dac3fae63a583e5"
+}

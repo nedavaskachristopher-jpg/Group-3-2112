@@ -48,6 +48,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     verify = commands.add_parser("verify", help="Check frozen source, evidence, exports and links")
+    verify.add_argument("--private-root", type=Path, help="Explicit private artifact directory; requires --local-artifacts")
     verify.add_argument("--local-artifacts", action="store_true", help="Also hash existing private files; never parse them")
     results = commands.add_parser("results", help="Display the completed result without ML dependencies or private data")
     results.add_argument("--json", action="store_true", help="Print exact cached values as JSON")
@@ -56,7 +57,9 @@ def main(argv=None):
     try:
         if args.command == "verify":
             from tools.verify_handover import verify as verify_package
-            print(json.dumps(verify_package(local_artifacts=args.local_artifacts), indent=2))
+            if args.private_root is not None and not args.local_artifacts:
+                raise ValueError("--private-root requires --local-artifacts")
+            print(json.dumps(verify_package(local_artifacts=args.local_artifacts, private_root=args.private_root), indent=2))
         elif args.command == "results":
             result = cached_results()
             if args.json:

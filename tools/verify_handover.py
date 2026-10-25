@@ -114,7 +114,7 @@ def check_tables(root, final, frozen):
     return 6
 
 
-def verify(root=ROOT, local_artifacts=False):
+def verify(root=ROOT, local_artifacts=False, private_root=None):
     frozen = json.loads((root / "research/reports/final_freeze.json").read_text())
     receipt = json.loads((root / "research/reports/final_release.json").read_text())
     final = json.loads((root / "research/reports/final_holdout.json").read_text())
@@ -135,14 +135,15 @@ def verify(root=ROOT, local_artifacts=False):
     claims = check_claims(root)
     tables = check_tables(root, final, frozen)
     markdown = [root / "README.md", root / "AGENTS.md"]
-    for directory in ["research", "report", "docs", "tests", "tools"]:
+    for directory in ["research", "report", "docs", "tests", "tools", "applications", "notebooks", "examples", "src", "output"]:
         markdown += list((root / directory).rglob("*.md"))
     links = check_links(root, markdown)
     if local_artifacts:
+        private = Path(private_root) if private_root is not None else root / ".local_data"
         for spec in frozen["models"].values():
-            check_hashes(root, {spec["artifact"]: spec["sha256"]}, text=False)
-        check_hashes(root / ".local_data", frozen["data_hashes"], text=False)
-        check_hashes(root, {".local_data/final_evaluation_v1/final_predictions.csv": receipt["predictions_sha256"]}, text=False)
+            check_hashes(private, {spec["artifact"].removeprefix(".local_data/"): spec["sha256"]}, text=False)
+        check_hashes(private, frozen["data_hashes"], text=False)
+        check_hashes(private, {"final_evaluation_v1/final_predictions.csv": receipt["predictions_sha256"]}, text=False)
     return {"frozen_source_and_references_unchanged": True, "package_files_checked": len(manifest["files"]),
             "exact_claims_checked": claims, "local_links_checked": links, "private_hash_checks": local_artifacts,
             "aggregate_csv_tables_checked": tables,

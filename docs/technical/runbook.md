@@ -33,6 +33,10 @@ returns a failing exit status if either suite fails.
 python review.py verify --local-artifacts
 ```
 
+If the exact private workspace is shared separately, select it explicitly:
+`python review.py verify --local-artifacts --private-root PATH_TO_PRIVATE_DIRECTORY`.
+The public tree does not contain fitted model binaries or the final score cache.
+
 This additionally hashes existing root `.local_data/` model snapshots, sealed
 data files and the saved prediction CSV. It never parses raw CSV rows, calls a
 model or fits parameters. Private paths remain as recorded in the original
@@ -80,3 +84,22 @@ The exposed final period must not be used to tune a model and then described
 as new blind evidence. Further modelling needs independent evaluation data.
 The original one-time release runner is retained for audit; current review uses
 cached aggregates exclusively.
+
+## Group application checks
+
+```powershell
+python -m tools.check_repository
+python -m tools.check_integration
+python -m tools.build_notebook
+```
+
+Repository checks enforce the English/public-private boundary. Integration checks
+hash the preserved source inputs, confirm the current contract, inspect cached-map
+provenance and check notebook execution records. The notebook builder executes
+only cached-evidence cells. It never invokes old training or raw data loaders.
+
+Optional private-model inference and cache-only map regeneration are documented
+under [applications](../../applications/README.md). The inference example is
+synthetic, and the interface refuses to score the already-released test dates.
+The compatibility `src/verify_results.py` now delegates to read-only verification;
+it cannot silently replace missing or corrupt UBJ files.
