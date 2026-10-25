@@ -1,0 +1,18 @@
+{
+  "experiment": "lesson_02_baselines_v1",
+  "feature_set": "conditions_core",
+  "training_warmup_end_inclusive": "2019-07-02",
+  "logistic_regression": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "class_weight": "balanced",
+    "max_iter": 2000,
+    "tol": 0.0001
+  },
+  "diagnostic_threshold": 0.5,
+  "threshold_policy": "Fixed teaching reference, not an optimised or operational warning threshold",
+  "calibration_bins": 5,
+  "calibration_policy": "Diagnostic only; no calibrator is fitted in Lesson 2",
+  "selection_policy": "Single prespecified fit with no hyperparameter search",
+  "final_test_policy": "No final-test parsing, prediction, calibration or scoring"
+}

@@ -1,0 +1,36 @@
+{
+  "experiment": "lesson_07_probability_v1",
+  "warmup_end_inclusive": "2019-07-02",
+  "gap_days": 7,
+  "stopping_days": 7,
+  "diagnostic_threshold": 0.5,
+  "reliability_bins": 5,
+  "sigmoid": {"C": 1.0, "clip": 0.000001, "max_iterations": 1000},
+  "recall_targets": [0.8, 0.9],
+  "threshold_sweep": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+  "scenarios": [
+    {
+      "name": "earlier_model_week_calibration",
+      "calibration": {"start": "2019-12-02", "end": "2019-12-08"},
+      "assessment": {"start": "2019-12-16", "end": "2019-12-24"}
+    },
+    {
+      "name": "recent_model_single_day_calibration",
+      "calibration": {"start": "2019-12-16", "end": "2019-12-16"},
+      "assessment": {"start": "2019-12-24", "end": "2019-12-24"}
+    }
+  ],
+  "calibration_evidence_gate": {
+    "minimum_calibration_days": 7,
+    "minimum_assessment_days": 7,
+    "minimum_class_count_per_partition": 20,
+    "minimum_disjoint_assessment_windows": 2,
+    "improvement_required": "Assessment Brier and log loss must both improve over raw XGBoost 17 and the calibration-period constant prevalence reference in each supported window."
+  },
+  "calibration_policy": "One fixed nondecreasing sigmoid on clipped raw-score logits, fitted by unweighted log loss with L2 slope regularisation. Do not rebalance calibration labels. Keep the base model fixed after calibration; do not transfer a calibrator to a refitted model.",
+  "method_scope": "Compare identity, sigmoid and past-calibration prevalence; flexible isotonic calibration is not fitted because time support is sparse. Evidence-gate counts are conservative project heuristics, not statistical guarantees or operational standards.",
+  "threshold_policy": "User requested parallel 80% and 90% recall scenarios. On calibration rows only, choose the highest observed score cutoff meeting each target, with score >= cutoff. This minimises alert count subject to the target on those selection rows; later recall is not guaranteed. Keep ties together. No monetary costs or operational staffing assumptions are invented.",
+  "window_policy": "Dates specified before new calibration results, after previous development results were known. Every assessment is held out from that scenario's base fit, stopping, calibration and threshold selection, but is previously reviewed retrospective development data. Do not present overlapping scenarios as independent replication.",
+  "adoption_policy": "If the evidence gate fails, do not adopt sigmoid or claim reliable probability percentages. Retain raw scores and both provisional research cutoffs for the recent model as a draft for a later explicit pipeline freeze.",
+  "final_test_policy": "No final-test parsing, prediction, calibration, threshold selection or scoring"
+}

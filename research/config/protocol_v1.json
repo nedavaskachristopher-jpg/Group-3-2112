@@ -1,0 +1,56 @@
+{
+  "protocol_version": "1.0",
+  "study_area": "Blue Mountains National Park",
+  "unit": "ERA5-Land grid cell and UTC feature day",
+  "target": "At least one eligible VIIRS detection on the next UTC day",
+  "source_table": "blue_mountains_model_table_2019_2020_extended.csv",
+  "minimum_park_area_fraction": 0.10,
+  "feature_date_start": "2019-07-01",
+  "feature_date_end": "2020-06-29",
+  "original_train_end": "2019-12-15",
+  "original_validation_end": "2019-12-31",
+  "gap_days": 7,
+  "rationale": "Preserve the supplier's pre-existing future test period. Remove the final seven feature days of each development partition before any model fitting. Do not move boundaries in response to model scores.",
+  "holdout_policy": "Keep all final-test rows outside development loaders. No test label summaries, plots, predictions, calibration, threshold selection or scores during development.",
+  "prior_information": "The supplied README and team specification already disclosed aggregate label counts and season-level information. This is a protected retrospective temporal holdout, not a double-blind or previously unseen-season experiment.",
+  "availability_assumption": "Predict after the full UTC feature day has ended. ERA5-Land and the satellite archive support retrospective analysis; their real-world publication latency is not reproduced.",
+  "primary_feature_set": "conditions_core",
+  "feature_sets": {
+    "conditions_core": [
+      "temperature_mean_c", "temperature_max_c", "temperature_min_c", "dewpoint_mean_c",
+      "relative_humidity_mean_pct", "relative_humidity_min_pct", "precipitation_sum_mm",
+      "precipitation_3d_mm", "wind_speed_mean_ms", "wind_speed_max_ms", "elevation_mean_m",
+      "elevation_min_m", "elevation_max_m", "slope_mean_deg", "aspect_sin", "aspect_cos"
+    ],
+    "conditions_extended": [
+      "temperature_mean_c", "temperature_max_c", "temperature_min_c", "dewpoint_mean_c",
+      "relative_humidity_mean_pct", "relative_humidity_min_pct", "precipitation_sum_mm",
+      "precipitation_3d_mm", "wind_speed_mean_ms", "wind_speed_max_ms", "elevation_mean_m",
+      "elevation_min_m", "elevation_max_m", "slope_mean_deg", "aspect_sin", "aspect_cos",
+      "precipitation_7d_mm", "precipitation_30d_mm", "precipitation_90d_mm", "days_since_rain_5mm"
+    ],
+    "full": [
+      "temperature_mean_c", "temperature_max_c", "temperature_min_c", "dewpoint_mean_c",
+      "relative_humidity_mean_pct", "relative_humidity_min_pct", "precipitation_sum_mm",
+      "precipitation_3d_mm", "wind_speed_mean_ms", "wind_speed_max_ms", "elevation_mean_m",
+      "elevation_min_m", "elevation_max_m", "slope_mean_deg", "aspect_sin", "aspect_cos",
+      "precipitation_7d_mm", "precipitation_30d_mm", "precipitation_90d_mm", "days_since_rain_5mm",
+      "fire_today", "fire_neighbour_today", "fire_days_last_7"
+    ]
+  },
+  "excluded_predictors": [
+    "fire_positive", "fire_detection_count_raw", "prescribed_burn_detection_count",
+    "eligible_fire_detection_count", "split", "grid_id", "latitude", "longitude",
+    "feature_date", "target_date", "day_of_year_sin", "day_of_year_cos",
+    "park_area_fraction", "rain_history_days", "dem_valid_pixel_count", "aspect_mean_deg"
+  ],
+  "evaluation_plan": {
+    "primary_metric": "Average precision (AP); do not silently substitute trapezoidal PR-AUC",
+    "other_metrics": ["precision", "recall", "F1", "confusion matrix", "Brier score", "log loss", "calibration curve", "alerts per day"],
+    "baselines": ["training prevalence", "fire persistence", "logistic regression"],
+    "probability_output": "100 * P(next-day eligible detection), with probability reliability checked separately",
+    "calibration_and_thresholds": "Use development data only. Define an out-of-sample calibration and threshold procedure before fitting a calibrator. Never use final-test labels.",
+    "current_fire_comparison": "Compare conditions-only and full features. Evaluate the subset with fire_today = 0, retaining both positive and negative outcomes. A newly detected cell-day is not a confirmed new ignition.",
+    "final_test_release": "Freeze preprocessing, features, model parameters, calibrator and threshold before the first test evaluation. Any later changes require a new independent evaluation, not another claim of blind performance."
+  }
+}

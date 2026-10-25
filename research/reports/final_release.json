@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "started_at_utc": "2026-10-24T15:45:42.989565+00:00",
+  "freeze_commit": "ef45cdf63b570c01ce4c76659f3071e89ba29f5a",
+  "freeze_manifest_sha256": "0134e05d862a83ebb1b9921a8288484e9b74d9fcfac121432e6366a55640c3db",
+  "test_file_sha256": "f6eb30bc5252c17c8ed5263693bb1096567b28d68d54030942aa0a1f3a815621",
+  "evaluation_runs": 1,
+  "test_csv_reads": 1,
+  "authorization": "Explicit user request to freeze both research cutoffs and perform one final evaluation",
+  "aggregate_sha256": "50fdf78aae6e37d89286a3ea9d07dcc565643e1cc998cc7a152d4233b78c3e4b",
+  "predictions_sha256": "930dbb0d910cc1d01d37cac3842df3f1e8af06767246cb5e3f0792c690dd4376",
+  "metrics_cached_at_utc": "2026-10-24T15:45:43.456283+00:00",
+  "completed_at_utc": "2026-10-24T15:45:43.707283+00:00"
+}

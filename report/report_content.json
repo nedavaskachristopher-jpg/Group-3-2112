@@ -1,0 +1,373 @@
+{
+  "title": "Machine Learning Report Contribution",
+  "project": "Blue Mountains Bushfire Prediction",
+  "pages": [
+    {
+      "title": "Study design and inputs",
+      "fragment": "ml_methods.tex",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "We built a research prototype for next-day eligible satellite fire detection in Blue Mountains National Park. The frozen model and its two development-selected recall policies did not establish reliable warning performance. The deliverable is an auditable ML comparison, not a deployed warning system or a validated ignition-probability map."
+        },
+        {
+          "type": "heading",
+          "text": "Prediction unit and evidence"
+        },
+        {
+          "type": "paragraph",
+          "text": "Each row is one retained ERA5-Land grid cell and one UTC feature day; the target is at least one eligible VIIRS detection on the following UTC day. Continuing fire counts as positive. Non-detection is not proof of no physical fire. Weather is aggregated over the grid cell, while terrain and labels concern its park portion; the group data owner must retain source and geometry documentation. ERA5-Land is retrospective reanalysis [6]."
+        },
+        {
+          "type": "heading",
+          "text": "Temporal separation"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Partition",
+            "UTC feature dates",
+            "Rows"
+          ],
+          "rows": [
+            [
+              "Training",
+              "1 July to 8 December 2019",
+              "6923"
+            ],
+            [
+              "Gap",
+              "9 to 15 December 2019",
+              "301"
+            ],
+            [
+              "Validation",
+              "16 to 24 December 2019",
+              "387"
+            ],
+            [
+              "Gap",
+              "25 to 31 December 2019",
+              "301"
+            ],
+            [
+              "Final holdout",
+              "1 January to 29 June 2020",
+              "7,783"
+            ]
+          ],
+          "widths": [
+            0.23,
+            0.61,
+            0.16
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "All cells from a date stayed together. The supplier's future-test boundary was preserved, with seven-day gaps rather than interleaved weeks [3]. At least 10% park overlap retained 43 cells. Rainfall warm-up excluded the first two feature days from fitting, leaving 6,837 training rows and 143 positive targets. Gaps reduce adjacency, not dependence between long-running fires."
+        },
+        {
+          "type": "heading",
+          "text": "Reviewed inputs"
+        },
+        {
+          "type": "paragraph",
+          "text": "The core has sixteen weather/terrain variables; the second version adds only the audited same-day fire_today flag. Target-day counts, labels, dates, grid identifiers and coordinates are excluded as predictors. Long rainfall/dry-history and other current-fire candidates were not enabled because their warm-up or semantics needed further treatment. Fuel-moisture imagery and NDVI were not implemented."
+        }
+      ]
+    },
+    {
+      "title": "Models and evaluation procedure",
+      "fragment": "ml_methods.tex",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Matched models and stopping"
+        },
+        {
+          "type": "paragraph",
+          "text": "Training prevalence and persistence were explicit references. Logistic regression and XGBoost were each compared with sixteen and seventeen inputs on matched fitting/evaluation rows. Logistic scaling and balanced weights used training rows only. Tree fitting used training negatives divided by positives for class emphasis; calibration did not rebalance labels. XGBoost tests nonlinear thresholds/interactions [1], rather than guaranteeing better performance."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "XGBoost setting",
+            "Recorded value"
+          ],
+          "rows": [
+            [
+              "Maximum depth",
+              "3"
+            ],
+            [
+              "Learning rate",
+              "0.05"
+            ],
+            [
+              "L2 leaf penalty",
+              "5.0"
+            ],
+            [
+              "Row and feature subsampling",
+              "0.8 and 0.9"
+            ],
+            [
+              "Early stopping",
+              "25 rounds without AP improvement"
+            ],
+            [
+              "Final 16 and 17 input tree counts",
+              "6 and 8"
+            ]
+          ],
+          "widths": [
+            0.57,
+            0.43
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Average precision (AP) was computed from raw scores using sklearn, and explicitly maximised for stopping [2]. The initial validation selected tree length and was development evidence. Later forward checks selected length on past inner data and refitted that fixed count before checking later dates. Missing-class windows remained visible; the dependent windows were not treated as independent replication."
+        },
+        {
+          "type": "heading",
+          "text": "Probability and reminder decisions"
+        },
+        {
+          "type": "paragraph",
+          "text": "A nondecreasing regularised sigmoid was fitted on base-model-excluded calibration rows, then checked on later dates, with seven-day gaps and no post-calibration base refit. The week-long design worsened later probability quality; the improving recent design had only one calibration and one assessment day. Calibration was therefore not adopted [4]. The highest calibration-only cutoff meeting each requested recall constraint was retained, with ties together."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Development target",
+            "Exact raw cutoff",
+            "Comparison"
+          ],
+          "rows": [
+            [
+              "80.0%",
+              "0.6658568382263184",
+              ">="
+            ],
+            [
+              "90.0%",
+              "0.4193871319293976",
+              ">="
+            ]
+          ],
+          "widths": [
+            0.31,
+            0.49,
+            0.2
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The complete source, features, artifacts, thresholds and reporting rules were committed in freeze ef45cdf before one final release [7]. No final fitting, calibration or threshold search occurred. AP was primary; confusion counts, probability quality and alert burden were reported overall, without current detections, and for every calendar month."
+        }
+      ]
+    },
+    {
+      "title": "Final findings",
+      "fragment": "ml_findings.tex",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The final period has 7,783 cell-days, 181 dates and 49 positive next-day targets (0.63%); these are not independent fires. Both frozen development recall targets failed to transfer [7]."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Frozen policy",
+            "TP",
+            "FP",
+            "FN",
+            "Recall",
+            "Precision"
+          ],
+          "rows": [
+            [
+              "80% target",
+              "16",
+              "39",
+              "33",
+              "32.7%",
+              "29.1%"
+            ],
+            [
+              "90% target",
+              "34",
+              "2,434",
+              "15",
+              "69.4%",
+              "1.4%"
+            ],
+            [
+              "Persistence",
+              "16",
+              "39",
+              "33",
+              "32.7%",
+              "29.1%"
+            ]
+          ],
+          "widths": [
+            0.28,
+            0.1,
+            0.16,
+            0.1,
+            0.18,
+            0.18
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Model at diagnostic 0.5",
+            "AP",
+            "Recall",
+            "Brier"
+          ],
+          "rows": [
+            [
+              "Training prevalence",
+              "0.0063",
+              "0.0%",
+              "0.0065"
+            ],
+            [
+              "Persistence",
+              "0.0992",
+              "32.7%",
+              "0.0093"
+            ],
+            [
+              "Logistic 16",
+              "0.0461",
+              "81.6%",
+              "0.1319"
+            ],
+            [
+              "Logistic 17",
+              "0.2113",
+              "63.3%",
+              "0.0391"
+            ],
+            [
+              "XGBoost 16",
+              "0.0219",
+              "57.1%",
+              "0.1912"
+            ],
+            [
+              "XGBoost 17",
+              "0.1062",
+              "32.7%",
+              "0.1511"
+            ]
+          ],
+          "widths": [
+            0.45,
+            0.18,
+            0.19,
+            0.18
+          ]
+        },
+        {
+          "type": "figure",
+          "path": "figures/final_policy_tradeoff.png",
+          "height": 154,
+          "caption": "Figure 1  Frozen-policy trade-off. Counts are cell-days, not incidents or staffing requirements. The development target is not a promise of final recall."
+        },
+        {
+          "type": "paragraph",
+          "text": "The prespecified logistic 17 comparison ranked better than XGBoost 17; this did not trigger a replacement or retuning. Without current detections, the higher cutoff found 0 of 33 positives; the lower found 18 with 2,395 false alerts. All months were retained, including zero-positive months with undefined AP/recall. A no-alert reference scored 99.37% accuracy while missing every positive."
+        }
+      ]
+    },
+    {
+      "title": "Reliability and implications",
+      "fragment": "ml_recommendations.tex",
+      "blocks": [
+        {
+          "type": "figure",
+          "path": "figures/raw_score_reliability.png",
+          "height": 156,
+          "caption": "Figure 2  Fixed-bin reliability for the frozen raw score. Bin sizes and observed frequencies do not establish independent-event precision or calibrated percentages."
+        },
+        {
+          "type": "paragraph",
+          "text": "The raw scores overstate observed next-day detection frequencies. The small AP advantage over persistence does not establish practical warning benefit, and Brier/log loss measure overall probability quality rather than calibration alone. We did not fit a correction using final outcomes [4,7]."
+        },
+        {
+          "type": "heading",
+          "text": "Interpretation and recommendations"
+        },
+        {
+          "type": "paragraph",
+          "text": "The evidence supports a research prototype, not operational dispatch or public risk percentages. False alerts could waste review capacity and erode trust; missed detections could create false reassurance. A future interface should retain human review, label score meaning, provenance and timing, and distinguish satellite non-detection from physical safety. Response capacity and the costs of false versus missed alerts require stakeholder agreement, not invented financial assumptions."
+        },
+        {
+          "type": "paragraph",
+          "text": "Transfer is limited by sparse early positives, changing prevalence, one supplied season, dependent cells/events, imperfect detection coverage and coarse spatial aggregation. Retrospective publication latency was not simulated. The related Australian multi-source study motivates environmental modelling, but its task, data and headline accuracy are not a like-for-like benchmark for our next-day AP evaluation [5]."
+        },
+        {
+          "type": "paragraph",
+          "text": "Further work needs independent seasons/events, checked observation coverage, suitable fuel information and forecast-time data availability before calibration and response-policy validation. This exposed test must not become a tuning set. The ML contribution completes the auditable comparison; the group must still verify source/licence/map details, domain interpretation, citations, authorship and AI-use records before submission."
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "key": "mlChen2016",
+      "title": "XGBoost A Scalable Tree Boosting System",
+      "author": "Tianqi Chen and Carlos Guestrin",
+      "year": "2016",
+      "url": "https://arxiv.org/abs/1603.02754"
+    },
+    {
+      "key": "mlAveragePrecision",
+      "title": "Average precision score",
+      "author": "{scikit-learn developers}",
+      "year": "2026",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html"
+    },
+    {
+      "key": "mlTemporalEvaluation",
+      "title": "Cross validation of time series data",
+      "author": "{scikit-learn developers}",
+      "year": "2026",
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-of-time-series-data"
+    },
+    {
+      "key": "mlCalibration",
+      "title": "Probability calibration",
+      "author": "{scikit-learn developers}",
+      "year": "2026",
+      "url": "https://scikit-learn.org/stable/modules/calibration.html"
+    },
+    {
+      "key": "mlJois2026",
+      "title": "Australian Bushfire Intelligence with AI Driven Environmental Analytics",
+      "author": "Tanvi Jois and Hussain Ahmad and Fatima Noor and Faheem Ullah",
+      "year": "2026",
+      "url": "https://arxiv.org/abs/2601.06105"
+    },
+    {
+      "key": "mlERA5Land",
+      "title": "ERA5 Land hourly data from 1950 to present",
+      "author": "{Copernicus Climate Change Service}",
+      "year": "2026",
+      "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=overview"
+    },
+    {
+      "key": "mlFinalEvidence",
+      "title": "Blue Mountains frozen final temporal evaluation",
+      "author": "{ENGG2112 project team}",
+      "year": "2026",
+      "url": "https://github.com/kianluo024/ENGG2112-Blue-Mountain-Bushfire-prediction-ML-/blob/main/research/reports/final_holdout.md"
+    }
+  ]
+}

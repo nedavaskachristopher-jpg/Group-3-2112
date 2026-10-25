@@ -1,0 +1,35 @@
+{
+  "sources": [
+    {
+      "source_id": "proposal",
+      "sha256": "56e257cd9fc9f0f21e98bf8aadb0ebfa0c5ec1705cd76be1a335a1013736e54b",
+      "status": "Reviewed source material; original document not distributed"
+    },
+    {
+      "source_id": "team_specification",
+      "sha256": "650b843436cab98b8f2291fc5b72f267148ae9417ce2948028269510a453507f",
+      "status": "Reviewed source material; original document not distributed"
+    },
+    {
+      "source_id": "related_paper",
+      "sha256": "f29ed36055a0329b67903d56ecd69c994ccb15ee3eba6f3f87df3128d83c78fe",
+      "status": "Reviewed source material; original document not distributed"
+    },
+    {
+      "source_id": "assessment_requirements",
+      "sha256": "89ef8acfc80d25c2dee4811c93a78a5b325f28b5c66e2cd13eb9a3aa6d57d699",
+      "status": "Reviewed source material; original document not distributed"
+    },
+    {
+      "source_id": "assessment_rubric",
+      "sha256": "0d1b8bfdde8be3be0d6f60804c3f7fd7d12855d858a42bd8d96d30cd5d782302",
+      "status": "Reviewed source material; original document not distributed"
+    },
+    {
+      "source_id": "course_report_template",
+      "sha256": "6dcf1999e2d78fc802cf7274fe3645e056c70e496905495d8dd4f948622d84e4",
+      "status": "Reviewed layout and structure; fictional example claims not adopted"
+    }
+  ],
+  "private_paths_and_student_identifiers_omitted": true
+}

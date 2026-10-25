@@ -1,0 +1,6 @@
+partition,rows,first_feature_date,last_feature_date
+train,6923,2019-07-01,2019-12-08
+gap_before_validation,301,2019-12-09,2019-12-15
+validation,387,2019-12-16,2019-12-24
+gap_before_final,301,2019-12-25,2019-12-31
+final_test,7783,2020-01-01,2020-06-29

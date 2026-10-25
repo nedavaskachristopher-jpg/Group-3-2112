@@ -1,0 +1,42 @@
+{
+  "protocol_version": "1.0",
+  "created_utc": "2026-10-24T13:57:54.905407+00:00",
+  "protocol_sha256": "c819936b4d3a48d504ae7ec78b257c6e0b1a0be63860f564fa3577e2188dc800",
+  "source_table_sha256": "c9b4391f9616dce86172605419793e42a39a20adf1aecb30da11b4965afccb8b",
+  "source_rows": 18980,
+  "source_columns": 39,
+  "source_grid_cells": 52,
+  "retained_grid_cells": 43,
+  "removed_edge_rows": 3285,
+  "partitions": {
+    "train": {
+      "rows": 6923,
+      "first_feature_date": "2019-07-01",
+      "last_feature_date": "2019-12-08"
+    },
+    "embargo": {
+      "rows": 602,
+      "first_feature_date": "2019-12-09",
+      "last_feature_date": "2019-12-31"
+    },
+    "validation": {
+      "rows": 387,
+      "first_feature_date": "2019-12-16",
+      "last_feature_date": "2019-12-24"
+    },
+    "final_test": {
+      "rows": 7783,
+      "first_feature_date": "2020-01-01",
+      "last_feature_date": "2020-06-29"
+    }
+  },
+  "file_sha256": {
+    "development/train.csv": "cc637fc59a3d62bdbd1016aefbb9485e9cf5d8c200fe0ea2eaf8e4bbbd6a61f3",
+    "development/validation.csv": "cf59da5449eb86e70a84d95c82fbe16e184cb977b9af2ca76a1bade3dbb4f07e",
+    "holdout/final_test.csv": "f6eb30bc5252c17c8ed5263693bb1096567b28d68d54030942aa0a1f3a815621"
+  },
+  "holdout_labels_profiled": false,
+  "holdout_evaluated": false,
+  "prior_information": "The supplied README and team specification already disclosed aggregate label counts and season-level information. This is a protected retrospective temporal holdout, not a double-blind or previously unseen-season experiment.",
+  "source_provenance_checks_passed": 16
+}

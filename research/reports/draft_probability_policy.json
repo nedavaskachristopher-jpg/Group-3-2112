@@ -1,0 +1,59 @@
+{
+  "status": "draft_research_policy_not_frozen",
+  "model": "xgboost_17",
+  "scenario": "recent_model_single_day_calibration",
+  "trees": 8,
+  "calibration": null,
+  "base_artifact": ".local_data\\lesson_07_probability_v1\\recent_model_single_day_calibration\\xgboost_17.ubj",
+  "base_fit_feature_end": "2019-12-08",
+  "score_scale": [
+    0,
+    1
+  ],
+  "score": "xgboost_17",
+  "score_display_label": "Experimental model score",
+  "display_as_validated_probability_percent": false,
+  "cutoffs": [
+    {
+      "recall_target": 0.8,
+      "threshold": 0.6658568382263184,
+      "comparison": ">=",
+      "selection_recall": 0.8,
+      "selection_rows": 43,
+      "selection_scope": "calibration rows only"
+    },
+    {
+      "recall_target": 0.9,
+      "threshold": 0.4193871319293976,
+      "comparison": ">=",
+      "selection_recall": 1.0,
+      "selection_rows": 43,
+      "selection_scope": "calibration rows only"
+    }
+  ],
+  "selection_dates": {
+    "feature_start": "2019-12-16",
+    "feature_end": "2019-12-16",
+    "target_start": "2019-12-17",
+    "target_end": "2019-12-17",
+    "rows": 43,
+    "days": 1,
+    "positives": 20,
+    "positive_rate": 0.46511627906976744
+  },
+  "limitations": "Recall constraints describe calibration selection rows, not a promise for future dates. One calibration day is inadequate for a dependable operating threshold. No operational dispatch is authorised or modelled.",
+  "artifact_hashes": {
+    ".local_data\\lesson_07_probability_v1\\earlier_model_week_calibration\\logistic_16.joblib": "795d897358ba409979242e4db6b85c1c691ba779a002bd9d968f9efea1bd8979",
+    ".local_data\\lesson_07_probability_v1\\earlier_model_week_calibration\\xgboost_16.ubj": "efb99312e96c6e328c8a8903898ea3bb80c5e103d28108f8b74c3aac7752f482",
+    ".local_data\\lesson_07_probability_v1\\earlier_model_week_calibration\\logistic_17.joblib": "22834cd5120bb45339f6632648871303c18455acb2129f9d209c038ec24aecbd",
+    ".local_data\\lesson_07_probability_v1\\earlier_model_week_calibration\\xgboost_17.ubj": "66cfbd9eeeb221acbee91ded40a7e0c3a79db156e8390a41716f5ad6c83390e4",
+    ".local_data\\lesson_07_probability_v1\\earlier_model_week_calibration\\sigmoid.json": "752f318d716e2254870d71a2bcddf4a5c729214b77d6d7367f6b181f60023768",
+    ".local_data\\lesson_07_probability_v1\\recent_model_single_day_calibration\\logistic_16.joblib": "31e4b67200647194fa4ae97ddcd5807c3d5939432758eb442689ac5737cb2001",
+    ".local_data\\lesson_07_probability_v1\\recent_model_single_day_calibration\\xgboost_16.ubj": "a4f7b267ff5c09ba0e96bff9997662999ad6068b54ced67dd315c21c501616a1",
+    ".local_data\\lesson_07_probability_v1\\recent_model_single_day_calibration\\logistic_17.joblib": "17b55e3a6f0fb1ae3a36d88765398c8fd2162e938e601a4da47a717088e164e7",
+    ".local_data\\lesson_07_probability_v1\\recent_model_single_day_calibration\\xgboost_17.ubj": "b63065a61efcf4b0e94db0fa80d5623ae90d5d61422f6092a9ac6fa7a528d9ce",
+    ".local_data\\lesson_07_probability_v1\\recent_model_single_day_calibration\\sigmoid.json": "9c99dcf2f8acb1efa8ead12adee9b3e5364250036afb38dc32373644c588e0a5",
+    ".local_data\\lesson_07_probability_v1\\probability_predictions.csv": "103cc0e83affa89b338a3dafff7aa414fc1367223c8b81391ddd6a9b429474b6"
+  },
+  "final_holdout_evaluated": false
+}
