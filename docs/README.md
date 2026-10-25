@@ -2,6 +2,9 @@
 
 | Need | Entry point |
 | --- | --- |
+| Read current project and model scope | [Model card](MODEL_CARD.md), [data notes](DATA_NOTES.md), [forecast horizon](FORECAST_HORIZONS.md) |
+| Inspect group integration and acceptance | [Integration record](integration/README.md), [acceptance](integration/acceptance.md) |
+| Review the integrated draft and member status | [Report](../report/README.md), [team](../team/README.md) |
 | Understand the folder layout and what moved | [Repository layout](technical/repository_layout.md) |
 | Trace code to methods and evidence | [Source map](technical/source_map.md) |
 | Check inputs and score meaning | [Feature catalogue](technical/feature_catalog.md), [model contract](technical/model_contract.json) |

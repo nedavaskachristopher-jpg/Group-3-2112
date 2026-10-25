@@ -134,8 +134,8 @@ def verify(root=ROOT, local_artifacts=False, private_root=None):
         check_hashes(root, {relative: spec["sha256"]}, text=spec["mode"] == "text_lf")
     claims = check_claims(root)
     tables = check_tables(root, final, frozen)
-    markdown = [root / "README.md", root / "AGENTS.md"]
-    for directory in ["research", "report", "docs", "tests", "tools", "applications", "notebooks", "examples", "src", "output"]:
+    markdown = [root / "README.md", root / "AGENTS.md", root / "WORKFLOW.md"]
+    for directory in ["research", "report", "docs", "tests", "tools", "applications", "notebooks", "examples", "src", "output", "team", "inputs"]:
         markdown += list((root / directory).rglob("*.md"))
     links = check_links(root, markdown)
     if local_artifacts:

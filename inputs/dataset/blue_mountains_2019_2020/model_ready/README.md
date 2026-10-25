@@ -1,3 +1,5 @@
+> Supplied dataset documentation. Its wider feature/previous-model descriptions are historical. The active revised model uses 16/17 approved inputs; see the root inputs README and current model contract.
+
 # Model-ready Blue Mountains dataset
 
 This folder contains the aligned grid-day data used by the student proof-of-concept. The study area is Blue Mountains National Park and the study period is 1 July 2019 to 30 June 2020. These files support retrospective model development; they are not operational fire-warning data.

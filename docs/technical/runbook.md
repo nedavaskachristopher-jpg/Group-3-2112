@@ -48,6 +48,8 @@ freeze; only the public study files moved into `research/`.
 .\.venv\Scripts\python.exe tools/build_handover.py
 .\.venv\Scripts\python.exe -m pip install -r tools/requirements-report.txt
 .\.venv\Scripts\python.exe tools/render_handover_pdf.py
+.\.venv\Scripts\python.exe -m tools.build_group_report
+.\.venv\Scripts\python.exe tools/render_handover_pdf.py --group
 .\.venv\Scripts\python.exe review.py verify
 ```
 

@@ -26,7 +26,7 @@ REFERENCES = [
     {"key": "mlCalibration", "title": "Probability calibration", "author": "{scikit-learn developers}", "year": "2026", "url": "https://scikit-learn.org/stable/modules/calibration.html"},
     {"key": "mlJois2026", "title": "Australian Bushfire Intelligence with AI Driven Environmental Analytics", "author": "Tanvi Jois and Hussain Ahmad and Fatima Noor and Faheem Ullah", "year": "2026", "url": "https://arxiv.org/abs/2601.06105"},
     {"key": "mlERA5Land", "title": "ERA5 Land hourly data from 1950 to present", "author": "{Copernicus Climate Change Service}", "year": "2026", "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=overview"},
-    {"key": "mlFinalEvidence", "title": "Blue Mountains frozen final temporal evaluation", "author": "{ENGG2112 project team}", "year": "2026", "url": "https://github.com/kianluo024/ENGG2112-Blue-Mountain-Bushfire-prediction-ML-/blob/main/research/reports/final_holdout.md"},
+    {"key": "mlFinalEvidence", "title": "Blue Mountains frozen final temporal evaluation", "author": "{ENGG2112 project team}", "year": "2026", "url": "https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/main/research/reports/final_holdout.md"},
 ]
 
 
@@ -342,8 +342,9 @@ def refresh_manifest(root=ROOT):
     for directory in ["report", "docs", "tools", "tests", "applications", "notebooks", "examples", "src", "team", ".github", "output"]:
         paths += [path for path in (root / directory).rglob("*")
                   if path.is_file() and "__pycache__" not in path.parts and path != manifest_path]
+    paths += list((root / "inputs").rglob("README.md"))
     files = {}
-    for path in sorted(paths):
+    for path in sorted(set(paths)):
         text = path.suffix.lower() not in {".png", ".pdf"}
         files[path.relative_to(root).as_posix()] = {"sha256": digest(path, text=text), "mode": "text_lf" if text else "bytes"}
     write_json(manifest_path, {"purpose": "Post-evaluation packaging only; no new prediction or fitting",

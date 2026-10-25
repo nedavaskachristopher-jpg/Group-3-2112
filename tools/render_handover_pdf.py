@@ -1,5 +1,6 @@
 """Render the shared report content; no raw data or model loading is involved."""
 
+import argparse
 import json
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -17,12 +18,13 @@ except ImportError:
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def render(root=ROOT):
+def render(root=ROOT, content_name='report_content.json', output_name='ml_contribution.pdf', group=False):
     folder = root / "report"
-    content = json.loads((folder / "report_content.json").read_text(encoding="utf-8"))
-    output = folder / "ml_contribution.pdf"
+    content = json.loads((folder / content_name).read_text(encoding="utf-8"))
+    output = folder / output_name
     doc = SimpleDocTemplate(str(output), pagesize=A4, rightMargin=48, leftMargin=48, topMargin=44, bottomMargin=42,
-                           title="Blue Mountains Bushfire Prediction ML Contribution", author="Kian Luo", invariant=1)
+                           title=content['project'] + ' ' + content['title'],
+                           author='ENGG2112 Group 3 - author confirmation pending' if group else 'Kian Luo', invariant=1)
     body = ParagraphStyle("MLBody", fontName="Helvetica", fontSize=10.2, leading=13.4, spaceAfter=8, textColor=colors.black)
     heading = ParagraphStyle("MLHeading", parent=body, fontName="Helvetica-Bold", fontSize=11, leading=14, spaceBefore=5, spaceAfter=6, keepWithNext=True)
     title = ParagraphStyle("MLTitle", parent=heading, fontSize=15, leading=19, spaceAfter=5)
@@ -69,7 +71,7 @@ def render(root=ROOT):
     def footer(canvas, document):
         canvas.setFont("Helvetica", 8)
         canvas.setFillColor(colors.HexColor("#475569"))
-        canvas.drawString(48, 25, "ENGG2112  |  ML contribution  |  Frozen results unchanged")
+        canvas.drawString(48, 25, "ENGG2112  |  Integration draft  |  Member review pending" if group else "ENGG2112  |  ML contribution  |  Frozen results unchanged")
         canvas.drawRightString(A4[0]-48, 25, str(document.page))
 
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
@@ -78,4 +80,10 @@ def render(root=ROOT):
 
 
 if __name__ == "__main__":
-    render()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--group', action='store_true', help='Render the integrated group draft instead of ML-only content')
+    args = parser.parse_args()
+    if args.group:
+        render(content_name='group_report_content.json', output_name='group_report.pdf', group=True)
+    else:
+        render()

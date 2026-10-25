@@ -105,7 +105,7 @@ Further work needs independent seasons/events, checked observation coverage, sui
 4. scikit-learn developers. Probability calibration. 2026. [https://scikit-learn.org/stable/modules/calibration.html](https://scikit-learn.org/stable/modules/calibration.html)
 5. Tanvi Jois and Hussain Ahmad and Fatima Noor and Faheem Ullah. Australian Bushfire Intelligence with AI Driven Environmental Analytics. 2026. [https://arxiv.org/abs/2601.06105](https://arxiv.org/abs/2601.06105)
 6. Copernicus Climate Change Service. ERA5 Land hourly data from 1950 to present. 2026. [https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=overview](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=overview)
-7. ENGG2112 project team. Blue Mountains frozen final temporal evaluation. 2026. [https://github.com/kianluo024/ENGG2112-Blue-Mountain-Bushfire-prediction-ML-/blob/main/research/reports/final_holdout.md](https://github.com/kianluo024/ENGG2112-Blue-Mountain-Bushfire-prediction-ML-/blob/main/research/reports/final_holdout.md)
+7. ENGG2112 project team. Blue Mountains frozen final temporal evaluation. 2026. [https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/main/research/reports/final_holdout.md](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/main/research/reports/final_holdout.md)
 
 ## Evidence
 

@@ -1,5 +1,8 @@
 # Layout verification
 
+Historical source-ML packaging record imported from commit `1b3d7dd`.
+Current group acceptance is recorded separately under `docs/integration/`.
+
 This revision physically separates the completed research workspace, group
 report material, documentation and delivery utilities. The original handover
 record remains in [verification.md](verification.md); this record covers the

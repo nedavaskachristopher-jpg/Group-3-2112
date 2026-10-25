@@ -1,5 +1,10 @@
 # Repository layout and relocation
 
+This document records the earlier source-ML repository organisation at commit
+`1b3d7dd`. The integrated group repository also preserves `inputs/`, `team/` and
+adds guarded `applications/` and cached `notebooks/`. See the current
+[root navigation](../../README.md) and [integration record](../integration/README.md).
+
 ## Responsibilities
 
 The previous handover added several indexes but left historical experiments and

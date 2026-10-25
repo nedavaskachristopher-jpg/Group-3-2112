@@ -67,3 +67,10 @@
   `python review.py test` as the current public review workflow.
 - Root `.local_data/` retains private artifacts. Optional verification hashes
   those files without parsing labels or repeating prediction.
+- Preserve the existing group's source data bytes and real historical attribution.
+  Current data contact is Penelope; Jin's earlier PR remains historically credited.
+- Keep legacy models/outputs at the preservation tag. Active notebooks/maps use
+  cached evidence. Optional inference requires a private exact artifact and must
+  reject the already-released final dates.
+- Automated acceptance and the authorised integration merge do not establish
+  completed member review, stakeholder endorsement or readiness to submit.

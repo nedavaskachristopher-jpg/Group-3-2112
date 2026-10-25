@@ -21,6 +21,7 @@ conversation and relevant outputs separately for submission evidence.
 | Check probability reliability and compare 80% and 90% recall policies | Separated calibration/assessment designs, no calibration adoption and exact candidate cutoffs | [Probability evidence](../research/reports/probability_reliability.md) |
 | Freeze both policies, evaluate once and do not adjust them after seeing results | Freeze commit `ef45cdf`, one-time release and unchanged adverse results | [Freeze](../research/reports/final_freeze.json), [receipt](../research/reports/final_release.json), [result](../research/reports/final_holdout.md) |
 | Organise the ML deliverables, English report material and repository | Aggregate-derived report exports, navigation, source/claim indexes and public/private separation | [Handover](README.md), [manifest](../docs/evidence/delivery_manifest.json) |
+| Compare the old group repository and integrate the revision in five stages, with detailed English commits | Preserved legacy tag, full migration inventory, revised study, guarded inference, cached notebook/map, reconciled group draft and clean-clone acceptance | [Integration](../docs/integration/README.md), [application checks](../docs/integration/application_checks.json), [acceptance](../docs/integration/acceptance.md) |
 
 ## Verification actually recorded
 

@@ -1,40 +1,21 @@
-# ML evidence handoff
+# Revised ML handoff
 
-Owner: Kian. Data reviewer: Jin. Interpretation reviewer: Seb. Report integrator: Chris.
+The evaluated implementation is [research/](../../research/README.md). Exact
+features and outputs are in the [contract](../../docs/technical/model_contract.json).
+Use the [runbook](../../docs/technical/runbook.md),
+[final evidence](../../research/reports/final_holdout.md),
+[English ML sections](../../report/ml_sections.md) and
+[integrated draft](../../report/group_report.md).
 
-## Existing results
+The final primary model is eight-tree XGBoost 17. Inputs, preprocessing, artifact
+identity, uncalibrated score decision and both inclusive cutoffs remain frozen.
+The one-time receipt still records one evaluation and one final CSV read.
+Poor final results and the stronger logistic ranking are retained honestly.
 
-| Full XGBoost evaluation | AP | Recall | Precision | TP | FP | FN |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Weekly holdout | 0.823682 | 0.766355 | 0.836735 | 82 | 16 | 25 |
-| Strictly forward | 0.185871 | 0.288889 | 0.270833 | 13 | 35 | 32 |
+Public results, verification, notebook review and CI need no private model.
+Optional inference needs the exact private model; final dates are blocked.
+The map reads the original score cache only. There is no new SHAP or live API.
 
-Five-fold within-season mean AP is 0.692174, with sample SD 0.093025. The forward no-fire-today subset has 32 positives; none triggered a full-model alert at its validation-selected threshold. Counts describe cell-days, not independent incidents. Check final report numbers against [metrics.csv](../../output/results/metrics.csv), not rounded examples alone.
-
-Full models use 23 predictors; conditions-only models omit the three recent-fire predictors. Weights, preprocessing, tuning and thresholds are fitted within the designated training/validation partitions. Weekly/blocked experiments measure same-season interpolation and can use later training weeks. The forward test uses earlier fitting dates but still covers the same season/cells. Raw percentage-formatted scores are uncalibrated; current models predict the next UTC day only.
-
-## Open checks and completion evidence
-
-- [ ] Data interface signed off with Jin using [DATA_HANDOFF.md](../jin_data_engineering/DATA_HANDOFF.md).
-- [ ] Model verification reads delivered UBJ files without rewriting them. Healthy artifacts pass and corrupt/missing files fail; regression checks preserve model hashes.
-- [ ] Another member reproduces prepared inference from repository instructions; record environment, command, expected comparison and outcome.
-- [ ] Representative errors reviewed with Seb/Jin in [ERROR_ANALYSIS.md](ERROR_ANALYSIS.md).
-- [ ] Methods/results/limitations use consistent targets, partitions, metrics and evaluated versions.
-- [ ] Actual human checks, edits and AI assistance recorded.
-
-## Prepared inference demonstration
-
-From the repository root, install `requirements.txt` in a Python 3.12 environment, then run:
-
-```powershell
-python src/predict.py --input output/example_features.csv --model output/models/chronological_xgb_full.json --output output/reproduced_example_scores.csv
-```
-
-Compare raw scores and alerts with [example_scores.csv](../../output/example_scores.csv), allowing the documented numerical tolerance. Percentage rounding is presentation only. The interface consumes already prepared feature rows and does not download live weather.
-
-| Demonstration record | Actual value |
-| --- | --- |
-| Member/machine/date | To be completed |
-| Environment and command | To be completed |
-| Score/alert comparison | To be completed |
-| Remaining issue | To be completed |
+The two experiments use the same original table. This is protected retrospective
+evaluation, not a new independent season. Human data/domain/author review is
+pending and must be recorded by the responsible members.

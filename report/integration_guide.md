@@ -1,5 +1,11 @@
 # Integrating the ML contribution into the group report
 
+The current repository includes an [integrated group draft](group_report.md),
+[reading PDF](group_report.pdf) and [LaTeX assembly](group_report.tex). These
+include data/project context and a cached-score map around the unchanged ML
+contribution. They are supplied for member/source-owner review; author details,
+actual contribution statements and final submission approval remain pending.
+
 Kian requested a complete ML handover plus ready-to-integrate English ML
 sections. This package does not invent contributions or sign-off from other
 members. Suggested ownership below follows the supplied role document.

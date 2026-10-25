@@ -1,35 +1,16 @@
-# Project framing and integrated report sections
+# Report section review map
 
-Owner: Chris. Complete and substantiate these sections; the prompts are not finished research findings.
+The [integrated draft](../../report/group_report.md) provides connected text.
+Chris should reconcile its scope with the official assignment, add confirmed
+front matter and obtain actual technical-owner review.
 
-## Background and motivation
+- Background/objectives: next-day detection research, not confirmed ignition risk.
+- Data: supplied lineage and current 16/17-input contract; full raw GIS work is not claimed.
+- Methods: chronological gaps, matched baselines, development-only decisions and freeze.
+- Findings: unchanged poor final policies, better logistic ranking and reliability limits.
+- Map: first-date cached scores; illustrative only, with selection/provenance disclosed.
+- Recommendations: independent data, observation/timing checks and stakeholder-agreed use.
+- Appendix: condensed AI interactions and actual member review status; no fabricated sign-off.
 
-Explain the specific Blue Mountains problem, intended research use and why a grid-day investigation is useful. Support contextual claims with primary or official sources. Distinguish active-fire detection from ignition probability, fire behaviour and official fire danger ratings.
-
-Working text: To be completed.
-
-## Objectives
-
-Use measurable objectives consistent with the completed work: prepare a reproducible grid-day panel; compare learned models with prevalence and persistence; evaluate rankings and fixed-threshold errors; distinguish continuing fire from no-fire-today transitions; examine temporal transfer limits.
-
-Final agreed objective wording: To be completed.
-
-## Changes from the proposal
-
-| Proposal item | Actual implementation | Reason and evidence |
-| --- | --- | --- |
-| Independent later-season evaluation | One-season weekly/blocked evaluation plus a strictly forward within-season test | Additional complete seasons were not available in the supplied panel; describe the consequence explicitly |
-| Optional fuel/weather-station/extra-model work | Confirm which optional items were actually completed | To be completed with actual evidence |
-| Additional analysis | Persistence, conditions-only comparison, new-fire subset and other documented diagnostics | Link the evaluated artifacts and explain their purpose |
-
-## Executive summary
-
-Write after integrating the report. Cover the problem, method, principal evidence, practical limits and recommendation. Use the final checked results and the official length requirements.
-
-Working text: To be completed.
-
-## Overall conclusion
-
-Explain which objectives were met, where evidence remains weak and which next step addresses the strongest limitation. Do not claim operational use, confirmed ignition prediction or independent-season validation from the current artifacts.
-
-Working text: To be completed.
+The previous 20/23-feature weekly/forward report remains at the legacy tag.
+Its metrics, SHAP and maps must not be relabelled as current-model evidence.

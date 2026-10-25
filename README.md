@@ -1,70 +1,77 @@
 # ENGG2112 Group 3: Blue Mountains Bushfire Prediction
 
-ENGG2112 ML research for next-day eligible VIIRS detections in Blue Mountains
-National Park. The modelling and evaluation workflow is complete. Final results
-did not establish reliable warning performance or calibrated fire probabilities.
+Research into next-day eligible satellite fire detections in Blue Mountains
+National Park. The revised ML workflow is integrated; its final results do not
+establish reliable warnings or calibrated fire probabilities.
 
-## Choose one starting point
+## Start here
 
-| What you want | Where to start |
+| Need | Entry point |
 | --- | --- |
-| Read the code | [Research workspace](research/README.md) |
-| Read the final result | [Final evaluation](research/reports/final_holdout.md) |
-| Use the English ML report | [Report package](report/README.md) |
-| Understand decisions and methods | [Documentation](docs/README.md) |
+| Read the current code and settings | [Research workspace](research/README.md) |
+| Read exact final evidence | [Final evaluation](research/reports/final_holdout.md) |
+| Read the integrated group-report draft | [Report package](report/README.md) |
+| Review methods and inputs | [Model card](docs/MODEL_CARD.md), [data notes](docs/DATA_NOTES.md) |
+| Coordinate member review | [Workflow](WORKFLOW.md), [team workspaces](team/README.md), [task board](team/TASK_BOARD.md) |
+| Understand what changed | [Integration record](docs/integration/README.md) |
 
-## Review from the repository root
+## Public review
 
-Python 3.12 is the recorded runtime. Viewing results and verifying the public
-files use only the Python standard library; no private data is required.
+Python 3.12 is the recorded runtime. Results and public verification use only
+the standard library, without private models or raw-data parsing.
 
 ```powershell
 python review.py results
 python review.py verify
+python -m tools.check_repository
+python -m tools.check_integration
 ```
 
-To run all synthetic/unit tests, install the recorded ML dependencies first:
+For all synthetic/unit tests:
 
 ```powershell
-python -m pip install -r research/requirements.txt
+python -m pip install -r requirements.txt
 python review.py test
 ```
 
-Use the existing virtual environment's Python on Windows if needed:
-`.\.venv\Scripts\python.exe review.py verify`. Commands also work when invoked
-using an absolute path from another directory. See the [runbook](docs/technical/runbook.md)
-for export regeneration and optional private hash checks.
+On Windows, use `.\.venv\Scripts\python.exe` for an existing environment.
+The [runbook](docs/technical/runbook.md) covers export regeneration, the
+[cached review notebook](notebooks/README.md) and optional private hash checks.
 
-## Folder responsibilities
+## Current result
+
+The one-time frozen evaluation contains 7,783 cell-days and 49 positive next-day
+targets. The 80% development-target policy detected 16, missed 33 and made 39
+false alerts. The 90% policy detected 34, missed 15 and made 2,434 false alerts.
+These names are development recall targets, not achieved final recall. Raw
+scores are not validated probabilities, and the target includes continuing fire.
+The prespecified logistic comparison ranked better than the selected XGBoost.
+
+## Layout
 
 ```text
-research/   Evaluated code, settings, original evidence and original tests
-report/     English ML sections, LaTeX, reading PDF, figures and summary tables
-docs/       Methods, lessons, evidence indexes and verification records
-tools/      Aggregate-only export and verification scripts
-tests/      Delivery and review-entry-point tests
-review.py   One entry point: results, verify, test
+research/       Frozen evaluated code, configurations, original evidence and tests
+report/         Integrated draft, English ML sections, LaTeX, figures and tables
+docs/           Methods, provenance, lessons, integration and verification records
+applications/   Guarded private-model inference and cache-only mapping
+notebooks/      Executed cached-result review, without training or prediction
+inputs/         Existing source data and provenance, preserved from the group baseline
+team/           Current roles, handoffs, actual contributions and historical records
+tools/, tests/  Delivery utilities and public/synthetic checks
+review.py       One public entry point: results, verify, test
 ```
 
-The research workspace is a relocated snapshot: frozen Python, configurations,
-tests, aggregate values and release records retain their original content.
-Its historical paths are relative to `research/`; the [relocation record](docs/technical/repository_layout.md)
-explains this boundary. Private data, predictions and fitted models remain ignored.
+`src/` contains two compatibility commands; `output/` explains the retired old
+location. The complete old code, models, predictions, notebook and SHAP/map
+evidence remain at tag `legacy-ml-2026-10-25`. There is one active revised study.
 
-There was one final evaluation. The two policy names refer to development recall
-targets, not achieved final recall. Scores are not validated probabilities; the
-target includes continuing detections, not just new ignitions. Further improvement
-requires a new research cycle and independent evaluation data.
+The old and revised studies use the same source-table hash and overlapping
+2019-20 dates; this is not an independent-season replication. The source ML
+repository/commit and original freeze remain recorded in the integration files.
+Private revised models and row predictions are not uploaded. Optional inference
+requires the exact frozen model privately and rejects the released final dates.
 
-The ML contribution is ready for group integration. Whole-report assembly,
-verified data/map provenance, authorship and member review remain with the group;
-see the [integration guide](report/integration_guide.md) and
-[AI-use record](report/ai_use_appendix.md).
-
-## Group integration
-
-[Team workspaces](team/README.md) and [workflow](WORKFLOW.md) retain historical
-contribution context. Current group text is being reconciled on the integration
-branch. See [integration records](docs/integration/README.md),
-[applications](applications/README.md) and the [review notebook](notebooks/README.md).
-The old experiment is preserved at tag `legacy-ml-2026-10-25`.
+Engineering acceptance is recorded separately from member review. The report
+is an integration draft: author details, data licences/geometry, literature
+interpretation, real contributions and final submission readiness still need
+the group's confirmation. AI assistance is disclosed in the report package.

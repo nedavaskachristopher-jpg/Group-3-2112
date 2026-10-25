@@ -28,6 +28,11 @@ new independent season or previously unknown test dataset.
 
 ## File decisions
 
+Completed engineering checkpoints: stage 1 `b1ea643`, stage 2 `69db821`,
+stage 3 `b8ebe46`. Later documentation/acceptance commits remain identifiable in
+the branch history. See [acceptance](acceptance.md) for clean-clone evidence and
+[current team status](../../team/TASK_BOARD.md) for pending human review.
+
 [migration_inventory.json](migration_inventory.json) records every baseline
 tracked file's action and hash. Preserve source data and real attribution;
 supersede the old active ML outputs through versioned history. Retired code,

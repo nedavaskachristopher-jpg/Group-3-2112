@@ -1,3 +1,5 @@
+> Historical pre-integration record. Numerical claims and roles describe the legacy version; see the current team index.
+
 # Data handoff to ML engineering
 
 Owner: Jin. Reviewer: Kian. Values below describe the current artifacts; human confirmation fields remain open.
@@ -18,7 +20,7 @@ Owner: Jin. Reviewer: Kian. Values below describe the current artifacts; human c
 | Neighbour fire | Derived on the original 52-cell panel before filtering |
 | Reproducibility scope | Prepared-data/extension reconstruction is supported; the full original raw GIS delivery is not included |
 
-Authoritative references: [feature contract](../../output/feature_contract.json), [quality report](../../inputs/dataset/blue_mountains_2019_2020/model_ready/quality_report.json), [provenance](../../inputs/dataset/blue_mountains_2019_2020/model_ready/provenance.json), [training manifest](../../output/results/run_manifest.json).
+Authoritative references: [feature contract](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/output/feature_contract.json), [quality report](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/inputs/dataset/blue_mountains_2019_2020/model_ready/quality_report.json), [provenance](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/inputs/dataset/blue_mountains_2019_2020/model_ready/provenance.json), [training manifest](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/output/results/run_manifest.json).
 
 ## Confirm before final report integration
 

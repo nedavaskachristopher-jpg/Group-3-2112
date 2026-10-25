@@ -1,3 +1,5 @@
+> Historical pre-integration record. Numerical claims and roles describe the legacy version; see the current team index.
+
 # Data methods contribution
 
 Owner: Jin. The opening text summarises the merged data notes and requires the owner's final source/processing review before report use.
@@ -23,4 +25,4 @@ The extended panel contains 18,980 cell-days and 39 columns. Filtering cells to 
 
 The panel covers one season. Satellite no-detection is not proof of no fire. Prescribed-burn exclusion is limited to the supplied dated polygons. Early rainfall history is incomplete, coarse cells aggregate varied terrain and direct fuel measurements are absent. Source availability and omitted raw files must match the current provenance record.
 
-Review this contribution with Kian, then hand the checked wording and citations to Chris. Record the version and review in [CONTRIBUTIONS.md](../CONTRIBUTIONS.md).
+Review this contribution with Kian, then hand the checked wording and citations to Chris. Record the version and review in [CONTRIBUTIONS.md](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/team/CONTRIBUTIONS.md).
