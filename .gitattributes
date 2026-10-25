@@ -16,6 +16,7 @@ research/reports/final_holdout.json -text -eol whitespace=blank-at-eol,blank-at-
 
 # Existing group source data retain their supplied bytes.
 inputs/** -text
+inputs/**/*.md text eol=lf
 *.joblib binary
 *.ubj binary
 *.nc binary

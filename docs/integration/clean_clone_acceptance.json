@@ -1,0 +1,50 @@
+{
+  "accepted": true,
+  "checked_at_utc": "2026-10-25T03:22:50.878293+00:00",
+  "checked_commit": "c723f99ee548493d90a41cbb7ad127923a946f13",
+  "tracked_files_unchanged": 207,
+  "synthetic_tests_passed": 68,
+  "python_sources_parsed": 48,
+  "runtime_matches_freeze": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "joblib": "1.6.0",
+    "matplotlib": "3.11.2",
+    "scipy": "1.18.1"
+  },
+  "public_verification": {
+    "frozen_source_and_references_unchanged": true,
+    "package_files_checked": 122,
+    "exact_claims_checked": 290,
+    "local_links_checked": 395,
+    "private_hash_checks": false,
+    "aggregate_csv_tables_checked": 6,
+    "raw_csv_parsed": false,
+    "model_fitting": false,
+    "evaluation_runs": 1
+  },
+  "public_content": {
+    "public_text_files_checked": 192,
+    "english_and_private_boundary_checks": true
+  },
+  "integration": {
+    "preserved_input_files_checked": 18,
+    "source_table_hash_matches": true,
+    "cached_map_provenance_checked": true,
+    "executed_review_cells": 4
+  },
+  "pdf_pages_checked": {
+    "report/group_report.pdf": 8,
+    "report/ml_contribution.pdf": 4
+  },
+  "cached_result_only": true,
+  "evaluation_runs": 1,
+  "private_artifacts_required": false,
+  "real_data_fitting": false,
+  "new_final_prediction": false,
+  "human_review_completed": false,
+  "scope_note": "Fresh remote clone of the complete stage-4 implementation with newly installed pinned dependencies. The stage-5 commit adds the acceptance command/record and text-format corrections. Its final head is checked again from a fresh clone and by CI before the authorised merge; the exact final-head run is recorded on the integration pull request and Actions logs."
+}

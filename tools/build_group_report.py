@@ -112,7 +112,7 @@ def export(content, root=ROOT):
     markdown += ['', '## Evidence and review records', '',
                  '[Final aggregate](../research/reports/final_holdout.json) | [Freeze](../research/reports/final_freeze.json) | [Integration](../docs/integration/README.md) | [Contributions](../team/CONTRIBUTIONS.md) | [AI record](ai_use_appendix.md)', '']
     (folder / 'group_report.md').write_text('\n'.join(markdown), encoding='utf-8')
-    (folder / 'group_sections.tex').write_text('\n'.join(tex) + '\n', encoding='utf-8')
+    (folder / 'group_sections.tex').write_text('\n'.join(tex).rstrip() + '\n', encoding='utf-8')
     (folder / 'group_report.tex').write_text(r'''\documentclass[10pt,a4paper]{article}
 \usepackage[margin=1.7cm]{geometry}
 \usepackage[T1]{fontenc}

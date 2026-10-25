@@ -17,7 +17,7 @@
   },
   "files": {
     ".gitattributes": {
-      "sha256": "40c548b722a5557c05e1d991831e0c4c3930528113615f424ef53bd0c703cf07",
+      "sha256": "da37c97100eb0bfa849ff04b4beb1c62569b543ee7befbb1202c6ca87c7f44a5",
       "mode": "text_lf"
     },
     ".github/ISSUE_TEMPLATE/team_task.md": {
@@ -29,7 +29,7 @@
       "mode": "text_lf"
     },
     ".github/workflows/verify.yml": {
-      "sha256": "d90e66305013b9b833223934ab7b0c9b9a9bf7742835564d2b8eaffc2cd9652f",
+      "sha256": "ad806fdd04b92dcb6ba7c2167ac0cbe8607d0fa3a11d731a08030b2cde45d8a3",
       "mode": "text_lf"
     },
     ".gitignore": {
@@ -93,11 +93,15 @@
       "mode": "text_lf"
     },
     "docs/integration/acceptance.md": {
-      "sha256": "0e99bcc828e8af0499fcf7e6beb0d58b50cfaec8679ef0eead746556c9a89d1e",
+      "sha256": "98c5ae3dffda806a5224b2e3bcc32eaf63562623e5b52a3a3e85b523d0130b00",
       "mode": "text_lf"
     },
     "docs/integration/application_checks.json": {
       "sha256": "c8f24efe63e7011ce43caf73877034a0b28bad60aa9ef8a94bd57818897565a5",
+      "mode": "text_lf"
+    },
+    "docs/integration/clean_clone_acceptance.json": {
+      "sha256": "07b94b6f859efbd54935c42595c4dda654ddbb0b0430f7c031b16f0dd91738f6",
       "mode": "text_lf"
     },
     "docs/integration/migration_inventory.json": {
@@ -105,7 +109,7 @@
       "mode": "text_lf"
     },
     "docs/integration/README.md": {
-      "sha256": "c34ba2e27d5b6302965e9c2d7035670e2e7f277d3722c2f2eab072109eadfde9",
+      "sha256": "3547f411cb0ef72c2c0762343a9cfefe022ff063e920befdebc1be6dec9a8365",
       "mode": "text_lf"
     },
     "docs/integration/source_import.json": {
@@ -265,7 +269,7 @@
       "mode": "text_lf"
     },
     "report/group_sections.tex": {
-      "sha256": "e409d56acd4b1bdc0e5dcd2f8b9e8d6eb73d81457a18af22342f21e589caa7aa",
+      "sha256": "a2ad01d8c3400268d50c8f0daa12de874f7da3c9041b1d2c65f45abc92306555",
       "mode": "text_lf"
     },
     "report/integration_guide.md": {
@@ -464,8 +468,12 @@
       "sha256": "432eaab9266b8264a79a49affd9925cfee4f50c824adb29920835de428cae013",
       "mode": "text_lf"
     },
+    "tools/acceptance.py": {
+      "sha256": "05546bc6115dd76ab709217ff51a2a45206cd4619478dbfb2bee910752e13fea",
+      "mode": "text_lf"
+    },
     "tools/build_group_report.py": {
-      "sha256": "6d216b6ca9101c92b9b9095e26d119c3dd32087dc09ec3d5a4048ca9b88dab01",
+      "sha256": "30bd594c0ac0cbe8ace9cb6d24842b7e4fa02abd6cfb8cf28c2d40f000154d3a",
       "mode": "text_lf"
     },
     "tools/build_handover.py": {
@@ -485,7 +493,7 @@
       "mode": "text_lf"
     },
     "tools/README.md": {
-      "sha256": "20c24885c17669b4ca464b06f1fd2b4e8ca48342a451cd6ba22bdb9e066225bb",
+      "sha256": "0ac31eab86d8a676306da11384155a9c5a6fecf5c7a9dbfd8996ea869d8dbd25",
       "mode": "text_lf"
     },
     "tools/render_handover_pdf.py": {

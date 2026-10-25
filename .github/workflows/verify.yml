@@ -16,13 +16,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.12.14'
           cache: pip
-      - run: python -m pip install -r requirements.txt
-      - run: python -m tools.check_repository
-      - run: python review.py verify
-      - run: python -m tools.check_integration
-      - run: python review.py test
-      - run: python review.py results
+      - run: python -m pip install -r requirements.txt -r tools/requirements-report.txt
+      - run: python -m tools.acceptance --pdf
       - name: Confirm checks did not rewrite tracked artifacts
         run: git diff --exit-code

@@ -29,9 +29,16 @@ new independent season or previously unknown test dataset.
 ## File decisions
 
 Completed engineering checkpoints: stage 1 `b1ea643`, stage 2 `69db821`,
-stage 3 `b8ebe46`. Later documentation/acceptance commits remain identifiable in
-the branch history. See [acceptance](acceptance.md) for clean-clone evidence and
+stage 3 `b8ebe46`, stage 4 `c723f99`, followed by the separate stage-5 acceptance
+commit. See [acceptance](acceptance.md) for clean-clone evidence and
 [current team status](../../team/TASK_BOARD.md) for pending human review.
+
+The original freeze commit belongs to the source ML repository, not the group
+repository's pre-existing history:
+[source freeze](https://github.com/kianluo024/ENGG2112-Blue-Mountain-Bushfire-prediction-ML-/commit/ef45cdf63b570c01ce4c76659f3071e89ba29f5a).
+Imported manifest paths remain relative to `research/`; source repository and
+commit hashes stay explicit rather than pretending that the freeze occurred in
+this newly integrated group history.
 
 [migration_inventory.json](migration_inventory.json) records every baseline
 tracked file's action and hash. Preserve source data and real attribution;
