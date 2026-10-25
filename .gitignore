@@ -1,5 +1,9 @@
 .venv/
 .runtime/
+.local_data/
+*.joblib
+*.ubj
+*.pkl
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/

@@ -1,0 +1,910 @@
+{
+  "baseline_commit": "504f027576376d8a61c87350ccef7b4cd2fb7204",
+  "source_ml_commit": "1b3d7dd170583333327c887f95132bb5913e7ccd",
+  "all_baseline_files_classified": true,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "action": "adapt",
+      "baseline_sha256": "a671ce8aad029f7dccdc4aee6c7842acb62794237c29a9a8480b209898fcdb5c",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/team_task.md",
+      "action": "adapt",
+      "baseline_sha256": "46762bf9e306932ccce86218dd72b2da05392512d3632b98464a988323563940",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "action": "adapt",
+      "baseline_sha256": "8a7c52a2fe05d7f6058ca94b2894e7ee05154f9f5014d1fc49864415c0a8a04e",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "action": "adapt",
+      "baseline_sha256": "d7a22015cfd4bee09670b29e411e4b1375c479092dc891063d6f4ef9ef9e57cd",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": ".gitignore",
+      "action": "adapt",
+      "baseline_sha256": "318cedc4675b359e409d0ddfc08389ba66e5b3c3ee25194a67e24006e3b8e3ee",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "README.md",
+      "action": "adapt",
+      "baseline_sha256": "66d3e86bb6fc9c43528a6cc84c3521f21ae468f8d9fa9704d3a276b8f005f486",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "WORKFLOW.md",
+      "action": "adapt",
+      "baseline_sha256": "538ebe07feacf782eda157fecd43a222040dd3c240a7d790d9125b4d1b48a603",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "docs/AI_ASSISTANCE.md",
+      "action": "adapt",
+      "baseline_sha256": "8e55c0eb1fa9f8c6527e1901e62b3dcd9a28799c4c41d487082da66689fd0e04",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "docs/DATA_NOTES.md",
+      "action": "adapt",
+      "baseline_sha256": "c50ae41412a943c3a86369fc6f9050d717748a6cb96f368b33f66d665e8f6809",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "docs/FORECAST_HORIZONS.md",
+      "action": "adapt",
+      "baseline_sha256": "7ad0f07dc0b1d954a00ea03da788541313aa49eeba1e40efe83834c69c5fffa2",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "docs/MODEL_CARD.md",
+      "action": "adapt",
+      "baseline_sha256": "0f01973a92e6678a5eac7a33e77a466a45b0a1b113990a6285656522a036f522",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "docs/PUBLICATION_CHECKS.md",
+      "action": "adapt",
+      "baseline_sha256": "49b5f4ef7184ddf22a3a1de3fccf1ba923c8b3a3bc47fedd4bad60781d7988d4",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/metadata/data_register.csv",
+      "action": "preserve",
+      "baseline_sha256": "16564c2117c9c00e267e2150b7b8fa0fcd0ccde458e5996bcfa903a23a59e9a6",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/metadata/sha256_manifest.csv",
+      "action": "preserve",
+      "baseline_sha256": "644c4b041002c8c55c0f3980c39460493a06c7e8929a8cba776edd218f2a5929",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/README.md",
+      "action": "adapt",
+      "baseline_sha256": "d26d47af9fecdc66ca4dfc36fc8da06ac46d97a3aa6d83305f917d8407bfe506",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/blue_mountains_era5_grid.gpkg",
+      "action": "preserve",
+      "baseline_sha256": "e750a696662b49be016a71814eb0dfc09542c6b2c976ae902f96af51bb01f0c2",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/blue_mountains_model_table_2019_2020.csv",
+      "action": "preserve",
+      "baseline_sha256": "1cfc97cf719ca69995e0263d22f65ba8bd7f87fe04f4a54637f5fa5f3480625f",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/blue_mountains_model_table_2019_2020_extended.csv",
+      "action": "preserve",
+      "baseline_sha256": "c9b4391f9616dce86172605419793e42a39a20adf1aecb30da11b4965afccb8b",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/daily_fire_labels_2019_2020.csv",
+      "action": "preserve",
+      "baseline_sha256": "00fac6ecce820b829ce6ddc89b28028fd6c9cc8b4dc7fc6d5a8fe46b2d7757f5",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/daily_weather_features_2019_2020.csv",
+      "action": "preserve",
+      "baseline_sha256": "d2dd3be0cc2f08870a47575a47cc8efe2ec2bf99d1554d2204349b7a237cc415",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/data_dictionary.csv",
+      "action": "preserve",
+      "baseline_sha256": "40f124d5b7093438cf9cd5abfa419db328463a27199c22b0761b51215be2ad1b",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/provenance.json",
+      "action": "preserve",
+      "baseline_sha256": "2a23994ac5b32b0a3ff1b61093f0e602178f9bda55f7d931ea071cadcb113c2c",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/quality_report.json",
+      "action": "preserve",
+      "baseline_sha256": "9c0baad61d322403ef9321276c953de681b7f79ecb1016fa2c4665679ca249dc",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/terrain_features.csv",
+      "action": "preserve",
+      "baseline_sha256": "ff14db300d0b1714f8aad3288a81e07b678e315e251fe2d1164c10b833b4fa13",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/processed/blue_mountains_national_park_boundary.geojson",
+      "action": "preserve",
+      "baseline_sha256": "ecda75b1007fa8f70a1a21c4db38dc4b2db5b863fcce69eb3dac3fae63a583e5",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/raw/era5_land/era5_land_2019_07.nc",
+      "action": "preserve",
+      "baseline_sha256": "78dd8c7daf2a5a725a4f7ab8983e267069e46d97067c6dc4b61fd5b68e02d2c6",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/scripts/build_model_ready_dataset.py",
+      "action": "preserve",
+      "baseline_sha256": "1af02a4024f325b10fa8eab78facb5b4b9eb88a93dcdb70764c3f277849340a9",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/scripts/download_era5_land.py",
+      "action": "preserve",
+      "baseline_sha256": "768b6a1f1a9e4d1f9079d7cadcace95adb9d2992384e72106a210afe3d7f42b4",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/scripts/prepare_firms_data.py",
+      "action": "preserve",
+      "baseline_sha256": "6e2a6022c21c5b0bff896c1b5f72e58b52948f314cbf286a7256c20b72fdd95a",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/scripts/prepare_spatial_data.py",
+      "action": "preserve",
+      "baseline_sha256": "40681b07daabe3c065a23ee74ce2f735a8c99bf09f1fd976745d7b80f4fec138",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "inputs/dataset/blue_mountains_2019_2020/scripts/requirements.txt",
+      "action": "preserve",
+      "baseline_sha256": "18aeccea68c9ff7fd5b2ddffab75a753a1558f69eaee9abb19b7b350f9db340a",
+      "reason": "Keep existing public source bytes and provenance; clarify the active feature contract in prose.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/Kian_ML_Analysis.ipynb",
+      "action": "archive",
+      "baseline_sha256": "98905903e4c8833679df397966e2e6cbd173c1afba31332293ce3dc7d62a6417",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/example_features.csv",
+      "action": "archive",
+      "baseline_sha256": "b3814008db2d255f8671110cf2660cc5828e8685e94a98148278c01a25db22fe",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/example_scores.csv",
+      "action": "archive",
+      "baseline_sha256": "27a0bae062a4ce539ba7954d72bc79418ee055dd5fac8e499aa272cc23393e9b",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/feature_contract.json",
+      "action": "archive",
+      "baseline_sha256": "54bb37b5b94346f3b6e13a3e139b869d7cd8ccb01bf2e568f92143b2a66cdfa9",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/01_label_timeline.pdf",
+      "action": "archive",
+      "baseline_sha256": "ae7a4b19f50877a108d17de0c8db849abbf5b91a02f4b1d5b3133e5e04fc71b1",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/01_label_timeline.png",
+      "action": "archive",
+      "baseline_sha256": "dbe650b5e3cd5f7e6b1e9d509ed65d3feaf99c5fde4470f23bcf0f965af3337e",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/02_pr_chronological.pdf",
+      "action": "archive",
+      "baseline_sha256": "7886d3272373ce50e9d9493315288d38ad1756264543e21d937cd3877aac5e51",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/02_pr_chronological.png",
+      "action": "archive",
+      "baseline_sha256": "ec5d09e54cd5f6a9bb6a53515370b0a7f6775dcb19eef4058f86d3eb93db2379",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/02_pr_weekly_holdout.pdf",
+      "action": "archive",
+      "baseline_sha256": "4645924b7c90c72bb830b7f1186892608a632083bd29a954a2493bb928603a2b",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/02_pr_weekly_holdout.png",
+      "action": "archive",
+      "baseline_sha256": "b89c5f6a586aecb64912f52a8dc47253dffcea7f6074a47458c7d69a163434b1",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/03_blocked_cv.pdf",
+      "action": "archive",
+      "baseline_sha256": "da02c0217792a77959bf3634d73e61926cbc7060d73b17c32de2ce3a2e3e1b8f",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/03_blocked_cv.png",
+      "action": "archive",
+      "baseline_sha256": "2808547590b5b1590c921cd130bc6af9ae7075866ca82a77d052287d53eb4e85",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/04_confusion.pdf",
+      "action": "archive",
+      "baseline_sha256": "a0ad760ee5551fca7b614eaffaccf4588a9ed5a67b81905185aaf56134e0aa40",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/04_confusion.png",
+      "action": "archive",
+      "baseline_sha256": "a887129b0a72f8dcdbe0fab7f4191cd34f8cd1cda090a552dc61acedd1a47b5c",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/05_calibration.pdf",
+      "action": "archive",
+      "baseline_sha256": "96faadddf2007dd979ddfdeb2a8dc8798ea0c01374998dc972f50acbf9e59940",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/05_calibration.png",
+      "action": "archive",
+      "baseline_sha256": "f9c33d8cf8103a7c8d2188d1e65c5f5fd074fe8c6468054de74e0d89f0855650",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/06_shap_importance.pdf",
+      "action": "archive",
+      "baseline_sha256": "41ea813b81f304ecff5e37441afefb15884b7a040ea0d5b219a7f17b4c2641d7",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/06_shap_importance.png",
+      "action": "archive",
+      "baseline_sha256": "cee7df6a5303c8729360d6614aa4b63de8b602bb0c07fb6e1173b585600e7af9",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/07_shap_dependence.pdf",
+      "action": "archive",
+      "baseline_sha256": "6bf0440b4c9c9b86b2f5dc20afa6109393d9c51c61641e8f6e754876809c6122",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/07_shap_dependence.png",
+      "action": "archive",
+      "baseline_sha256": "8d9878a7f2fa71b715da96862e84659b9c8fd2136865abca9aa37e7bc274bc9d",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/08_illustrative_map.pdf",
+      "action": "archive",
+      "baseline_sha256": "8633308db3ea833a9821b44a24f03921db2537eca3cc700cfd77592c8b9da388",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/figures/08_illustrative_map.png",
+      "action": "archive",
+      "baseline_sha256": "78d3a8de297534e22146947d5ff423ee6e6069b12cbd1601c8eddc7137aa3ea7",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/chronological_lr_conditions.joblib",
+      "action": "archive",
+      "baseline_sha256": "afc4aac190e11404c767b3362ab1e7dad137f674b04dc670ccb513608682743e",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/chronological_lr_conditions.json",
+      "action": "archive",
+      "baseline_sha256": "e5bb28ec1c810192b8bdeda57e15ee3d32ce4963a9544fc7e71ffa719aa14926",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/chronological_lr_full.joblib",
+      "action": "archive",
+      "baseline_sha256": "c5ca2b117de2a7808f72c8f504245c493ce531e69956b35cee4b462e2e7fd0fa",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/chronological_lr_full.json",
+      "action": "archive",
+      "baseline_sha256": "8e497dfbec5669af908d6e4006fb3253fc6617b67a1c6931d229821825dd2cce",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/chronological_xgb_conditions.joblib",
+      "action": "archive",
+      "baseline_sha256": "cdc392ba712747c08e8c5b1feb9f5f824c68108beac1814c13e371a0d52e6ffe",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/chronological_xgb_conditions.json",
+      "action": "archive",
+      "baseline_sha256": "3cb4529f1de7bd5001f16abbeb2655be6ca2df10b1911c8371b2047e8c0e9a3f",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/chronological_xgb_conditions.ubj",
+      "action": "archive",
+      "baseline_sha256": "3b2a0b4a9a7846775c9e91731c2d2538ce30ff04e2c4387c7c75dc823a5af5ac",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/chronological_xgb_full.joblib",
+      "action": "archive",
+      "baseline_sha256": "a4868359b3f26fc125a87c5b98be2b6ea3594e2b07162d449d3b6606530a8fde",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/chronological_xgb_full.json",
+      "action": "archive",
+      "baseline_sha256": "705f2df9447ff557b4ca63e51fb733568ca6069ab84bd4f12dedf0aa8defc0f7",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/chronological_xgb_full.ubj",
+      "action": "archive",
+      "baseline_sha256": "de85975a2c284384d7b407dcd7e96213af35a9e7658b75bc2ef810320f02b465",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/weekly_holdout_lr_conditions.joblib",
+      "action": "archive",
+      "baseline_sha256": "ab98c60286ca2de644d4d442edf19c0de62a84631977015dbc74bf7410397e1f",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/weekly_holdout_lr_conditions.json",
+      "action": "archive",
+      "baseline_sha256": "0399b681f23f1fad7267807ac0bc8c4b01c6ebe9989a5001fe51390db84c2e1e",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/weekly_holdout_lr_full.joblib",
+      "action": "archive",
+      "baseline_sha256": "363163bdff14d0c4492cad1faf13726e9021a3243fa6044de5a5e41408ce9f29",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/weekly_holdout_lr_full.json",
+      "action": "archive",
+      "baseline_sha256": "c3b8898f811d91406fbc3d47d7bc2cfc54f7e1cf2af4b83060058c83f2f146b9",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/weekly_holdout_xgb_conditions.joblib",
+      "action": "archive",
+      "baseline_sha256": "4255dbfea7815f3fe1b7170408842795bf604b826576c6db724525fc5cefccb0",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/weekly_holdout_xgb_conditions.json",
+      "action": "archive",
+      "baseline_sha256": "f7f160e8ea5d2933287480e54e548d4205ab168ce73c8ef204c1dd2cf887a4bd",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/weekly_holdout_xgb_conditions.ubj",
+      "action": "archive",
+      "baseline_sha256": "c940ff9c6bf66582ef05b50498a68cb3dff02751b0e953093cb211886d6e3143",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/weekly_holdout_xgb_full.joblib",
+      "action": "archive",
+      "baseline_sha256": "2292c8f6b0ab6403620e6ac85e162e84507aac94401ff2cc014cbaf5676b7f42",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/weekly_holdout_xgb_full.json",
+      "action": "archive",
+      "baseline_sha256": "3f79589138da4abb0b0df191b33952488a206f8968fdc365f3da176d69012127",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/models/weekly_holdout_xgb_full.ubj",
+      "action": "archive",
+      "baseline_sha256": "ad51afde4bcdbd3e11de12296d919e02f4a8920b917249ec6e0d1da7dc4bbb63",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/rebuilt_model_table.csv",
+      "action": "archive",
+      "baseline_sha256": "f91b513e65ac3443b3375b84b89cf1e175eeeb22566dc295a123151c2545c43f",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/blocked_cv_summary.csv",
+      "action": "archive",
+      "baseline_sha256": "c193adf67a932c0788dc1a106b02bcd64a0e605bcad272c3ff1fff82d692d677",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/calibration.json",
+      "action": "archive",
+      "baseline_sha256": "291dda034ddc590a4a9591d4bfc52a4680f9c11906ffd4145cead2a84498dd9a",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/data_audit.json",
+      "action": "archive",
+      "baseline_sha256": "022b750ddaf7987e070d6fe60d6f0dbf1fb2389a8a0f7bc179c7564c8e451237",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/extended_rebuild_verification.json",
+      "action": "archive",
+      "baseline_sha256": "de6d7758ad3b66802541c98e89b1d571f9eedb70d4d736ec3f4224515c239c3b",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/map_example.json",
+      "action": "archive",
+      "baseline_sha256": "fc18dcd0623600b001b62eba2ab3323a1f75b7b937ceb5ed5cdaf6f800621853",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/metrics.csv",
+      "action": "archive",
+      "baseline_sha256": "89ac0a7548df5f15a3cac80246aee10f4a6bd551ed0354f9681f61075ae1058d",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/model_selection.json",
+      "action": "archive",
+      "baseline_sha256": "fd11c0b6a20d1bdcf55d55f802694fa2057461d177aac6c503aab168fd79bbd1",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/predictions.csv",
+      "action": "archive",
+      "baseline_sha256": "d124290a08f7ba4b82d84387a71458df7af70b0c18457468120c6331172e389e",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/report_content.json",
+      "action": "archive",
+      "baseline_sha256": "75f7dddea8823dc82b4f332155e92feb9f49f304fb8cf19ecb662623cdbc122c",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/run_manifest.json",
+      "action": "archive",
+      "baseline_sha256": "d8ffe8210966ad3518802bba689c8a892eee2cb446d41e7ba35178fea75f724a",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/shap_chronological_conditions.csv",
+      "action": "archive",
+      "baseline_sha256": "916f69c328d7c46e82ec22e93f47cfe7a0ba71e63f33889062bfc1bf63b486da",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/shap_chronological_full.csv",
+      "action": "archive",
+      "baseline_sha256": "b07a90b114f90d64f802478f541a82464a898b0fddddfbbf1e811e1afe311ac9",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/shap_inputs_chronological_conditions.csv",
+      "action": "archive",
+      "baseline_sha256": "20c202c1365fbecb7be673d7e45b5a22b807003c76b55deca568d45ee0bfbe0d",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/shap_inputs_chronological_full.csv",
+      "action": "archive",
+      "baseline_sha256": "6f3421789343fd772a9a3efc8845244e404165d4a543ef5280fe30515b7f525c",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/shap_inputs_weekly_holdout_conditions.csv",
+      "action": "archive",
+      "baseline_sha256": "39c64659351048efc0434ab1eba8a566e91fa1edfa3b15f1247c41bef2ca0c6f",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/shap_inputs_weekly_holdout_full.csv",
+      "action": "archive",
+      "baseline_sha256": "ac7b34dd4c242897be9928d1a83d199733686afd7352457795785f04b0c1ec17",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/shap_summary.csv",
+      "action": "archive",
+      "baseline_sha256": "3faddb23556dbdf197c4cbf85fbf95beb8917fda23efc0eca2efabebafc643c0",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/shap_weekly_holdout_conditions.csv",
+      "action": "archive",
+      "baseline_sha256": "c3332e5f2ffae3125123c462cbe71a1466109470bf039bc43a0ee644a60fb685",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/shap_weekly_holdout_full.csv",
+      "action": "archive",
+      "baseline_sha256": "7a33f2df6fc3591dd4837a70798d6042bd9aa5e24949c470641b2b5ef89d10c2",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/source_provenance_verification.json",
+      "action": "archive",
+      "baseline_sha256": "b102ab9944de9e3d8ea5dfa8c5d130958c407c8c905da948393de0380b94a7fd",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/split_counts.csv",
+      "action": "archive",
+      "baseline_sha256": "b64f4d8f777d7430cfaf614b74bc318d8702c44a5096c9ce299bfa4cd7bcf650",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/uncertainty.json",
+      "action": "archive",
+      "baseline_sha256": "489747ce02ae8c198fad9083f8f1a8917be0f9b0039826fb07e1a7ab9a35dba8",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "output/results/verification.json",
+      "action": "archive",
+      "baseline_sha256": "e0b96d2c3a6a9e2ef5753b2cdbabe1467d57082ff5bff0962773da97fc1a59db",
+      "reason": "Retain the old experiment at the preserved tag; do not mix its artifacts with revised results.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "requirements.txt",
+      "action": "adapt",
+      "baseline_sha256": "6eea272dc7600cbabb399eb7867f4bb7775ef0664988fff44ed42cf24c7348d2",
+      "reason": "Align the current entry points, dependencies, CI or shared documentation with the revised study.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/audit_data.py",
+      "action": "replace",
+      "baseline_sha256": "c0c4d779578e2367bbfea6f8470d48541c7125d64d1e2ab1bc3138b118435f7d",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/build_notebook.py",
+      "action": "replace",
+      "baseline_sha256": "8b85f5d8dab58c282cb87a0205c3220123ad1f38a92de2c191e719ff4aee2e00",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/build_report.py",
+      "action": "replace",
+      "baseline_sha256": "34b45b3796fe2dd97d62cdf861b07c67e3befdac402027239c6ec271d0360d80",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/check_english.py",
+      "action": "replace",
+      "baseline_sha256": "f87c0e8d25b3836fba75cc7a566214119f741452ceecb7af77f6a2404a3191f8",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/make_figures.py",
+      "action": "replace",
+      "baseline_sha256": "4fce4f05b9918f52be229c783ae65f20854d31bf02c76dbd67c3ca46e958ed9f",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/package_delivery.py",
+      "action": "replace",
+      "baseline_sha256": "7465f59192b543c87cc27de689bd35e2d485fa9d8fa407773d7eef15d4d733c5",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/predict.py",
+      "action": "replace",
+      "baseline_sha256": "53427c751dba2876126f2a8fd341e4e6a67bdc3cb4d4c41ea58948487453a5c7",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/rebuild_extended.py",
+      "action": "replace",
+      "baseline_sha256": "b21d7de04afc80f20c634d8dc5692f1874e674374d70239831b5b06ad23cd688",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/score_display.py",
+      "action": "replace",
+      "baseline_sha256": "8e5d09e24e60bc99b5beddb2a233f740819a3cfb053bd39fb2759376373b684a",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/train_evaluate.py",
+      "action": "replace",
+      "baseline_sha256": "dfef8e754f5477b24e6a0bb11b39b6993ccd408a0166492ec21805d9388b3656",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/update_data_records.py",
+      "action": "replace",
+      "baseline_sha256": "727420ebf61329a20d906cf83349016887ba842f9a74965b65111d5e660f961e",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/update_score_display.py",
+      "action": "replace",
+      "baseline_sha256": "fe7d92cae8772ef2fc726b6f6d7d5266926daa741387a66fc85197873ecafad7",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "src/verify_results.py",
+      "action": "replace",
+      "baseline_sha256": "a65b8a7c38d790a5c4a91d3fb8091881807d995f07bb5cc7e179a705b5ee2f5d",
+      "reason": "Replace active legacy runners with revised research or narrowly scoped review/application commands.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/CONTRIBUTIONS.md",
+      "action": "adapt",
+      "baseline_sha256": "9245f90348b5573bdafad65148804bab6e6a8818ae92b20a8113ad335b101e55",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/DECISIONS.md",
+      "action": "adapt",
+      "baseline_sha256": "abfc6f1c4be526190b770a5c6fc85fc2280e67501dde066126d152cb31b83047",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/MEETING_2026-10-22.md",
+      "action": "adapt",
+      "baseline_sha256": "aeebe954476633d1630cdb9c6f741f22063085827809c5f51d00d47d12d8fad9",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/README.md",
+      "action": "adapt",
+      "baseline_sha256": "29b47f5872333480b2c5d95d904788420b3e15a5247037ce1ea9735273776b3c",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/TASK_BOARD.md",
+      "action": "adapt",
+      "baseline_sha256": "41e1b7f9f5e5d3e894260565d706ce26a88219b9e342983f921cd40bb785f076",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/chris_project_and_report/README.md",
+      "action": "adapt",
+      "baseline_sha256": "2cfb416c9be9bfc81eaab6e7745e5a81ec6517e7de2c17a81e64c2b1504fbd67",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/chris_project_and_report/REPORT_PLAN.md",
+      "action": "adapt",
+      "baseline_sha256": "88d2d1e6517ed7012b7efd65fe600068c14c829338ecf9c583e2d86eeb63076d",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/chris_project_and_report/REPORT_SECTIONS.md",
+      "action": "adapt",
+      "baseline_sha256": "c851e93e772f94979020a3ccdf2851cf18e1d8f053b94aed76da3a9019d4eaf9",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/jin_data_engineering/DATA_HANDOFF.md",
+      "action": "adapt",
+      "baseline_sha256": "390c32d741e0a658e6d175fb2050c2396c899036af58828cc79bfe110f937981",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/jin_data_engineering/README.md",
+      "action": "adapt",
+      "baseline_sha256": "787e4f7c3d0c058276f1561c428fc6958b5008c38b244cc5898d7d3d91088e6f",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/jin_data_engineering/REPORT_SECTION.md",
+      "action": "adapt",
+      "baseline_sha256": "cf23d8f04374cc9e4387830a454a2cd762c89044e6fc6a13066cba17f80c5ab6",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/kian_ml_and_coordination/ERROR_ANALYSIS.md",
+      "action": "adapt",
+      "baseline_sha256": "af0d6546e6b2238e739ac8f95eb5b3ec300f8dd2c91d0cce7f85a49089ba5a41",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/kian_ml_and_coordination/ML_HANDOFF.md",
+      "action": "adapt",
+      "baseline_sha256": "979d789af9e4bcb0b384c9bd90fd9d9d16498f22f88f8659ce5472b8a86f2f6c",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/kian_ml_and_coordination/README.md",
+      "action": "adapt",
+      "baseline_sha256": "dfa69e4071078594f43494b12a1c1eb74390894d2f974482bc3a79d6e0463858",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/kian_ml_and_coordination/REPORT_SECTION.md",
+      "action": "adapt",
+      "baseline_sha256": "057f92197c1dbfb857f61c016a6b73f89ccd15cb1deb5e6dc0f562406c19351a",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/seb_domain_research/README.md",
+      "action": "adapt",
+      "baseline_sha256": "dcdc375de748a3b08e39becbe75bf25d699840bc6b44376514adf96c3ad3ced8",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/seb_domain_research/RELATED_WORK.md",
+      "action": "adapt",
+      "baseline_sha256": "7f886c1d803633160dbe6f6eb75a2b0d84e32372128a834523b5cd77de7b9a4c",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    },
+    {
+      "path": "team/seb_domain_research/STAKEHOLDERS_ETHICS.md",
+      "action": "adapt",
+      "baseline_sha256": "e422182b0cc34a8911ad7f322f6a62901e3e0dc4d06caa7f4321b636f9b70a74",
+      "reason": "Preserve actual contribution attribution and historical meeting context; update current technical claims.",
+      "historical_ref": "legacy-ml-2026-10-25"
+    }
+  ]
+}
