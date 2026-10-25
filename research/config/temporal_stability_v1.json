@@ -1,0 +1,23 @@
+{
+  "experiment": "lesson_06_temporal_stability_v1",
+  "warmup_end_inclusive": "2019-07-02",
+  "gap_days": 7,
+  "stopping_days": 7,
+  "diagnostic_threshold": 0.5,
+  "validation_blocks": [
+    {"name": "validation_early", "start": "2019-12-16", "end": "2019-12-18"},
+    {"name": "validation_middle", "start": "2019-12-19", "end": "2019-12-21"},
+    {"name": "validation_late", "start": "2019-12-22", "end": "2019-12-24"}
+  ],
+  "forward_windows": [
+    {"name": "november_18_24", "start": "2019-11-18", "end": "2019-11-24"},
+    {"name": "november_25_december_01", "start": "2019-11-25", "end": "2019-12-01"},
+    {"name": "december_02_08", "start": "2019-12-02", "end": "2019-12-08"},
+    {"name": "december_16_24", "start": "2019-12-16", "end": "2019-12-24"}
+  ],
+  "selection_policy": "Calendar windows fixed before new fitting, after inspecting development label availability and existing validation block results. Retrospective development diagnostics, not untouched evaluations or a hyperparameter search.",
+  "fitting_policy": "Select XGBoost tree count on a past seven-day inner stopping window with a preceding seven-day feature-date gap. Refit that fixed count on all available past development rows up to the outer seven-day gap. Logistic uses these same refitting rows. Never pass outer outcomes to fitting or early stopping.",
+  "missing_class_policy": "If inner fitting or stopping lacks either class, mark XGBoost unavailable for that window; do not borrow future labels or choose a fallback based on outer scores. Keep the window and other models.",
+  "comparison_policy": "Both reviewed feature sets, persistence and past training prevalence; all rows and the no-current-detection subset. Report daily and fixed three-day validation slices without claiming they are independent of original early stopping.",
+  "final_test_policy": "No final-test parsing, prediction, calibration or scores"
+}

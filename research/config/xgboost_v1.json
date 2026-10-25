@@ -1,0 +1,34 @@
+{
+  "experiment": "lesson_05_xgboost_v1",
+  "feature_sets": ["conditions_core", "core_plus_fire_today"],
+  "training_warmup_end_inclusive": "2019-07-02",
+  "diagnostic_threshold": 0.5,
+  "calibration_bins": 5,
+  "xgboost": {
+    "objective": "binary:logistic",
+    "tree_method": "hist",
+    "device": "cpu",
+    "n_estimators": 400,
+    "max_depth": 3,
+    "learning_rate": 0.05,
+    "min_child_weight": 5,
+    "subsample": 0.8,
+    "colsample_bytree": 0.9,
+    "reg_lambda": 5.0,
+    "reg_alpha": 0.0,
+    "random_state": 42,
+    "n_jobs": 2,
+    "disable_default_eval_metric": true
+  },
+  "scale_pos_weight_policy": "Number of negative training rows divided by positive training rows. Match the positive-to-negative emphasis ratio of balanced logistic loss; absolute loss scale and regularisation differ between algorithms.",
+  "early_stopping": {
+    "rounds": 25,
+    "metric": "average_precision_score",
+    "maximize": true,
+    "save_best": true
+  },
+  "selection_policy": "One prespecified parameter configuration, fitted once per reviewed feature set. Validation selects boosting length through early stopping; it is development evidence, not an independent final evaluation.",
+  "input_policy": "Same fitting rows and reviewed inputs as logistic references. No standardisation is applied to trees. Do not use target-day detection counts.",
+  "data_quality_policy": "Retain original labels and every validation date, including the 22 December observation-quality concern.",
+  "final_test_policy": "No final-test parsing, predictions, calibration or scores"
+}

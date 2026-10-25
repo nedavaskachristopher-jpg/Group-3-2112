@@ -1,25 +1,20 @@
-# Forward test error analysis
+# Frozen-result error analysis
 
-Owner: Kian. Review partners: Seb and Jin. This is an analysis workspace; the example rows have not yet been selected or interpreted by members.
+Use the [final aggregate](../../research/reports/final_holdout.json) and
+[final report](../../research/reports/final_holdout.md). No new metrics are
+computed from final labels during integration.
 
-Use the `chronological` / `xgb_full` records from [predictions.csv](../../output/results/predictions.csv). Retain the evaluated threshold. Inspect representative true positives, false positives and false negatives, including no-fire-today cases. Link each observation to the corresponding input row and explain the selection rule so examples are not presented as representative performance by themselves.
+| Existing observation | Implication | Limit |
+| --- | --- | --- |
+| Higher cutoff: 16 TP, 39 FP, 33 FN | Fewer alerts, substantial missed detections | These are cell-days, not independent incidents |
+| Lower cutoff: 34 TP, 2,434 FP, 15 FN | More detections at a much larger review burden | Staffing/cost acceptability has not been established |
+| Without current detections: higher cutoff misses all 33 positives | Current-fire information does not establish new-ignition warning ability | The subset is a detection transition, not confirmed ignition |
+| Lower cutoff in that subset: 18 TP, 2,395 FP | Limited recall gain comes with many false alerts | Satellite non-detection is an imperfect negative label |
+| Logistic 17 AP 0.2113 exceeds XGBoost 17 AP 0.1062 | Nonlinear complexity did not establish better final ranking | Do not replace the frozen primary model after seeing results |
+| Zero-positive later months remain reported | Accuracy can look high without useful detection | Observation coverage requires data-owner review |
+| Raw-score frequencies are overstated | Percentages cannot be trusted as event probabilities | No correction is fitted on final outcomes |
 
-| Grid and feature/target dates | Outcome and score/threshold | Fire today/neighbour/history | Relevant weather/rainfall | Observation | Possible explanation and evidence | Reviewer |
-| --- | --- | --- | --- | --- | --- | --- |
-| To be selected | To be completed | To be completed | To be completed | To be completed | To be completed | To be completed |
-
-Questions to investigate:
-
-1. Which errors involve cells with no detected fire on the feature day?
-2. Do false alerts often follow a detection today, and can next-day satellite non-detection be checked independently?
-3. Does the conditions-only model behave differently on the same rows?
-4. Are mistakes concentrated in a small number of dates or connected cells?
-5. Which interpretations are supported by the records, and which need independent event/observation evidence?
-
-Separate observations from hypotheses. Do not infer causality from one example or assume a negative satellite label proves extinction. Keep the original test results frozen. A new feature or threshold motivated by these errors is a subsequent exploratory method and needs a suitable new evaluation design.
-
-## Handoff to the report
-
-Write a short explanation of observed patterns, limits of the interpretation and the next evidence needed. Seb connects errors to stakeholder consequences; Jin checks label/observation limitations. Record completed reviews and source rows.
-
-Checked findings: To be completed.
+The cached first-date map is illustrative, not a representative-case performance
+claim. No event causes or individual fire histories are invented. Further
+case-level interpretation would require independent event/coverage evidence;
+any outcome-motivated modelling belongs to a new development cycle.

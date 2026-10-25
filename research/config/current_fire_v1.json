@@ -1,0 +1,21 @@
+{
+  "experiment": "lesson_04_current_fire_v1",
+  "feature_set": "core_plus_fire_today",
+  "added_predictors": ["fire_today"],
+  "reference_baseline_config_sha256": "5bc63ea4a2e5daaa2f010b976349decfde4c41ac6496d199a5288e5a070dc8f3",
+  "training_warmup_end_inclusive": "2019-07-02",
+  "logistic_regression": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "class_weight": "balanced",
+    "max_iter": 2000,
+    "tol": 0.0001
+  },
+  "diagnostic_threshold": 0.5,
+  "calibration_bins": 5,
+  "design": "Change only input availability: add the audited same-day binary detection flag. Refit on the identical training rows, with identical scaling policy and classifier settings. Preserve the original baseline.",
+  "availability": "The flag describes feature_date, not target_date. Assume prediction after the full UTC feature day, with the archival data latency limitation unchanged.",
+  "selection_policy": "Single candidate motivated by development error analysis, with no parameter search or threshold optimisation. Validation has already informed development and is not an independent final evaluation.",
+  "data_quality_policy": "Keep all original rows and labels, including target day 2019-12-22. No label repair or difficult-date removal.",
+  "final_test_policy": "No final-test parsing, predictions, scores or calibration"
+}

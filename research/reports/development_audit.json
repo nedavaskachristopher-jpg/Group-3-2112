@@ -1,0 +1,107 @@
+{
+  "scope": "Development data only; final-test outcomes were not profiled or scored",
+  "source_files_hashed": 65,
+  "supplier_provenance_files_verified": 16,
+  "checks": {
+    "unique_grid_date_keys": true,
+    "no_missing_development_values": true,
+    "binary_development_target": true,
+    "next_day_target": true,
+    "label_matches_eligible_target_count": true,
+    "target_count_accounting": true,
+    "fire_today_matches_same_day_label": true,
+    "humidity_in_range": true,
+    "temperature_order": true,
+    "nonnegative_weather": true,
+    "terrain_static_per_grid": true,
+    "base_extended_shared_fields_agree": true,
+    "daily_weather_recomputed_from_raw": true,
+    "precipitation_3d_causal_window": true,
+    "precipitation_7d_causal_window": true,
+    "precipitation_30d_causal_window": true,
+    "precipitation_90d_causal_window": true,
+    "fire_last7_includes_today_only_and_past": true,
+    "rain_history_length": true,
+    "dry_spell_initialisation_reproduced": true,
+    "fire_neighbour_is_current_day_8_neighbour_flag": true
+  },
+  "raw_weather_checks": {
+    "temperature_mean_c": {
+      "mismatches": 0,
+      "max_absolute_error": 9.825032527999156e-06,
+      "tolerance": 0.0005
+    },
+    "temperature_max_c": {
+      "mismatches": 0,
+      "max_absolute_error": 7.968749976328127e-06,
+      "tolerance": 0.0005
+    },
+    "temperature_min_c": {
+      "mismatches": 0,
+      "max_absolute_error": 7.050781228201686e-06,
+      "tolerance": 0.0005
+    },
+    "dewpoint_mean_c": {
+      "mismatches": 0,
+      "max_absolute_error": 7.1915689900947655e-06,
+      "tolerance": 0.0005
+    },
+    "relative_humidity_mean_pct": {
+      "mismatches": 0,
+      "max_absolute_error": 2.344392729014544e-05,
+      "tolerance": 0.0005
+    },
+    "relative_humidity_min_pct": {
+      "mismatches": 0,
+      "max_absolute_error": 1.656462993793184e-05,
+      "tolerance": 0.0005
+    },
+    "wind_speed_mean_ms": {
+      "mismatches": 0,
+      "max_absolute_error": 1.5131281276836717e-06,
+      "tolerance": 0.0005
+    },
+    "wind_speed_max_ms": {
+      "mismatches": 0,
+      "max_absolute_error": 7.524199450159585e-07,
+      "tolerance": 0.0005
+    },
+    "precipitation_sum_mm": {
+      "mismatches": 0,
+      "max_absolute_error": 1.5431880946437104e-06,
+      "tolerance": 0.0001
+    },
+    "precipitation_source_rows_checked": 9516,
+    "precipitation_last_day_not_checked": "2019-12-31: next-month midnight was intentionally not opened"
+  },
+  "development_partitions": {
+    "train": {
+      "rows": 6923,
+      "positive_cell_days": 143,
+      "positive_rate": 0.02065578506427849,
+      "all_negative_accuracy": 0.9793442149357215,
+      "missing_primary_predictor_values": 0
+    },
+    "validation": {
+      "rows": 387,
+      "positive_cell_days": 160,
+      "positive_rate": 0.4134366925064599,
+      "all_negative_accuracy": 0.5865633074935401,
+      "missing_primary_predictor_values": 0
+    }
+  },
+  "dry_history_unknown_rows_before_first_observed_wet_day_all_development_cells": 639,
+  "limitations": [
+    "The 39-column extended table has no supplied generation script or complete data dictionary; its shared fields and eight additions were independently checked on development data.",
+    "The 7/30/90-day rainfall sums include a 30 June 2019 accumulation from the 1 July 00 UTC weather record. Early windows are partial, not full-duration histories.",
+    "The dry-spell counter starts at 120 without 120 days of preceding observations. Treat these initial values as unknown; exclude or repair before using extended features.",
+    "The first two development feature days have incomplete three-day rainfall history. Drop these warm-up rows before the first core-feature fit.",
+    "Validation is a short high-fire interval with a much larger positive rate than training. Probability calibration and threshold stability need development-only checks.",
+    "Seven-day gaps reduce adjacency but do not guarantee that long-lived fire events are independent across partitions.",
+    "No independent-season or independent-location generalisation is demonstrated.",
+    "Terrain extraction and raw point-to-polygon fire labelling were reviewed in the supplied scripts, not independently rerun with GIS software.",
+    "Known prescribed burns are partially excluded using retrospective fire-history polygons. Satellite non-detection is not confirmed absence of fire.",
+    "ERA5-Land reanalysis and full-day satellite archives do not reproduce real-time data publication latency."
+  ],
+  "holdout_evaluated": false
+}

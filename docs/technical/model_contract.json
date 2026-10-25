@@ -1,0 +1,59 @@
+{
+  "purpose": "Research interface only; not an operational warning API",
+  "target": "At least one eligible VIIRS detection on the next UTC day",
+  "ordered_inputs": [
+    "temperature_mean_c",
+    "temperature_max_c",
+    "temperature_min_c",
+    "dewpoint_mean_c",
+    "relative_humidity_mean_pct",
+    "relative_humidity_min_pct",
+    "precipitation_sum_mm",
+    "precipitation_3d_mm",
+    "wind_speed_mean_ms",
+    "wind_speed_max_ms",
+    "elevation_mean_m",
+    "elevation_min_m",
+    "elevation_max_m",
+    "slope_mean_deg",
+    "aspect_sin",
+    "aspect_cos",
+    "fire_today"
+  ],
+  "metadata_not_predictors": [
+    "grid_id",
+    "feature_date",
+    "target_date"
+  ],
+  "output_score": {
+    "range": [
+      0,
+      1
+    ],
+    "label": "Experimental raw model score",
+    "validated_probability": false
+  },
+  "research_flags": [
+    {
+      "name": "recall_80_policy",
+      "recall_target": 0.8,
+      "threshold": 0.6658568382263184,
+      "comparison": ">=",
+      "selection_recall": 0.8,
+      "selection_rows": 43,
+      "selection_scope": "calibration rows only"
+    },
+    {
+      "name": "recall_90_policy",
+      "recall_target": 0.9,
+      "threshold": 0.4193871319293976,
+      "comparison": ">=",
+      "selection_recall": 1.0,
+      "selection_rows": 43,
+      "selection_scope": "calibration rows only"
+    }
+  ],
+  "calibration": null,
+  "model_artifact_sha256": "b63065a61efcf4b0e94db0fa80d5623ae90d5d61422f6092a9ac6fa7a528d9ce",
+  "availability_assumption": "Predict after the full UTC feature day has ended. ERA5-Land and the satellite archive support retrospective analysis; their real-world publication latency is not reproduced."
+}

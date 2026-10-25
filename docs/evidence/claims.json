@@ -1,0 +1,3358 @@
+{
+  "scope": "Aggregate claims only; values are not rounded",
+  "claims": [
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "population",
+        "rows"
+      ],
+      "transform": null,
+      "value": 7783
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "population",
+        "days"
+      ],
+      "transform": null,
+      "value": 181
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "population",
+        "grid_cells"
+      ],
+      "transform": null,
+      "value": 43
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "population",
+        "first_feature_date"
+      ],
+      "transform": null,
+      "value": "2020-01-01"
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "population",
+        "last_feature_date"
+      ],
+      "transform": null,
+      "value": "2020-06-29"
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "population",
+        "first_target_date"
+      ],
+      "transform": null,
+      "value": "2020-01-02"
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "population",
+        "last_target_date"
+      ],
+      "transform": null,
+      "value": "2020-06-30"
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "population",
+        "positives"
+      ],
+      "transform": null,
+      "value": 49
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "population",
+        "positive_rate"
+      ],
+      "transform": null,
+      "value": 0.0062957728382371835
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "training_prevalence",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.0062957728382371835
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "training_prevalence",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "training_prevalence",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "training_prevalence",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9937042271617628
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "training_prevalence",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.006469875611888218
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "training_prevalence",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.04535174814612696
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "training_prevalence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "training_prevalence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "training_prevalence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 49
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "training_prevalence",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "persistence",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.09923073384096491
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "persistence",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.2909090909090909
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "persistence",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.32653061224489793
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "persistence",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9907490684825903
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "persistence",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.009250931517409739
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "persistence",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "persistence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 16
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "persistence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 39
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "persistence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "persistence",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 0.30386740331491713
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_16",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.04611054663312981
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_16",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.02717391304347826
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_16",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.8163265306122449
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_16",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.8148528844918412
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_16",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.13193623820939845
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_16",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.48571901310491444
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_16",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 40
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_16",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 1432
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_16",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 9
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_16",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 8.132596685082873
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_17",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.2113369774080788
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_17",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.08683473389355742
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_17",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.6326530612244898
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_17",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9558011049723757
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_17",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.03914162596900707
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_17",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.17180589339556657
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_17",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 31
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_17",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 326
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_17",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 18
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "logistic_17",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 1.9723756906077348
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_16",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.021911900225284997
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_16",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.0180064308681672
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_16",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.5714285714285714
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_16",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.8011049723756906
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_16",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.19117803459582086
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_16",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.5732199067569435
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_16",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 28
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_16",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 1527
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_16",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 21
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_16",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 8.591160220994475
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.10615208854830291
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.1111111111111111
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.32653061224489793
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9793138892457921
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.1510628704379381
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.49039031221229545
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 16
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 128
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 0.7955801104972375
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.10615208854830291
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.2909090909090909
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.32653061224489793
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9907490684825903
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.1510628704379381
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.49039031221229545
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 16
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 39
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 0.30386740331491713
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.10615208854830291
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.013776337115072933
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.6938775510204082
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.6853398432481048
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.1510628704379381
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.49039031221229545
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 34
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 2434
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 15
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 13.6353591160221
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "persistence",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.09923073384096491
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "persistence",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.2909090909090909
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "persistence",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.32653061224489793
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "persistence",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9907490684825903
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "persistence",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.009250931517409739
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "persistence",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "persistence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 16
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 39
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "policies",
+        "persistence",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 0.30386740331491713
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "training_prevalence",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.004270186335403727
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "training_prevalence",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "training_prevalence",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "training_prevalence",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9957298136645962
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "training_prevalence",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.004529021848532655
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "training_prevalence",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.03756109482521811
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "training_prevalence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "training_prevalence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "training_prevalence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "training_prevalence",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "persistence",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.004270186335403727
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "persistence",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "persistence",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "persistence",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9957298136645962
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "persistence",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.004270186335403727
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "persistence",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "persistence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "persistence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "persistence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "persistence",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_16",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.030907885816229736
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_16",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.0196078431372549
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_16",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.8484848484848485
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_16",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.8181935817805382
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_16",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.12974434155354492
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_16",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.4790707186190425
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_16",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 28
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_16",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 1400
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_16",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 5
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_16",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 7.889502762430939
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_17",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.03686980438881099
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_17",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.04966887417218543
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_17",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.45454545454545453
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_17",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9605331262939959
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_17",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.03438523203443273
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_17",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.13710793413953803
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_17",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 15
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_17",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 287
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_17",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 18
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "logistic_17",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 1.6685082872928176
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_16",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.014596105367347643
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_16",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.011834319526627219
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_16",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.5454545454545454
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_16",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.8035714285714286
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_16",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.19069539597324708
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_16",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.5722376772805139
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_16",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 18
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_16",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 1503
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_16",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 15
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_16",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 8.403314917127071
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_17",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.008102072164972579
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_17",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_17",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_17",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9842132505175983
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_17",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.14966933829529158
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_17",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.4875064267961172
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_17",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_17",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 89
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_17",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "models",
+        "xgboost_17",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 0.49171270718232046
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_80_policy",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.008102072164972579
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_80_policy",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_80_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_80_policy",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9957298136645962
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_80_policy",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.14966933829529158
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_80_policy",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.4875064267961172
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_80_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_80_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_80_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_80_policy",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_90_policy",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.008102072164972579
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_90_policy",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.0074595938665561546
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_90_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.5454545454545454
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_90_policy",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.6881469979296067
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_90_policy",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.14966933829529158
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_90_policy",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": 0.4875064267961172
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_90_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 18
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_90_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 2395
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_90_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 15
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "recall_90_policy",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 13.331491712707182
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "persistence",
+        "average_precision"
+      ],
+      "transform": null,
+      "value": 0.004270186335403727
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "persistence",
+        "precision"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "persistence",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "persistence",
+        "accuracy"
+      ],
+      "transform": null,
+      "value": 0.9957298136645962
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "persistence",
+        "brier_score"
+      ],
+      "transform": null,
+      "value": 0.004270186335403727
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "persistence",
+        "log_loss"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "persistence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "persistence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "persistence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "no_current_detection",
+        "policies",
+        "persistence",
+        "alerts_per_day"
+      ],
+      "transform": null,
+      "value": 0.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "population",
+        "positives"
+      ],
+      "transform": null,
+      "value": 44
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.29545454545454547
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 13
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 31
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.6590909090909091
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 29
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 1034
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 15
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "persistence",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.29545454545454547
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "persistence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 13
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 33
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        0,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 31
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "population",
+        "positives"
+      ],
+      "transform": null,
+      "value": 5
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.6
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 3
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 6
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 2
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": 1.0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 5
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 735
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "persistence",
+        "recall"
+      ],
+      "transform": null,
+      "value": 0.6
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "persistence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 3
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 6
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        1,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 2
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "population",
+        "positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 457
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "persistence",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "persistence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        2,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "population",
+        "positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 148
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "persistence",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "persistence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        3,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "population",
+        "positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 31
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "persistence",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "persistence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        4,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "population",
+        "positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "recall_80_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 29
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "recall_90_policy",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "persistence",
+        "recall"
+      ],
+      "transform": null,
+      "value": null
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "persistence",
+        "true_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_positives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "monthly",
+        5,
+        "all_rows",
+        "policies",
+        "persistence",
+        "false_negatives"
+      ],
+      "transform": null,
+      "value": 0
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        0,
+        "lower"
+      ],
+      "transform": null,
+      "value": 0.2
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        0,
+        "upper"
+      ],
+      "transform": null,
+      "value": 0.4
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        0,
+        "rows"
+      ],
+      "transform": null,
+      "value": 4831
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        0,
+        "mean_probability"
+      ],
+      "transform": null,
+      "value": 0.349233330585428
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        0,
+        "observed_rate"
+      ],
+      "transform": null,
+      "value": 0.0010349824052991099
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        1,
+        "lower"
+      ],
+      "transform": null,
+      "value": 0.4
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        1,
+        "upper"
+      ],
+      "transform": null,
+      "value": 0.6
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        1,
+        "rows"
+      ],
+      "transform": null,
+      "value": 2897
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        1,
+        "mean_probability"
+      ],
+      "transform": null,
+      "value": 0.4396582668634954
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        1,
+        "observed_rate"
+      ],
+      "transform": null,
+      "value": 0.009665170866413532
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        2,
+        "lower"
+      ],
+      "transform": null,
+      "value": 0.6
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        2,
+        "upper"
+      ],
+      "transform": null,
+      "value": 0.8
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        2,
+        "rows"
+      ],
+      "transform": null,
+      "value": 55
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        2,
+        "mean_probability"
+      ],
+      "transform": null,
+      "value": 0.6658568382263184
+    },
+    {
+      "source": "research/reports/final_holdout.json",
+      "path": [
+        "all_rows",
+        "models",
+        "xgboost_17",
+        "reliability_bins",
+        2,
+        "observed_rate"
+      ],
+      "transform": null,
+      "value": 0.2909090909090909
+    },
+    {
+      "source": "research/reports/final_freeze.json",
+      "path": [
+        "models",
+        "logistic_16",
+        "columns"
+      ],
+      "transform": "length",
+      "value": 16
+    },
+    {
+      "source": "research/reports/final_freeze.json",
+      "path": [
+        "models",
+        "logistic_17",
+        "columns"
+      ],
+      "transform": "length",
+      "value": 17
+    },
+    {
+      "source": "research/reports/final_freeze.json",
+      "path": [
+        "models",
+        "xgboost_16",
+        "columns"
+      ],
+      "transform": "length",
+      "value": 16
+    },
+    {
+      "source": "research/reports/final_freeze.json",
+      "path": [
+        "models",
+        "xgboost_16",
+        "trees"
+      ],
+      "transform": null,
+      "value": 6
+    },
+    {
+      "source": "research/reports/final_freeze.json",
+      "path": [
+        "models",
+        "xgboost_17",
+        "columns"
+      ],
+      "transform": "length",
+      "value": 17
+    },
+    {
+      "source": "research/reports/final_freeze.json",
+      "path": [
+        "models",
+        "xgboost_17",
+        "trees"
+      ],
+      "transform": null,
+      "value": 8
+    },
+    {
+      "source": "research/reports/final_freeze.json",
+      "path": [
+        "policies",
+        0,
+        "threshold"
+      ],
+      "transform": null,
+      "value": 0.6658568382263184
+    },
+    {
+      "source": "research/reports/final_freeze.json",
+      "path": [
+        "policies",
+        1,
+        "threshold"
+      ],
+      "transform": null,
+      "value": 0.4193871319293976
+    }
+  ]
+}

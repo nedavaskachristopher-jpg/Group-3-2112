@@ -1,18 +1,17 @@
-# Team workspace
+# Current team workspaces
 
-Start with the [group workflow](../WORKFLOW.md) and [task board](TASK_BOARD.md). Kian coordinates group progress and ML engineering. Each member's folder contains ownership instructions and working documents for that contribution.
-
-| Member | Folder | Start here |
+| Contact | Workspace | Required review |
 | --- | --- | --- |
-| Kian | [ML and coordination](kian_ml_and_coordination/README.md) | Review the task board, ML handoff and error-analysis work |
-| Chris | [Project and report](chris_project_and_report/README.md) | Confirm course requirements and prepare report integration |
-| Jin | [Data engineering](jin_data_engineering/README.md) | Review the populated data handoff and data section |
-| Seb | [Domain research](seb_domain_research/README.md) | Complete literature, stakeholders and ethics work |
+| Kian | [ML and integration](kian_ml_and_coordination/README.md) | Explain the evaluated version, adverse findings and integrity checks |
+| Chris | [Project and report](chris_project_and_report/README.md) | Assemble and review the integrated draft against course requirements |
+| Penelope | [Data handoff](penelope_data_engineering/README.md) | Confirm source/geometry/labels/rights and data limitations |
+| Seb | [Domain research](seb_domain_research/README.md) | Review primary literature, stakeholder reasoning and recommendations |
 
-Shared records: [contributions](CONTRIBUTIONS.md), [decisions](DECISIONS.md), and [tasks](TASK_BOARD.md).
+Current roles follow the user's clarification and later specification. Jin's
+earlier data PR and historical documents retain their attribution under
+[history](history/README.md); no identity mapping or reassigned authorship is
+invented. See the [workflow](../WORKFLOW.md), [task board](TASK_BOARD.md),
+[contributions](CONTRIBUTIONS.md) and [decisions](DECISIONS.md).
 
-For the planned 22 October discussion, use the [meeting script and next-step guide](MEETING_2026-10-22.md). Confirm its proposed assignments and dates together.
-
-The starting text is organisational scaffolding or a draft based on existing artifacts. It is not evidence that a member authored or approved it. Members review, complete and record their actual work. Repository content, comments and file names use English.
-
-Code, data and generated results retain their current authoritative locations: `src/`, `inputs/`, `output/` and `docs/`. Links from member folders make ownership visible while preserving a reproducible shared project.
+The files provide review-ready material and assignments. They do not establish
+completed personal work, peer review or consent to submit on anyone's behalf.

@@ -1,8 +1,0 @@
-{
-  "passed": true,
-  "rows": 18980,
-  "columns": 39,
-  "numeric_atol": 0.0001,
-  "numeric_rtol": 1e-05,
-  "input_note": "Base model table and current labels are Data Engineer outputs. This reconstructs the extension, not all raw GIS processing."
-}

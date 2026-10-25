@@ -1,4 +1,4 @@
-name: Verify saved experiment artifacts
+name: Verify frozen research and group integration
 
 on:
   push:
@@ -16,9 +16,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.12.14'
           cache: pip
-      - run: python -m pip install -r requirements.txt
-      - run: python src/check_english.py
-      - run: python src/verify_results.py
-      - run: python src/rebuild_extended.py
+      - run: python -m pip install -r requirements.txt -r tools/requirements-report.txt
+      - run: python -m tools.acceptance --pdf
+      - name: Confirm checks did not rewrite tracked artifacts
+        run: git diff --exit-code

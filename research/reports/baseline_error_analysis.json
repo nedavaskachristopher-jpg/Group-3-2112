@@ -1,0 +1,241 @@
+{
+  "scope": "Existing validation predictions only; no model refit or test-label analysis",
+  "prediction_file_sha256": "b7f494ac0ceb61aab5bc27346011a2923df1a8de5bcb2ac4b38a1edb1bfd66b7",
+  "training_positive_rate": 0.02091560626005558,
+  "validation_positive_rate": 0.4134366925064599,
+  "current_fire_groups": [
+    {
+      "fire_today": 0,
+      "rows": 232,
+      "positives": 37,
+      "TP": 7,
+      "FP": 114,
+      "FN": 30,
+      "TN": 81
+    },
+    {
+      "fire_today": 1,
+      "rows": 155,
+      "positives": 123,
+      "TP": 85,
+      "FP": 26,
+      "FN": 38,
+      "TN": 6
+    }
+  ],
+  "daily_errors_and_source_trace": [
+    {
+      "feature_date": "2019-12-16",
+      "target_date": "2019-12-17",
+      "rows": 43,
+      "positives": 20,
+      "TP": 14,
+      "FP": 12,
+      "FN": 6,
+      "TN": 11,
+      "archive_detections": 1738,
+      "clean_park_detections": 905
+    },
+    {
+      "feature_date": "2019-12-17",
+      "target_date": "2019-12-18",
+      "rows": 43,
+      "positives": 22,
+      "TP": 6,
+      "FP": 1,
+      "FN": 16,
+      "TN": 20,
+      "archive_detections": 2044,
+      "clean_park_detections": 945
+    },
+    {
+      "feature_date": "2019-12-18",
+      "target_date": "2019-12-19",
+      "rows": 43,
+      "positives": 23,
+      "TP": 23,
+      "FP": 20,
+      "FN": 0,
+      "TN": 0,
+      "archive_detections": 2040,
+      "clean_park_detections": 959
+    },
+    {
+      "feature_date": "2019-12-19",
+      "target_date": "2019-12-20",
+      "rows": 43,
+      "positives": 22,
+      "TP": 21,
+      "FP": 21,
+      "FN": 1,
+      "TN": 0,
+      "archive_detections": 1567,
+      "clean_park_detections": 662
+    },
+    {
+      "feature_date": "2019-12-20",
+      "target_date": "2019-12-21",
+      "rows": 43,
+      "positives": 22,
+      "TP": 20,
+      "FP": 20,
+      "FN": 2,
+      "TN": 1,
+      "archive_detections": 1907,
+      "clean_park_detections": 914
+    },
+    {
+      "feature_date": "2019-12-21",
+      "target_date": "2019-12-22",
+      "rows": 43,
+      "positives": 0,
+      "TP": 0,
+      "FP": 43,
+      "FN": 0,
+      "TN": 0,
+      "archive_detections": 10,
+      "clean_park_detections": 0
+    },
+    {
+      "feature_date": "2019-12-22",
+      "target_date": "2019-12-23",
+      "rows": 43,
+      "positives": 15,
+      "TP": 0,
+      "FP": 2,
+      "FN": 15,
+      "TN": 26,
+      "archive_detections": 288,
+      "clean_park_detections": 154
+    },
+    {
+      "feature_date": "2019-12-23",
+      "target_date": "2019-12-24",
+      "rows": 43,
+      "positives": 15,
+      "TP": 8,
+      "FP": 20,
+      "FN": 7,
+      "TN": 8,
+      "archive_detections": 210,
+      "clean_park_detections": 86
+    },
+    {
+      "feature_date": "2019-12-24",
+      "target_date": "2019-12-25",
+      "rows": 43,
+      "positives": 21,
+      "TP": 0,
+      "FP": 1,
+      "FN": 21,
+      "TN": 21,
+      "archive_detections": 620,
+      "clean_park_detections": 269
+    }
+  ],
+  "descriptive_input_shift": [
+    {
+      "feature": "temperature_min_c",
+      "mean_shift_in_training_standard_deviations": 1.7175503743002978,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "temperature_max_c",
+      "mean_shift_in_training_standard_deviations": 1.687798415564159,
+      "fraction_outside_training_range": 0.20671834625322996
+    },
+    {
+      "feature": "temperature_mean_c",
+      "mean_shift_in_training_standard_deviations": 1.6729028255734764,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "dewpoint_mean_c",
+      "mean_shift_in_training_standard_deviations": 1.6173527070240241,
+      "fraction_outside_training_range": 0.06459948320413436
+    },
+    {
+      "feature": "relative_humidity_min_pct",
+      "mean_shift_in_training_standard_deviations": -0.42530190131448703,
+      "fraction_outside_training_range": 0.025839793281653745
+    },
+    {
+      "feature": "wind_speed_mean_ms",
+      "mean_shift_in_training_standard_deviations": -0.3669406176039002,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "precipitation_3d_mm",
+      "mean_shift_in_training_standard_deviations": -0.3218008527729979,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "relative_humidity_mean_pct",
+      "mean_shift_in_training_standard_deviations": -0.25237922861819956,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "wind_speed_max_ms",
+      "mean_shift_in_training_standard_deviations": -0.12259622569262432,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "precipitation_sum_mm",
+      "mean_shift_in_training_standard_deviations": -0.08244144083723713,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "slope_mean_deg",
+      "mean_shift_in_training_standard_deviations": 1.2012398235111347e-15,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "elevation_mean_m",
+      "mean_shift_in_training_standard_deviations": -4.708166207909391e-16,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "aspect_sin",
+      "mean_shift_in_training_standard_deviations": 1.5784521893388196e-16,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "aspect_cos",
+      "mean_shift_in_training_standard_deviations": -4.819766978468436e-17,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "elevation_min_m",
+      "mean_shift_in_training_standard_deviations": 0.0,
+      "fraction_outside_training_range": 0.0
+    },
+    {
+      "feature": "elevation_max_m",
+      "mean_shift_in_training_standard_deviations": 0.0,
+      "fraction_outside_training_range": 0.0
+    }
+  ],
+  "highest_logistic_score_bin": {
+    "lower": 0.8,
+    "upper": 1.0,
+    "rows": 114,
+    "mean_probability": 0.8806607545971196,
+    "observed_rate": 0.3157894736842105
+  },
+  "flagged_zero_detection_days": [
+    {
+      "feature_date": "2019-12-21",
+      "target_date": "2019-12-22",
+      "rows": 43,
+      "positives": 0,
+      "TP": 0,
+      "FP": 43,
+      "FN": 0,
+      "TN": 0,
+      "archive_detections": 10,
+      "clean_park_detections": 0
+    }
+  ],
+  "flag_interpretation": "A review flag, not proof of cloud, instrument outage, wrong labels or absence of fire. Keep the original outcomes and scores unchanged.",
+  "holdout_evaluated": false
+}

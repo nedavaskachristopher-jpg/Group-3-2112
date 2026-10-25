@@ -1,0 +1,21 @@
+{
+  "experiment": "final_evaluation_v1",
+  "primary_model": "xgboost_17",
+  "primary_metric": "sklearn average_precision_score on raw scores",
+  "calibration": null,
+  "model_source": "recent_model_single_day_calibration artifacts from probability_v1; no refitting",
+  "threshold_source": "Exact 80% and 90% recall-target cutoffs from draft_probability_policy.json; inclusive score >= cutoff; neither is guaranteed future recall",
+  "comparison_models": ["training_prevalence", "persistence", "logistic_16", "logistic_17", "xgboost_16", "xgboost_17"],
+  "diagnostic_threshold": 0.5,
+  "reliability_bins": 5,
+  "pr_display_max_points": 201,
+  "metrics": ["average_precision", "precision", "recall", "f1", "accuracy", "confusion_matrix", "brier_score", "log_loss", "alerts_per_day", "false_alerts_per_day", "reliability_bins"],
+  "subsets": ["all retained cell-days", "fire_today == 0, retaining both target classes"],
+  "calendar_months": ["2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06"],
+  "population_policy": "Evaluate every sealed final-test row from 1 January through 29 June 2020. Preserve labels, all dates, area filter and grid membership. No event/date exclusion or threshold search.",
+  "comparison_policy": "Report both frozen recall-target policies and persistence together. Report all prespecified model and monthly comparisons without selecting a winning cutoff from final answers. AP depends on prevalence; no cross-period AP difference alone proves deterioration.",
+  "uncertainty_policy": "One retrospective season with dependent cells, dates and continuing events. Describe results without independent-incident confidence claims or proof of operational benefit.",
+  "score_presentation": "Experimental uncalibrated model score; do not claim a validated probability percentage or fit a calibrator on the final test",
+  "release_policy": "The user explicitly authorised one final evaluation in this conversation. Commit the immutable freeze first, record release before parsing, parse only approved columns once, predict without fitting, and cache results. Later commands may read cached results only.",
+  "post_evaluation_policy": "Do not alter the frozen model, preprocessing, features, calibration, thresholds or evaluation rules based on final results. Further model development requires new independent evaluation data."
+}
