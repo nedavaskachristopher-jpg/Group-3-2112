@@ -8,8 +8,8 @@ the files but does not parse final labels or rerun the raw GIS pipeline.
 
 The source table has 18,980 rows, 39 columns and 52 cells. Keeping park overlap
 at least 0.10 retains 43 cells. An available column is not automatically an
-approved predictor: the active comparisons use 16/17 inputs, not the previous
-20/23. Source quality/provenance JSON describes the supplied table and previous
+approved predictor: the active full/conditions-only comparisons use 17/16 inputs from the wider
+table. Source quality/provenance JSON describes the supplied table and previous
 processing context; it is not the active fitted feature contract.
 
 ## Source roles
@@ -26,7 +26,9 @@ Source URLs and historical acquisition details remain in the
 [source register](../inputs/dataset/blue_mountains_2019_2020/metadata/data_register.csv)
 and [provenance JSON](../inputs/dataset/blue_mountains_2019_2020/model_ready/provenance.json).
 The current [feature catalogue](technical/feature_catalog.md) defines what enters
-the model. Dates, keys, coordinates and target-day counts are not predictors.
+the model, and the [active interface evidence](evidence/active_model_interface.json)
+links that contract to the preserved source table and revised partition manifest.
+Dates, keys, coordinates and target-day counts are not predictors.
 
 Long rainfall windows have incomplete early history, and the initial dry-spell
 state has unknown prior history. The revised method excludes these candidates

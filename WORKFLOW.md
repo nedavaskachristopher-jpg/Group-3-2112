@@ -21,7 +21,7 @@ no identity equivalence or transfer of authorship is assumed. See
 The active study is in `research/`, imported from the exact revised ML commit
 recorded in [source_import.json](docs/integration/source_import.json).
 The target is next-day eligible VIIRS detection, including continuing fire.
-The main comparison uses 16/17 inputs. Seven-day gaps and past-only checks
+The main full/conditions-only comparison uses 17/16 inputs. Seven-day gaps and past-only checks
 precede one frozen final release; no threshold was changed after outcomes.
 
 Use [the model card](docs/MODEL_CARD.md), [final result](research/reports/final_holdout.md)

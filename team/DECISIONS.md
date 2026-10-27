@@ -4,7 +4,7 @@
 | --- | --- |
 | Use the revised study as the active ML implementation | Kian authorised the five-stage integration; exact source commit is recorded |
 | Retain original group history and source attribution | Preserved `legacy-ml-2026-10-25` tag, file inventory and original data PR |
-| Keep 16/17 approved inputs and both exact thresholds | Original revised freeze; no outcome-driven adjustment |
+| Keep 17/16 full/conditions-only approved inputs and both exact thresholds | Original revised freeze; no outcome-driven adjustment |
 | Report the poor final result and better logistic comparison | Frozen aggregate, not a replacement selected after testing |
 | Treat percentages as uncalibrated model scores | Calibration was tested but not adopted |
 | Use original cached scores for the first-date map | No final prediction or outcome-based date selection |

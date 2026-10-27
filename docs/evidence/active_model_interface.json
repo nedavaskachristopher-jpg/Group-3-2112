@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "status": "active",
+  "purpose": "Machine-readable bridge from the preserved source dataset to the frozen revised model interface.",
+  "authoritative_contract": "docs/technical/model_contract.json",
+  "source_table": {
+    "path": "inputs/dataset/blue_mountains_2019_2020/model_ready/blue_mountains_model_table_2019_2020_extended.csv",
+    "sha256": "c9b4391f9616dce86172605419793e42a39a20adf1aecb30da11b4965afccb8b"
+  },
+  "partition_manifest": "research/reports/partition_manifest.json",
+  "full_model_inputs": [
+    "temperature_mean_c",
+    "temperature_max_c",
+    "temperature_min_c",
+    "dewpoint_mean_c",
+    "relative_humidity_mean_pct",
+    "relative_humidity_min_pct",
+    "precipitation_sum_mm",
+    "precipitation_3d_mm",
+    "wind_speed_mean_ms",
+    "wind_speed_max_ms",
+    "elevation_mean_m",
+    "elevation_min_m",
+    "elevation_max_m",
+    "slope_mean_deg",
+    "aspect_sin",
+    "aspect_cos",
+    "fire_today"
+  ],
+  "conditions_only_inputs": [
+    "temperature_mean_c",
+    "temperature_max_c",
+    "temperature_min_c",
+    "dewpoint_mean_c",
+    "relative_humidity_mean_pct",
+    "relative_humidity_min_pct",
+    "precipitation_sum_mm",
+    "precipitation_3d_mm",
+    "wind_speed_mean_ms",
+    "wind_speed_max_ms",
+    "elevation_mean_m",
+    "elevation_min_m",
+    "elevation_max_m",
+    "slope_mean_deg",
+    "aspect_sin",
+    "aspect_cos"
+  ],
+  "conditions_only_omits": [
+    "fire_today"
+  ],
+  "legacy_provenance_note": "The preserved model-ready provenance.json records the earlier 23/20-feature experiment and remains unchanged for source reproducibility. It is not the active fitted feature contract."
+}

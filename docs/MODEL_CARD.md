@@ -18,7 +18,7 @@ new SHAP analysis were not implemented.
 ## Method and evaluation
 
 Compare training prevalence, persistence, logistic regression and XGBoost on
-matched 16/17-input populations. Training-only scaling/class weights and
+matched 17/16-input full/conditions-only populations. Training-only scaling/class weights and
 explicit AP stopping are recorded. Chronological partitions have seven-day
 gaps; rainfall warm-up removes the first two training dates. Later time checks
 select and refit tree counts on past data. Final XGBoost 17 has eight trees.
