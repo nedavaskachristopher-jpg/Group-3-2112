@@ -11,9 +11,9 @@ approval, stakeholder endorsement or readiness to submit the assessment.
 | Penelope | Current dataset handoff and data-owner contact | Source versions, geometry, labels, observation coverage and licences |
 | Seb | Domain literature, stakeholder consequences and ethics | Primary-source synthesis and interpretation of adverse results |
 
-Penelope is the current contact identified by the user and later role document.
-Jin's earlier data PR and documents retain their actual historical attribution;
-no identity equivalence or transfer of authorship is assumed. See
+Penelope is both the original data contributor and the current contact identified
+by the user and later role document. Her earlier data PR and documents retain
+their actual historical attribution to the same person. See
 [history](team/history/README.md) and [contributions](team/CONTRIBUTIONS.md).
 
 ## Authoritative technical version
@@ -62,4 +62,4 @@ Chris verifies these against the current official brief before submission.
 
 Use [contribution records](team/CONTRIBUTIONS.md), [decisions](team/DECISIONS.md),
 [AI disclosure](report/ai_use_appendix.md) and [acceptance](docs/integration/acceptance.md).
-The old meeting agenda and Jin documents are historical, not current instructions.
+The old meeting agenda and Penelope documents are historical, not current instructions.

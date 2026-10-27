@@ -2,7 +2,7 @@
 
 # Data methods contribution
 
-Owner: Jin. The opening text summarises the merged data notes and requires the owner's final source/processing review before report use.
+Owner: Penelope. The opening text summarises the merged data notes and requires the owner's final source/processing review before report use.
 
 The native ERA5-Land 0.1-degree grid provides the common spatial unit. The NPWS estate boundary defines Blue Mountains National Park and supplies the fraction of each weather cell within the park. ERA5-Land hourly temperature, dew point, precipitation and wind components are aggregated into feature-day weather and rainfall summaries. Park-clipped SRTM terrain supplies elevation, slope and aspect features.
 

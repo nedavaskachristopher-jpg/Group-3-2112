@@ -34,7 +34,8 @@ and removes two early dates for the three-day core window. Full raw FIRMS, DEM,
 fire-history GIS and eleven weather months are absent from this supplied public
 subset. Retaining original acquisition scripts does not mean they were rerun.
 
-The current data contact is Penelope; Jin's original PR attribution is preserved.
+Penelope is the current data contact and the contributor whose original data PR
+attribution is preserved.
 The group still needs to confirm source licences/versions, geometry, UTC timing,
 observation coverage and prescribed-burn handling. Satellite non-detection does
 not prove no physical fire. Zero-positive final months require source-owner

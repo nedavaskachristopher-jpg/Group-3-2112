@@ -9,7 +9,7 @@
 | Treat percentages as uncalibrated model scores | Calibration was tested but not adopted |
 | Use original cached scores for the first-date map | No final prediction or outcome-based date selection |
 | Keep exact revised weights/predictions private | Existing delivery boundary; public review/CI need neither |
-| Current data contact is Penelope | User clarification and later role document; Jin's attribution remains historical |
+| Original and current data contact is Penelope | User clarification confirms that the earlier and current names refer to the same member |
 | Separate automated acceptance from human approval | No stakeholder consultation, member review or submission completion is invented |
 
 Both studies use the same source table and overlapping dates. The revised release

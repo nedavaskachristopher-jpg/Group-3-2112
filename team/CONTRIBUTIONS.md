@@ -5,8 +5,7 @@
 | Person/context | What the record establishes | What it does not establish |
 | --- | --- | --- |
 | Kian | Directed revised ML and five-stage integration; code, tests, evidence and draft material produced with Codex assistance | Independent manual review of every generated artifact or operational validation |
-| Jin (historical) | Data documentation/integration PR #1 merged as `f089153` | New source/licence approval or another member's work |
-| Penelope | Identified as current data contact; user reports receiving the dataset from Penelope | Confirmed source ownership, full acquisition/GIS rerun or completed data review |
+| Penelope | Data documentation/integration PR #1 merged as `f089153`; also identified as the current data contact | Final source/licence confirmation, full acquisition/GIS rerun or completed data review |
 | Chris | Identified as project/report lead and integration reviewer | Completed final authorship/layout/submission review |
 | Seb | Identified as domain researcher; supplied related paper is recorded | Completed literature synthesis, consultation or approval of AI-drafted text |
 

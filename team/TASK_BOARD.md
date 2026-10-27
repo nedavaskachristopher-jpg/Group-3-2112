@@ -10,7 +10,7 @@ completed peer review is invented. Chris must confirm the course deadline.
 | I-03 | Kian | Guarded inference, cached notebook/map, CI: engineering complete | Teammate demonstration pending |
 | I-04 | Kian/Chris | Reconciled docs and integrated report draft available | Authors and technical owners review pending |
 | I-05 | Kian | Clean-clone acceptance and authorised merge recorded separately | See acceptance; no peer sign-off implied |
-| D-01 | Jin (historical) | Original data integration merged as PR #1 | Attribution retained; not a new source approval |
+| D-01 | Penelope | Original data integration merged as PR #1 | Attribution retained; not a new source approval |
 | D-02 | Penelope | Current handoff prepared | Source/labels/geometry/rights/coverage confirmation pending |
 | M-02 | Kian | Self-repairing verification retired; corrupt/missing-model checks implemented | Human review pending |
 | M-04 | Kian/Seb | Aggregate error analysis linked to frozen results | Domain/independent-event interpretation pending |

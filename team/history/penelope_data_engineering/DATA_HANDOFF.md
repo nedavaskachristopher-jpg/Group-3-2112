@@ -2,7 +2,7 @@
 
 # Data handoff to ML engineering
 
-Owner: Jin. Reviewer: Kian. Values below describe the current artifacts; human confirmation fields remain open.
+Owner: Penelope. Reviewer: Kian. Values below describe the current artifacts; human confirmation fields remain open.
 
 | Item | Current contract |
 | --- | --- |
@@ -24,11 +24,11 @@ Authoritative references: [feature contract](https://github.com/nedavaskachristo
 
 ## Confirm before final report integration
 
-- [ ] Jin confirms source versions, access dates and licence/attribution requirements.
-- [ ] Jin explains FIRMS confidence/type filters, deduplication and prescribed-burn matching with script/source evidence.
-- [ ] Jin explains UTC aggregation, the next-midnight precipitation accumulation and raw-data availability limits.
-- [ ] Jin and Kian confirm the target shift, feature list, filter and input hash.
-- [ ] Jin and Kian identify omitted raw inputs and do not claim a full raw-pipeline rerun.
+- [ ] Penelope confirms source versions, access dates and licence/attribution requirements.
+- [ ] Penelope explains FIRMS confidence/type filters, deduplication and prescribed-burn matching with script/source evidence.
+- [ ] Penelope explains UTC aggregation, the next-midnight precipitation accumulation and raw-data availability limits.
+- [ ] Penelope and Kian confirm the target shift, feature list, filter and input hash.
+- [ ] Penelope and Kian identify omitted raw inputs and do not claim a full raw-pipeline rerun.
 - [ ] Kian records the actual interface review and any remaining issue.
 
 | Confirmation | Name/date/evidence |

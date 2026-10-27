@@ -37,7 +37,7 @@
       "mode": "text_lf"
     },
     "AGENTS.md": {
-      "sha256": "db0e1fa7f9df362f8fc258645c79433ae81dcef2471223ea714f2d980ee1b003",
+      "sha256": "02b8a4811f15242f59ac42a22877d14c1af3cba4fc7625e2ec8a0cb6f5bbe8ac",
       "mode": "text_lf"
     },
     "applications/__init__.py": {
@@ -61,7 +61,7 @@
       "mode": "text_lf"
     },
     "docs/DATA_NOTES.md": {
-      "sha256": "a92243571c3e802217713df9325daf3ba35005e4a84807130bd9adcdfdd78109",
+      "sha256": "3bc4a7dd902f9efa701d5cdedef0ff68a48fa22e6503d7f9543fc305cbf7aded",
       "mode": "text_lf"
     },
     "docs/evidence/claims.json": {
@@ -253,11 +253,11 @@
       "mode": "text_lf"
     },
     "report/group_report.md": {
-      "sha256": "8e8b97d45149c763875064c08f65496baa74efb5e07d5538916609ec9257a283",
+      "sha256": "e33968b695d7b2a2ac188206a2b57e8731617ab3f8a191eb0c7a261a1017de58",
       "mode": "text_lf"
     },
     "report/group_report.pdf": {
-      "sha256": "3c21b6971917469b4477e79413f3ccac8bb611defc6f4eed52b5fa22bdc6728e",
+      "sha256": "49f63cef81b92bea325eab262044e683e9351fc4eb0be7f106aecafa5b007a22",
       "mode": "bytes"
     },
     "report/group_report.tex": {
@@ -265,11 +265,11 @@
       "mode": "text_lf"
     },
     "report/group_report_content.json": {
-      "sha256": "1063be79b48c346bda541895a810ca63e9251cdcfdbad23b1d17b8133a6b92d2",
+      "sha256": "96fa9fa3a8c34271c41da1fbd1b0d0516b61affe686779efc48abbf2fc495d28",
       "mode": "text_lf"
     },
     "report/group_sections.tex": {
-      "sha256": "a2ad01d8c3400268d50c8f0daa12de874f7da3c9041b1d2c65f45abc92306555",
+      "sha256": "9f06114e0c0f06b88642490b9974b93cf0d548c6727671f57320e30911b48b88",
       "mode": "text_lf"
     },
     "report/integration_guide.md": {
@@ -373,31 +373,31 @@
       "mode": "text_lf"
     },
     "team/CONTRIBUTIONS.md": {
-      "sha256": "5bc5d71ca2d54f844b324e60bdffbafbd717a8ccfff89143c90e47a65c94ec9b",
+      "sha256": "63eeaf21011950c77c5a35a6b7c1ac4e18838329d081689896ef42de08d68fb1",
       "mode": "text_lf"
     },
     "team/DECISIONS.md": {
-      "sha256": "de2c279e4f73a50a742bd055a492d28a1692b3d0a7ceaffa40df3aad752db633",
-      "mode": "text_lf"
-    },
-    "team/history/jin_data_engineering/DATA_HANDOFF.md": {
-      "sha256": "c74aea3b25bcfea2a15a8132784828b956f7fa70777f84e5e468dbb1f7df5f20",
-      "mode": "text_lf"
-    },
-    "team/history/jin_data_engineering/README.md": {
-      "sha256": "2607990b148dac014403760f83c135ea7fa13b338c03e13e7b2b00f6f9f9f43e",
-      "mode": "text_lf"
-    },
-    "team/history/jin_data_engineering/REPORT_SECTION.md": {
-      "sha256": "060121d076ea5a10b4a6d7f92aaeeaad03234fd2549f0a6bb33390811d05b32c",
+      "sha256": "c379c0f8b2985af511c5181d5a3b357fa5b4190ad5a39f29f5e0dc7c8ec2eec4",
       "mode": "text_lf"
     },
     "team/history/MEETING_2026-10-22.md": {
-      "sha256": "5659525bb6df3679869a1c0f54db05adc30ed8418f4e2a515ca0f7333237fd48",
+      "sha256": "9ee15053e7d642d41364a8bd81b6cd5eb3d3c4b56f4f4a7300f37d40735de497",
+      "mode": "text_lf"
+    },
+    "team/history/penelope_data_engineering/DATA_HANDOFF.md": {
+      "sha256": "3cd8de773d17ca6f23ec54e361a97caa3cee33c6c41671ff254c7ced3f69cd4f",
+      "mode": "text_lf"
+    },
+    "team/history/penelope_data_engineering/README.md": {
+      "sha256": "09e167e224921e5bc8415f27e64c81f0839ceb97256872ca1ee7b4276bf04ad8",
+      "mode": "text_lf"
+    },
+    "team/history/penelope_data_engineering/REPORT_SECTION.md": {
+      "sha256": "dc66cff7f53ba0e93dca46d9c83fe259b4714df6d11c5096b71fc892325a9b74",
       "mode": "text_lf"
     },
     "team/history/README.md": {
-      "sha256": "363877945a0aae00a6dc42b82ab82f09013599ab1b990db287e521760977de7e",
+      "sha256": "073416968cfb25197ee665d4f3b5ce2fee8c323a9b04c990446fa939d3bb4d96",
       "mode": "text_lf"
     },
     "team/kian_ml_and_coordination/ERROR_ANALYSIS.md": {
@@ -421,7 +421,7 @@
       "mode": "text_lf"
     },
     "team/penelope_data_engineering/README.md": {
-      "sha256": "caafb9b0114e64dda5f19a8b5077518e13388ac4cf82ebf8805bf44e172e23e0",
+      "sha256": "af4660962a72d125eb3e61da1907725741d3f7c6be61f47cd68909b65030cf92",
       "mode": "text_lf"
     },
     "team/penelope_data_engineering/REPORT_SECTION.md": {
@@ -429,7 +429,7 @@
       "mode": "text_lf"
     },
     "team/README.md": {
-      "sha256": "2a49df043f93fca2c936a4664b44a42080537cce3e7a078bdce8ef5d3c13c04b",
+      "sha256": "4354177ae01a0ecd804cd35e40cdf84100b599fb71c243ed945d0d1097336a01",
       "mode": "text_lf"
     },
     "team/seb_domain_research/README.md": {
@@ -445,7 +445,7 @@
       "mode": "text_lf"
     },
     "team/TASK_BOARD.md": {
-      "sha256": "6ff4af91c01c6815b2524bfc1dc2e2c68096a02f699e7acff59555dedaaaf62e",
+      "sha256": "d4fcb62d8f30be9cc6801e20a2fb5e8a8299321a175df18a20f2ffe233757193",
       "mode": "text_lf"
     },
     "tests/README.md": {
@@ -473,7 +473,7 @@
       "mode": "text_lf"
     },
     "tools/build_group_report.py": {
-      "sha256": "30bd594c0ac0cbe8ace9cb6d24842b7e4fa02abd6cfb8cf28c2d40f000154d3a",
+      "sha256": "47fa70971d441698811e04e9283bff5d3fcd8f0ada6a916e73756e22feb10a3b",
       "mode": "text_lf"
     },
     "tools/build_handover.py": {
@@ -509,7 +509,7 @@
       "mode": "text_lf"
     },
     "WORKFLOW.md": {
-      "sha256": "2158e6a0b96f495bdc24b89106ab59df83e231ee14ee618436594153d5f4c003",
+      "sha256": "d1f6e94208a7c11a188050d5789ec64ef2d2a8324a64fb85888efed5c69eb0c5",
       "mode": "text_lf"
     }
   }

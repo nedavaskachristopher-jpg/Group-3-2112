@@ -68,7 +68,8 @@
 - Root `.local_data/` retains private artifacts. Optional verification hashes
   those files without parsing labels or repeating prediction.
 - Preserve the existing group's source data bytes and real historical attribution.
-  Current data contact is Penelope; Jin's earlier PR remains historically credited.
+  Penelope is both the original data contributor and the current data contact;
+  her earlier PR remains historically credited to the same person.
 - Keep legacy models/outputs at the preservation tag. Active notebooks/maps use
   cached evidence. Optional inference requires a private exact artifact and must
   reject the already-released final dates.

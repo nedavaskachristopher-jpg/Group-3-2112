@@ -1,13 +1,13 @@
 > Historical pre-integration record. Numerical claims and roles describe the legacy version; see the current team index.
 
-# Jin data engineering workspace
+# Penelope data engineering workspace
 
-Jin owns data engineering and provenance. Start with [WORKFLOW.md](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/WORKFLOW.md) and tasks D-01/D-02 on the [task board](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/team/TASK_BOARD.md).
+Penelope owns data engineering and provenance. Start with [WORKFLOW.md](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/WORKFLOW.md) and tasks D-01/D-02 on the [task board](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/team/TASK_BOARD.md).
 
 ## Your files
 
-- [https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/team/jin_data_engineering/DATA_HANDOFF.md](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/team/jin_data_engineering/DATA_HANDOFF.md): the populated data/model interface for you and Kian to confirm.
-- [https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/team/jin_data_engineering/REPORT_SECTION.md](https://github.com/nedavaskachristopher-jpg/Group-3-2112/blob/legacy-ml-2026-10-25/team/jin_data_engineering/REPORT_SECTION.md): a data-methods draft based on the merged documentation, with explicit source/processing details still to complete.
+- [DATA_HANDOFF.md](DATA_HANDOFF.md): the populated data/model interface for you and Kian to confirm.
+- [REPORT_SECTION.md](REPORT_SECTION.md): a data-methods draft based on the merged documentation, with explicit source/processing details still to complete.
 
 ## Existing authoritative work
 

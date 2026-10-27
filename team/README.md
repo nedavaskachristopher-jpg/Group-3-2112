@@ -7,10 +7,10 @@
 | Penelope | [Data handoff](penelope_data_engineering/README.md) | Confirm source/geometry/labels/rights and data limitations |
 | Seb | [Domain research](seb_domain_research/README.md) | Review primary literature, stakeholder reasoning and recommendations |
 
-Current roles follow the user's clarification and later specification. Jin's
+Current roles follow the user's clarification and later specification. Penelope's
 earlier data PR and historical documents retain their attribution under
-[history](history/README.md); no identity mapping or reassigned authorship is
-invented. See the [workflow](../WORKFLOW.md), [task board](TASK_BOARD.md),
+[history](history/README.md) as work by the same member. See the
+[workflow](../WORKFLOW.md), [task board](TASK_BOARD.md),
 [contributions](CONTRIBUTIONS.md) and [decisions](DECISIONS.md).
 
 The files provide review-ready material and assignments. They do not establish

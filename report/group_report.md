@@ -55,7 +55,7 @@ Data sources are joined by grid and UTC date. Weather represents the whole grid 
 
 Available columns are not automatically approved predictors. Long rainfall windows have incomplete early history and the initial dry-spell state lacks prior observations. These candidates were excluded; the core three-day window has a two-day fitting warm-up. Inputs describe completed days and retrospective archives, so actual publication latency and issue-time availability have not been validated [6].
 
-Penelope is the current data contact identified for this revision. Jin's earlier data PR remains historically attributed. Source versions, licences, geometry, coverage and target construction still require the data owner's recorded review; no full acquisition or personal verification is claimed on either member's behalf.
+Penelope is both the original data contributor and the current data contact for this revision. Her earlier data PR remains historically attributed to the same person. Source versions, licences, geometry, coverage and target construction still require her recorded review; no full acquisition or personal verification beyond the recorded evidence is claimed on her behalf.
 
 ## Study design and inputs
 
