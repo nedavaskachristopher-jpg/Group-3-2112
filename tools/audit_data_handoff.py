@@ -26,6 +26,7 @@ import xarray as xr
 ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "inputs" / "dataset" / "blue_mountains_2019_2020"
 MODEL_READY = DATASET / "model_ready"
+LOCAL_AUDIT_OUTPUT = ROOT / ".local_data" / "audit" / "data_handoff_audit.json"
 START_DATE = pd.Timestamp("2019-07-01")
 END_DATE = pd.Timestamp("2020-06-30")
 RETAINED_CONFIDENCE = {"n", "h"}
@@ -583,7 +584,12 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=ROOT / "docs" / "evidence" / "data_handoff_audit.json",
+        default=LOCAL_AUDIT_OUTPUT,
+        help=(
+            "Audit JSON destination. Defaults to the Git-ignored local audit directory; "
+            "pass docs/evidence/data_handoff_audit.json explicitly only when intentionally "
+            "refreshing the published evidence."
+        ),
     )
     args = parser.parse_args()
     audit = Audit()

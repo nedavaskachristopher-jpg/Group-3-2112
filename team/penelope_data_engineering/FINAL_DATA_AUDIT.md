@@ -11,11 +11,17 @@ The migrated data handoff passes all 54 verifiable checks. Two non-critical ques
 
 Accordingly, `fire_positive = 0` means **no eligible FIRMS detection was present in the supplied archive for that cell and UTC date**. It must not be described as proof that no fire occurred.
 
-The complete machine-readable evidence is in [`data_handoff_audit.json`](../../docs/evidence/data_handoff_audit.json). Reproduce it from the repository root with:
+The complete published machine-readable evidence is in [`data_handoff_audit.json`](../../docs/evidence/data_handoff_audit.json). Install the separate audit dependencies and reproduce the checks from the repository root with:
 
 ```powershell
+python -m pip install -r tools/requirements-audit.txt
 python tools/audit_data_handoff.py --source-root "C:\path\to\the\retained\Dataset"
 ```
+
+By default, reproduction writes to the Git-ignored
+`.local_data/audit/data_handoff_audit.json`; it does not overwrite the
+published evidence. Pass `--output docs/evidence/data_handoff_audit.json` only
+when intentionally refreshing that evidence and its delivery-manifest hash.
 
 ## Verified handoff
 

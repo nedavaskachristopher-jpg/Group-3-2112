@@ -18,7 +18,16 @@ jobs:
         with:
           python-version: '3.12.14'
           cache: pip
-      - run: python -m pip install -r requirements.txt -r tools/requirements-report.txt
+      - run: python -m pip install -r requirements.txt -r tools/requirements-report.txt -r tools/requirements-audit.txt
+      - name: Verify the data-audit entry point and safe default output
+        shell: bash
+        run: |
+          published_before="$(sha256sum docs/evidence/data_handoff_audit.json | cut -d ' ' -f 1)"
+          python tools/audit_data_handoff.py --help
+          python tools/audit_data_handoff.py
+          published_after="$(sha256sum docs/evidence/data_handoff_audit.json | cut -d ' ' -f 1)"
+          test "$published_before" = "$published_after"
+          test -f .local_data/audit/data_handoff_audit.json
       - run: python -m tools.acceptance --pdf
       - name: Confirm checks did not rewrite tracked artifacts
         run: git diff --exit-code

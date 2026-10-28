@@ -18,8 +18,8 @@ does not retrain a model or change frozen evaluation results.
 The [model contract](../../docs/technical/model_contract.json) records the exact
 17 inputs, and the [feature catalogue](../../docs/technical/feature_catalog.md)
 explains their availability. Target-day counts, labels, dates, coordinates,
-grid ID and partition fields are not predictors. The source table and revised
-partition manifest have the same SHA-256.
+grid ID and partition fields are not predictors. The source-data hash matches
+the `source_table_sha256` recorded in the revised partition manifest.
 
 The audit verifies prepared-table integrity, provenance hashes, the one-day
 target shift and the 17/16-input interface. Against the retained source folder,

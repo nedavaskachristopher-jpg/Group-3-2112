@@ -29,7 +29,7 @@
       "mode": "text_lf"
     },
     ".github/workflows/verify.yml": {
-      "sha256": "ad806fdd04b92dcb6ba7c2167ac0cbe8607d0fa3a11d731a08030b2cde45d8a3",
+      "sha256": "1be5ff556330c6ee258693d1899b8331ce10bfb21a72ba7d48842d8f08250e83",
       "mode": "text_lf"
     },
     ".gitignore": {
@@ -429,11 +429,11 @@
       "mode": "text_lf"
     },
     "team/penelope_data_engineering/DATA_HANDOFF.md": {
-      "sha256": "337c19dcdbd4a6b9fb5539c25899526401718e4305ea680a85b07dd28cc7af3f",
+      "sha256": "783fb544b227936381cbf9f70abbdbb230e8701d5d305766b106ae15ac927edc",
       "mode": "text_lf"
     },
     "team/penelope_data_engineering/FINAL_DATA_AUDIT.md": {
-      "sha256": "0e382561d8f29d8eec4e44ec257a34e1b0035d7d8eac438e0136c838f35d0e5c",
+      "sha256": "3fcebbe244fed13810f46213e50d2201282eca318d2752cd9731b72720213886",
       "mode": "text_lf"
     },
     "team/penelope_data_engineering/README.md": {
@@ -489,7 +489,7 @@
       "mode": "text_lf"
     },
     "tools/audit_data_handoff.py": {
-      "sha256": "d17904d5bbc39c0cf4809f471083bb3396fffeb3360c1d3341951f42c783e9f9",
+      "sha256": "9d842843cc5b9d87ea4d0ab97ad1ddcede39a4beb470c3f515534363d96af6f5",
       "mode": "text_lf"
     },
     "tools/build_group_report.py": {
@@ -513,11 +513,15 @@
       "mode": "text_lf"
     },
     "tools/README.md": {
-      "sha256": "0ac31eab86d8a676306da11384155a9c5a6fecf5c7a9dbfd8996ea869d8dbd25",
+      "sha256": "b026aecf6e656f1145496665d22d1320a1314d61bfdd8a28d4dc955653bea992",
       "mode": "text_lf"
     },
     "tools/render_handover_pdf.py": {
       "sha256": "34d95aa192bf067d559035795a603a672f0a057e97b65b2583d1b211a8802f3d",
+      "mode": "text_lf"
+    },
+    "tools/requirements-audit.txt": {
+      "sha256": "4372a8aa66b65700cfee8e94ba1d6c7ab2cd42fc81b7ccccf06b82956e9545b4",
       "mode": "text_lf"
     },
     "tools/requirements-report.txt": {

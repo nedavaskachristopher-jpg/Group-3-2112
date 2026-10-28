@@ -1,0 +1,5 @@
+# Optional source-level data audit. Keep research/requirements.txt frozen.
+-r ../research/requirements.txt
+
+geopandas==1.2.0
+xarray==2026.9.0
