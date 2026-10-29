@@ -13,8 +13,36 @@ The scripts here implement aggregate-only export and verification.
 | [check_repository.py](check_repository.py) | Check English/public-private upload boundaries |
 | [acceptance.py](acceptance.py) | Run clean-checkout acceptance, exact runtime checks and optional PDF inspection |
 | [verify_handover.py](verify_handover.py) | Check unchanged research hashes, release identity, exports and links |
+| [audit_data_handoff.py](audit_data_handoff.py) | Audit prepared data, provenance and optional retained source files without retraining |
+| [requirements-audit.txt](requirements-audit.txt) | Optional data-audit dependencies; leaves frozen research requirements unchanged |
 | [requirements-report.txt](requirements-report.txt) | Optional PDF-export dependencies |
 
 See the [runbook](../docs/technical/runbook.md). Source-of-truth measurements
 remain in `research/reports/`. Export scripts do not read raw data, predict or fit.
 Only explicit optional verification reads private files, and only as bytes.
+
+## Optional data-handoff audit
+
+Install the separate audit dependencies without changing
+`research/requirements.txt`:
+
+```powershell
+python -m pip install -r tools/requirements-audit.txt
+```
+
+The default run writes to the Git-ignored
+`.local_data/audit/data_handoff_audit.json`, so routine reproduction cannot
+overwrite the published audit evidence:
+
+```powershell
+python tools/audit_data_handoff.py --source-root "C:\path\to\the\retained\Dataset"
+```
+
+Refreshing the committed evidence is a separate, deliberate operation. Review
+the resulting timestamp and checks before updating the delivery manifest:
+
+```powershell
+python tools/audit_data_handoff.py `
+  --source-root "C:\path\to\the\retained\Dataset" `
+  --output docs/evidence/data_handoff_audit.json
+```

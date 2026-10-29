@@ -47,7 +47,7 @@ JSON values. Rounding an inclusive cutoff can change decisions for an entire
 tied group.
 
 The prespecified comparisons are training prevalence, persistence, and matched
-16/17-input logistic and XGBoost models. All four fitted artifacts come from
+16-input conditions-only and 17-input full logistic and XGBoost models. All four fitted artifacts come from
 the same recent-model development scenario. Logistic scalers remain embedded
 in their saved training-fitted pipelines; XGBoost inputs are not scaled.
 The sixteen-input XGBoost has six trees. Original experiment reports are not

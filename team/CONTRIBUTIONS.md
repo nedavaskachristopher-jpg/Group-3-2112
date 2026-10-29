@@ -20,7 +20,7 @@ are retained; commit counts do not measure overall contribution.
 | --- | --- | --- | --- |
 | Kian | To be recorded by Kian | Pending | Pending |
 | Chris | To be recorded by Chris | Pending | Pending |
-| Penelope | To be recorded by Penelope | Pending | Pending |
+| Penelope | Completed the final data-handoff audit covering provenance, FIRMS cleaning, label construction, UTC/date alignment, monthly coverage and the 17/16-input data/ML interface | [Final audit](penelope_data_engineering/FINAL_DATA_AUDIT.md), [audit script](../tools/audit_data_handoff.py) and [JSON evidence](../docs/evidence/data_handoff_audit.json), 2026-10-25; migrated 2026-10-28 | Automated and retained-source checks pass with explicit observation/absence limitations; Kian/Chris review of the migrated wording remains pending |
 | Seb | To be recorded by Seb | Pending | Pending |
 
 Do not paste a completed contribution statement until these actions have

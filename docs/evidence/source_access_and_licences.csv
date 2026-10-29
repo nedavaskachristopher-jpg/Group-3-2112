@@ -1,0 +1,6 @@
+dataset,official_source,access_date,licence_or_terms
+NPWS Estate boundary,https://www.data.nsw.gov.au/data/dataset/nsw-national-parks-and-wildlife-service-npws-estate3f9e7,2026-10-07,Creative Commons Attribution
+NPWS Fire History,https://www.data.nsw.gov.au/data/dataset/fire-history-wildfires-and-prescribed-burns-1e8b6,2026-10-07,Creative Commons Attribution
+SRTM-derived DEM,https://data.gov.au/data/dataset/srtm-derived-1-second-digital-elevation-models-version-1-0,2026-10-07,Creative Commons Attribution 4.0 International
+S-NPP VIIRS active fire,https://firms.modaps.eosdis.nasa.gov/content/active_fire/,2026-10-07,NASA open-data policy; acknowledge and cite FIRMS/data product
+ERA5-Land,https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land,2026-10-07,CC-BY licence

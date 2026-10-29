@@ -1,4 +1,4 @@
-> Supplied dataset documentation. Its wider feature/previous-model descriptions are historical. The active revised model uses 16/17 approved inputs; see the root inputs README and current model contract.
+> Supplied dataset documentation. Its wider feature/previous-model descriptions are historical. The active revised full/conditions-only models use 17/16 approved inputs; see the root inputs README and current model contract.
 
 # Model-ready Blue Mountains dataset
 
@@ -33,11 +33,11 @@ The sources are joined by ERA5-Land `grid_id` and UTC date. Static terrain value
 
 ## Feature and split contract
 
-The full model uses 23 predictors: eight weather, six rainfall, six terrain and three recent-fire features. The conditions-only comparison uses the same 20 weather, rainfall and terrain features but omits `fire_today`, `fire_neighbour_today` and `fire_days_last_7`.
+The active full model uses 17 inputs: eight weather, two rainfall, six terrain and the audited same-day `fire_today` flag. The conditions-only comparison uses the same 16 weather, rainfall and terrain inputs but omits `fire_today`. Longer rainfall/dry-history and the other recent-fire candidates remain in the wider table but are not approved predictors in the frozen model.
 
-Identifiers, coordinates, dates, the original `split` field, `park_area_fraction`, target-day detection counts, audit fields and the target are excluded from the predictors. `output/feature_contract.json` records the exact lists.
+Identifiers, coordinates, dates, the original `split` field, `park_area_fraction`, target-day detection counts, audit fields and the target are excluded from the predictors. `docs/technical/model_contract.json` records the exact active list.
 
-`src/train_evaluate.py` regenerates purged temporal partitions after the park filter. It does not use the CSV's original `split` column for model fitting. The original split and its summary remain as data-engineering metadata only.
+`research/bushfire_ml/prepare.py` regenerates the protected temporal partitions after the park filter. It does not use the CSV's original `split` column for model fitting. The original split and its summary remain as data-engineering metadata only.
 
 ## Supporting records
 
@@ -47,7 +47,7 @@ Identifiers, coordinates, dates, the original `split` field, `park_area_fraction
 - `terrain_features.csv`: static elevation, slope and aspect summaries.
 - `daily_fire_labels_2019_2020.csv`: label panel and prescribed-burn audit counts.
 - `blue_mountains_era5_grid.gpkg`: cell geometry and park-overlap fractions.
-- `data_dictionary.csv`: definitions for the base table; extended-field definitions are in `output/feature_contract.json`.
+- `data_dictionary.csv`: definitions for the base table; the active fitted inputs are in `docs/technical/model_contract.json` and `docs/technical/feature_catalog.md`.
 - `quality_report.json`: base-pipeline checks, extended-table audit and modelling-subset checks.
 - `provenance.json`: source hashes, derived-table lineage and repository-delivery scope.
 
